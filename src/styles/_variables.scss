@@ -1,0 +1,23 @@
+
+/** colors **/
+$colors: (
+  mint-cream       : #F7FFF7,
+  pastel-red       : #ff6B6B,
+  maize            : #FFE66D,
+  medium-turquoise : #4ECDC4,
+  english-green    : #1A535C
+) !default;
+
+@function color($color) {
+  @return map_get($colors, $color);
+}
+
+/** breakpoints **/
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
+
+/** regular spacings **/
+$std-grid-spacing: 20px;

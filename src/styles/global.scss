@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Ubuntu:400,400i,700');
+
+* {
+    outline: 1px solid red;
+}
+
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+    //font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+}

@@ -1,0 +1,37 @@
+@import "../../styles/variables";
+
+.grid {
+
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns:  [sidebar-left-flush] $std-grid-spacing
+                          [sidebar-left-padded] 1fr
+                          [sidebar-right-padded] $std-grid-spacing
+                          [sidebar-right-flush content-left-flush] $std-grid-spacing
+                          [content-left-padded] 1.62fr
+                          [content-right-padded] $std-grid-spacing [content-right-flush]
+  ;
+
+  grid-template-rows: [content-top-flush] $std-grid-spacing
+                      [content-top-padded] auto
+                      [content-bottom-padded] $std-grid-spacing [content-bottom-flush];
+
+}
+
+.sidebar {
+  grid-column: sidebar-left-flush / sidebar-right-flush;
+  grid-row: content-top-flush / content-bottom-flush;
+
+  display: grid;
+  place-content: center;
+
+  // TODO: move visual styles outside grid.module file (layout only here)
+  padding: $std-grid-spacing;
+  background: color(maize);
+
+  .sidebar-content {
+
+  }
+}
