@@ -6,17 +6,11 @@
   height: auto;
 
   display: grid;
-  grid-template-columns:  [sidebar-left-flush] $std-grid-spacing
-                          [sidebar-left-padded] 1fr
-                          [sidebar-right-padded] $std-grid-spacing
-                          [sidebar-right-flush content-left-flush] $std-grid-spacing
-                          [content-left-padded] 1.62fr
-                          [content-right-padded] $std-grid-spacing [content-right-flush]
+  grid-template-columns:  [sidebar-left-flush] 1fr [sidebar-right-flush
+                           content-left-flush] 1.62fr [content-right-flush]
   ;
 
-  grid-template-rows: [content-top-flush] $std-grid-spacing
-                      [content-top-padded] auto
-                      [content-bottom-padded] $std-grid-spacing [content-bottom-flush];
+  grid-template-rows: [content-top-flush] auto [content-bottom-flush];
 
 }
 
@@ -27,11 +21,21 @@
   display: grid;
   place-content: center;
 
-  // TODO: move visual styles outside grid.module file (layout only here)
+  // TODO: move visual styles outside grid.module file (layout only here?)
   padding: $std-grid-spacing;
   background: color(maize);
 
   .sidebar-content {
+  }
+}
+
+.content {
+  grid-column: content-left-flush / content-right-flush;
+  grid-row: content-top-flush / content-bottom-flush;
+
+  padding: $std-grid-spacing $large-grid-spacing;
+
+  .inner-content {
 
   }
 }
