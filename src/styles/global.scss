@@ -9,11 +9,40 @@
 html, body {
     background: color(mint-cream);
     font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
 }
 
 ::selection {
     background: color(medium-turquoise);
     color: color(mint-cream);
+}
+
+@each $color_name, $color in $colors {
+    .bg--#{$color_name} {
+        background: $color;
+    }
+
+    .fg--#{$color_name} {
+        color: $color;
+    }
+}
+
+.vertical-std-padded {
+    padding-top: $std-grid-spacing;
+    padding-bottom: $std-grid-spacing;
+}
+
+.horizontal-std-padded {
+    padding-left: $std-grid-spacing;
+    padding-right: $std-grid-spacing;
+}
+
+.std-padded {
+    padding: $std-grid-spacing;
+}
+
+.std-margin {
+    margin: $std-grid-spacing;
 }
 
 h1 {
@@ -31,6 +60,3 @@ a {
     font-size: 40px;
 }
 
-.highlight {
-    color: color(medium-turquoise)
-}

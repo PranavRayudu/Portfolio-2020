@@ -19,6 +19,7 @@
     "react-icons": "^3.7.0"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
     "gatsby-plugin-sass": "^2.0.0",
     "node-gyp": "^4.0.0",
     "node-sass": "^4.9.0",

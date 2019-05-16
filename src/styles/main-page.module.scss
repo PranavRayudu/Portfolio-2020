@@ -1,0 +1,75 @@
+@import "variables";
+
+
+/** Sidebar Styles **/
+
+.sidebar-intro {
+    background: color(maize);
+}
+
+.sidebar-work {
+    background: color(aqua);
+    color: color(mint-cream);
+}
+
+.sidebar-blog {
+    background: color(forest);
+    color: color(mint-cream);
+}
+
+.icon-grid {
+
+    $space-around: 30px;
+
+    display: grid;
+
+    grid-template-columns: $space-around auto;
+    grid-template-rows: minmax($space-around, auto);
+    grid-auto-rows: minmax($space-around, auto);
+    grid-auto-flow: row;
+
+    align-items: center;
+}
+
+.icon {
+    font-size: 20px;
+    color: color(aqua);
+}
+
+.github-left-margin {
+    margin-left: $std-grid-spacing;
+}
+
+
+/** Content Styles **/
+
+.title {
+    font-size: 4em;
+}
+
+.description {
+    margin-top: 2em;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: normal;
+
+    color: grey;
+
+    max-width: 500px;
+}
+
+.work-grid {
+    display: grid;
+
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+
+    grid-gap:$std-grid-spacing $large-grid-spacing;
+
+    grid-auto-flow: row;
+}
+
+.blog-grid {
+
+}

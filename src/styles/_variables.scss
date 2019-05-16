@@ -5,7 +5,9 @@ $colors: (
   pastel-red       : #ff6B6B,
   maize            : #FFE66D,
   medium-turquoise : #4ECDC4,
-  english-green    : #1A535C
+  aqua             : #008595,
+  forest           : #015249,
+  marine           : #57BC90
 ) !default;
 
 @function color($color) {

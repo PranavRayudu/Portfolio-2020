@@ -1,11 +1,10 @@
 import React from "react"
 import sidebarStyles from "./grid.module.scss"
 
-
-export default ({children}) => (
-    <div className={sidebarStyles.sidebar}>
+export default props => (
+    <div className={[props.className, sidebarStyles.sidebar].join(' ')}>
         <div className={sidebarStyles.sidebarContent}>
-            {children}
+            {props.children}
         </div>
     </div>
 )
