@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{143:function(e,n,t){"use strict";t.r(n);var a=t(0),l=t.n(a),r=function(e){return l.a.createElement("header",null,l.a.createElement("h1",null,e.title),l.a.createElement("p",null,e.body))};n.default=function(){return l.a.createElement(r,{title:"Hello, my name is Pranav Rayudu",body:"I am... [dazzling introduction]"})}}}]);
-//# sourceMappingURL=component---src-pages-index-js-8c664ee150fc99abbc25.js.map
