@@ -1,11 +1,14 @@
 import React from "react"
+import Img from "gatsby-image"
 import SnippetStyles from "../styles/snippet.module.scss"
 
-export default props => (
+export default ({title, subtitle, body, image, link}) => (
   <div className={SnippetStyles.snippet}>
-    <h1 className={SnippetStyles.title}>{props.title}</h1>
-    <h2 className={SnippetStyles.subtitle}>{props.subtitle}</h2>
-    <p className={SnippetStyles.text}>{props.body}</p>
-    <a href={props.link}>Visit Site</a>
+      {image && (<Img fluid={image} />)}
+    <h1 className={SnippetStyles.title}>{title}</h1>
+    <h2 className={SnippetStyles.subtitle}>{subtitle}</h2>
+    <p className={SnippetStyles.text}>{body}</p>
+
+    <a href={link} target="_blank">Visit Site</a>
   </div>
 )

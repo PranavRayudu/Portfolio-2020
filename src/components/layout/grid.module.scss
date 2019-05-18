@@ -5,6 +5,7 @@
   height: auto;
 
   display: grid;
+
   grid-template-columns:
     [sidebar-left-flush] 1fr [sidebar-right-flush
     content-left-flush] 1.62fr [content-right-flush];
@@ -12,6 +13,23 @@
   grid-template-rows: [content-top-flush] auto [content-bottom-flush];
 
   grid-template-areas: "sidebar content";
+}
+
+.grid-straight {
+  @extend .grid;
+
+  @include respond-to(lg) {
+    grid-template-columns: [sidebar-left-flush content-left-flush] 1fr [sidebar-right-flush content-right-flush];
+    grid-template-areas: "content" "sidebar";
+  }
+}
+
+.grid-reverse {
+  @extend .grid;
+  @include respond-to(lg) {
+    grid-template-columns: [sidebar-left-flush content-left-flush] 1fr [sidebar-right-flush content-right-flush];
+    grid-template-areas: "sidebar" "content";
+  }
 }
 
 .sidebar {

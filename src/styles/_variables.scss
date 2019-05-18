@@ -2,12 +2,12 @@
 /** colors **/
 $colors: (
   mint-cream       : #F7FFF7,
-  pastel-red       : #ff6B6B,
-  maize            : #FFE66D,
   medium-turquoise : #4ECDC4,
-  aqua             : #008595,
-  forest           : #015249,
-  marine           : #57BC90
+  inchworm         : #A3E570,
+  tigers-eye       : #E57937,
+  dazzled-blue     : #2e5791,
+  maize            : #FFE66D,
+  pastel-red       : #ff6B6B,
 ) !default;
 
 @function color($color) {
@@ -16,11 +16,32 @@ $colors: (
 
 /** breakpoints **/
 $grid-breakpoints: (
-  sm: 576px,
-  md: 768px,
-  lg: 992px
+  sm: (max-width: 600px),
+  md: (max-width: 800px),
+  lg: (max-width: 1000px)
 );
 
 /** regular spacings **/
 $std-grid-spacing: 20px;
 $large-grid-spacing: 70px;
+
+
+@each $color_name, $color in $colors {
+  .bg--#{$color_name} {
+    background: $color;
+  }
+
+  .fg--#{$color_name} {
+    color: $color;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    @media #{inspect(map_get($grid-breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "no value retrieved from `#{$breakpoint}`" + "only #{map-keys($grid-breakpoints)} are available"
+  }
+}

@@ -1,12 +1,11 @@
 import React from "react"
-import {Link} from "gatsby"
-import Grid from "../components/layout/main-grid"
+import { Link } from "gatsby"
+import { Grid } from "../components/layout/main-grid"
 import Sidebar from "../components/layout/main-grid-sidebar"
 import Content from "../components/layout/main-grid-content"
 import MainPageStyles from "../styles/main-page.module.scss"
 
-import {IoLogoLinkedin, IoLogoGithub} from "react-icons/io"
-import {IoMdMail, IoMdLocate, IoIosHome} from "react-icons/io"
+import { IoIosHome, IoLogoGithub, IoLogoLinkedin, IoMdLocate, IoMdMail } from "react-icons/io"
 
 export default () => (
   <div>

@@ -3,37 +3,50 @@
 
 /** Sidebar Styles **/
 
+.sidebar-intro, .sidebar-work, .sidebar-blog {
+    padding: $std-grid-spacing;
+}
+
 .sidebar-intro {
     background: color(maize);
 }
 
 .sidebar-work {
-    background: color(aqua);
-    color: color(mint-cream);
+    background: color(inchworm);
+    //color: color(mint-cream);
 }
 
 .sidebar-blog {
-    background: color(forest);
+    background: color(tigers-eye);
     color: color(mint-cream);
+}
+
+.sidebar-work, .sidebar-blog {
+    place-content: start center;
+    padding: $large-grid-spacing $std-grid-spacing;
+    div {
+        position: sticky;
+        top: $large-grid-spacing;
+    }
 }
 
 .icon-grid {
 
     $space-around: 30px;
-
+    $large-space-around: 30px;
     display: grid;
 
     grid-template-columns: $space-around auto;
-    grid-template-rows: minmax($space-around, auto);
-    grid-auto-rows: minmax($space-around, auto);
+    grid-template-rows: $space-around;
     grid-auto-flow: row;
 
     align-items: center;
+    padding-bottom: $std-grid-spacing;
 }
 
 .icon {
     font-size: 20px;
-    color: color(aqua);
+    color: color(dazzled-blue);
 }
 
 .github-left-margin {
@@ -44,7 +57,7 @@
 /** Content Styles **/
 
 .title {
-    font-size: 4em;
+    font-size: 3.8em;
 }
 
 .description {
@@ -55,7 +68,7 @@
 
     color: grey;
 
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .work-grid {
@@ -65,9 +78,15 @@
     grid-template-rows: auto;
     grid-auto-rows: auto;
 
-    grid-gap:$std-grid-spacing $large-grid-spacing;
+    grid-gap:$large-grid-spacing $large-grid-spacing;
 
     grid-auto-flow: row;
+
+    @include respond-to(sm) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-items: stretch;
+    }
 }
 
 .blog-grid {

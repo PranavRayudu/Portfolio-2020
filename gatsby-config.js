@@ -5,13 +5,22 @@
  */
 
 module.exports = {
-    siteMetadata: {
-        title: `Taraka Pranav's Portfolio`,
-        //siteUrl: `https://www.gatsbyjs.org`,
-        description: `Blazing fast modern site generator for React`,
-    },
+  siteMetadata: {
+    title: `Taraka Pranav's Portfolio`,
+    //siteUrl: `https://www.gatsbyjs.org`,
+    description: `A redesigned portfolio for Pranav Rayudu using Gatsby.js and react`,
+  },
 
-    plugins: [
-        `gatsby-plugin-sass`,
-    ],
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
+  ],
 };
