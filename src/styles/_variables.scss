@@ -1,13 +1,14 @@
 
 /** colors **/
 $colors: (
-  mint-cream       : #F7FFF7,
-  medium-turquoise : #4ECDC4,
-  inchworm         : #A3E570,
-  tigers-eye       : #E57937,
-  dazzled-blue     : #2e5791,
-  maize            : #FFE66D,
-  pastel-red       : #ff6B6B,
+        green:      #1EB980,
+        dark-green: #045D56,
+        orange:     #FF6859,
+        yellow:     #FFCF44,
+        purple:     #B15DFF,
+        blue:       #72DEFF,
+        dark-blue:  #2E5791
+
 ) !default;
 
 @function color($color) {

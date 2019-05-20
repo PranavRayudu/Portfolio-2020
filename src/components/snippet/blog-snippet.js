@@ -25,6 +25,6 @@ export default (props) => (
     <Snippet>
         <Title>{props.title}</Title>
         <Subtitle>{props.subtitle}</Subtitle>
-        <Text>{props.body} <Link to="\">This is a link to itself</Link></Text>
+        <Text>{props.body} <Link to={props.link}>Read More</Link></Text>
     </Snippet>
 )
