@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-
-import { Grid, ReverseGrid } from "../components/layout/main-grid"
-import Sidebar from "../components/layout/main-grid-sidebar"
-import Content from "../components/layout/main-grid-content"
+import { Helmet } from "react-helmet"
+import { Grid, ReverseGrid } from "../components/grid/main-grid"
+import Sidebar from "../components/grid/main-grid-sidebar"
+import Content from "../components/grid/main-grid-content"
 import MainPageStyles from "../styles/main-page.module.scss"
-import WorkSnippet from "../components/work-snippet"
-import BlogSnippet from "../components/blog-snippet"
+import WorkSnippet from "../components/snippet/work-snippet"
+import BlogSnippet from "../components/snippet/blog-snippet"
 
 import { IoIosArrowForward, IoLogoGithub, IoLogoLinkedin, IoMdLocate, IoMdMail } from "react-icons/io"
 
@@ -15,6 +15,11 @@ import { IoIosArrowForward, IoLogoGithub, IoLogoLinkedin, IoMdLocate, IoMdMail }
  */
 export default ({data}) => (
     <div>
+      <Helmet>
+        {/*<meta charset="utf-8" />*/}
+        <title>{data.site.siteMetadata.title}</title>
+      </Helmet>
+
       <Grid>
             <Sidebar className={MainPageStyles.sidebarIntro}>
 
@@ -93,29 +98,32 @@ export default ({data}) => (
 )
 
 
-export const query = graphql`
-  query {
-    birdTest: file(relativePath: { eq: "bird-test.jpeg" }) {
-      childImageSharp {
-        fluid(maxWidth: 550) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    wireframeTest: file(relativePath: { eq: "website-wireframe-test.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 550) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    computerTest: file(relativePath: { eq: "computer-mockup-test.jpg" }) {
+export const fluidImage = graphql`
+    fragment fluidImage on File {
       childImageSharp {
         fluid(maxWidth: 550, maxHeight: 400) {
-          
           ...GatsbyImageSharpFluid
         }
       }
     }
-  }
   `
+
+export const query = graphql`
+  query {
+  
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  
+    birdTest: file(relativePath: 
+    { eq: "images/bird-test.jpeg" }) { ...fluidImage }
+    
+    wireframeTest: file(relativePath: 
+    { eq: "images/website-wireframe-test.jpg" }) { ...fluidImage }
+    
+    computerTest: file(relativePath: 
+    { eq: "images/computer-mockup-test.jpg" }) { ...fluidImage }
+    
+  }`

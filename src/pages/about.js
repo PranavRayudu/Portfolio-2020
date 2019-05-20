@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Grid } from "../components/layout/main-grid"
-import Sidebar from "../components/layout/main-grid-sidebar"
-import Content from "../components/layout/main-grid-content"
+import { Grid } from "../components/grid/main-grid"
+import Sidebar from "../components/grid/main-grid-sidebar"
+import Content from "../components/grid/main-grid-content"
 import MainPageStyles from "../styles/main-page.module.scss"
 
 import { IoIosHome, IoLogoGithub, IoLogoLinkedin, IoMdLocate, IoMdMail } from "react-icons/io"

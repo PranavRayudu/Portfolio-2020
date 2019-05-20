@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: `Taraka Pranav's Portfolio`,
-    //siteUrl: `https://www.gatsbyjs.org`,
+    url: "https://tarakapranav.netlify.com/",
     description: `A redesigned portfolio for Pranav Rayudu using Gatsby.js and react`,
   },
 
@@ -16,11 +16,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/content/`,
       },
     },
     `gatsby-plugin-sass`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`
   ],
 };

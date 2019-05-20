@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import SnippetStyles from "../styles/snippet.module.scss"
+import SnippetStyles from "./snippet.module.scss"
 
 export default ({title, subtitle, body, image, link}) => (
   <div className={SnippetStyles.snippet}>
