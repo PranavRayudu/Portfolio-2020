@@ -7,8 +7,8 @@
   display: grid;
 
   grid-template-columns:
-    [sidebar-left-flush] 1fr [sidebar-right-flush
-    content-left-flush] 1.62fr [content-right-flush];
+    [sidebar-left-flush] 30% [sidebar-right-flush
+    content-left-flush] auto [content-right-flush];
 
   grid-template-rows: [content-top-flush] auto [content-bottom-flush];
 
@@ -35,8 +35,15 @@
 .sidebar {
   grid-area: sidebar;
 
+  box-sizing: border-box;
+  max-width: 540px;
+
   display: grid;
   place-content: center;
+
+  @include respond-to(lg) {
+    max-width: 100%;
+  }
 }
 
 .sidebar-content {

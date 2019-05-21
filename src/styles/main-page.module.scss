@@ -8,16 +8,16 @@
 }
 
 .sidebar-intro {
-    background: color(yellow);
+    background: $md-amber-300;
 }
 
 .sidebar-work {
-    background: color(dark-green);
+    background: $md-indigo-500;
     color: white;
 }
 
 .sidebar-blog {
-    background: color(green);
+    background: $md-indigo-400;
 
 }
 
@@ -46,7 +46,7 @@
 
 .icon {
     font-size: 20px;
-    color: color(dark-blue);
+    color: $md-indigo-500;
 }
 
 .github-left-margin {

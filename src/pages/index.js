@@ -94,41 +94,49 @@ export default ({ data }) => (
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
         />
+        <WorkSnippet
+          title="Yar Pirate Ipsum"
+          subtitle="Pirate Ipsum"
+          body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties. Walk the plank scuppers lee cackle fruit Davy Jones' Locker chandler fore gun landlubber or just lubber carouser."
+          image={data.birdTest.childImageSharp.fluid}
+          link="https://google.com"
+        />
+        <WorkSnippet
+          title="Tired of how boring Lorem Ipsum got?"
+          subtitle="Cupcake Ipsum"
+          body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder. Sweet croissant cupcake croissant jujubes. Gummi bears macaroon pastry sesame snaps pudding cheesecake gingerbread."
+          image={data.wireframeTest.childImageSharp.fluid}
+          link="https://google.com"
+        />
+        <WorkSnippet
+          title="Cheese Ipsum"
+          subtitle="A Cheesy Lorem Ipsum Generator"
+          body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st. agur blue cheese manchego cheese strings red leicester. Cheesy grin the big cheese fondue hard cheese ricotta queso monterey jack feta."
+          image={data.computerTest.childImageSharp.fluid}
+          link="https://google.com"
+        />
       </Content>
     </ReverseGrid>
 
     <ReverseGrid>
-      <Sidebar className={MainPageStyles.sidebarBlog}>
-        <h2>A bunch of stuff I did and wrote about [Blog]</h2>
-      </Sidebar>
+    <Sidebar className={MainPageStyles.sidebarBlog}>
+      <h2>A bunch of stuff I did and wrote about [Blog]</h2>
+    </Sidebar>
 
-      <Content className={MainPageStyles.blogGrid}>
+    <Content className={MainPageStyles.blogGrid}>
 
-        {console.log(data)}
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+      {console.log(data)}
+      {data.allMarkdownRemark.edges.map(({ node }) => (
 
-            <BlogSnippet
-              title={node.frontmatter.title}
-              subtitle={node.frontmatter.date}
-              body={node.frontmatter.description}
-              link={node.frontmatter.path}
-            />
-          ))}
-
-        {/*<BlogSnippet title="Yar Pirate Ipsum"*/}
-        {/*             subtitle="Pirate Ipsum"*/}
-        {/*             body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties. Walk the plank scuppers lee cackle fruit Davy Jones' Locker chandler fore gun landlubber or just lubber carouser."*/}
-        {/*             />*/}
-        {/*<BlogSnippet title="Tired of how boring Lorem Ipsum got?"*/}
-        {/*             subtitle="Cupcake Ipsum"*/}
-        {/*             body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder. Sweet croissant cupcake croissant jujubes. Gummi bears macaroon pastry sesame snaps pudding cheesecake gingerbread."*/}
-        {/*             />*/}
-        {/*<BlogSnippet title="Cheese Ipsum"*/}
-        {/*             subtitle="A Cheesy Lorem Ipsum Generator"*/}
-        {/*             body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st. agur blue cheese manchego cheese strings red leicester. Cheesy grin the big cheese fondue hard cheese ricotta queso monterey jack feta."*/}
-        {/*             />*/}
-      </Content>
-    </ReverseGrid>
+        <BlogSnippet
+          title={node.frontmatter.title}
+          subtitle={node.frontmatter.date}
+          body={node.frontmatter.description}
+          link={node.frontmatter.path}
+        />
+      ))}
+    </Content>
+  </ReverseGrid>
   </div>
 )
 

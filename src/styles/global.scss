@@ -13,7 +13,7 @@ html, body {
 }
 
 ::selection {
-    background: color(blue);
+    background: $md-cyan-100;
     color: white;
 }
 
@@ -42,7 +42,7 @@ h1 {
 }
 
 a {
-    color: color(orange);
+    color: $md-red-a200;
     text-decoration: none;
 }
 

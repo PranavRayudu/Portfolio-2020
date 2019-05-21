@@ -1,19 +1,7 @@
 
 /** colors **/
-$colors: (
-        green:      #1EB980,
-        dark-green: #045D56,
-        orange:     #FF6859,
-        yellow:     #FFCF44,
-        purple:     #B15DFF,
-        blue:       #72DEFF,
-        dark-blue:  #2E5791
+@import "md-colors";
 
-) !default;
-
-@function color($color) {
-  @return map_get($colors, $color);
-}
 
 /** breakpoints **/
 $grid-breakpoints: (
@@ -25,17 +13,6 @@ $grid-breakpoints: (
 /** regular spacings **/
 $std-grid-spacing: 20px;
 $large-grid-spacing: 70px;
-
-
-@each $color_name, $color in $colors {
-  .bg--#{$color_name} {
-    background: $color;
-  }
-
-  .fg--#{$color_name} {
-    color: $color;
-  }
-}
 
 @mixin respond-to($breakpoint) {
   @if map-has-key($grid-breakpoints, $breakpoint) {
