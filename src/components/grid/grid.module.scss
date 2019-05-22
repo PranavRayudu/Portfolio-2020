@@ -18,7 +18,7 @@
 .grid-straight {
   @extend .grid;
 
-  @include respond-to(lg) {
+  @include respond-to(md) {
     grid-template-columns: [sidebar-left-flush content-left-flush] 1fr [sidebar-right-flush content-right-flush];
     grid-template-areas: "content" "sidebar";
   }
@@ -26,7 +26,7 @@
 
 .grid-reverse {
   @extend .grid;
-  @include respond-to(lg) {
+  @include respond-to(md) {
     grid-template-columns: [sidebar-left-flush content-left-flush] 1fr [sidebar-right-flush content-right-flush];
     grid-template-areas: "sidebar" "content";
   }
@@ -39,9 +39,9 @@
   max-width: 540px;
 
   display: grid;
-  place-content: center;
+  place-items: center;
 
-  @include respond-to(lg) {
+  @include respond-to(md) {
     max-width: 100%;
   }
 }
@@ -53,7 +53,4 @@
   grid-area: content;
 
   padding: $std-grid-spacing $large-grid-spacing;
-
-  .inner-content {
-  }
 }

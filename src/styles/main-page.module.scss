@@ -1,94 +1,116 @@
 @import "variables";
 
-
 /** Sidebar Styles **/
 
-.sidebar-intro, .sidebar-work, .sidebar-blog {
-    padding: $std-grid-spacing;
+.sidebar-intro,
+.sidebar-work,
+.sidebar-blog {
+  padding: $std-grid-spacing;
+
+  background: $md-black;
+  color: $md-white;
 }
 
 .sidebar-intro {
-    background: $md-amber-300;
+  padding-top: $large-grid-spacing;
 }
 
 .sidebar-work {
-    background: $md-indigo-500;
-    color: white;
+
 }
 
 .sidebar-blog {
-    background: $md-indigo-400;
 
 }
 
-.sidebar-work, .sidebar-blog {
-    place-content: start center;
-    padding: $large-grid-spacing $std-grid-spacing;
-    div {
-        position: sticky;
-        top: $large-grid-spacing;
-    }
+.sidebar-work,
+.sidebar-blog {
+  grid-template-rows: min-content;
+  padding: $large-grid-spacing $std-grid-spacing;
+  padding-top: 0;
+
+  .sticky-title {
+    place-self: start center;
+    position: sticky;
+    top: $large-grid-spacing;
+  }
+}
+
+.sidebar-divider {
+  place-self: start stretch;
+  height: 3px;
+  background: $md-yellow-400;
+  margin-bottom: $large-grid-spacing;
 }
 
 .icon-grid {
+  $space-around: 30px;
+  $large-space-around: 30px;
+  display: grid;
 
-    $space-around: 30px;
-    $large-space-around: 30px;
-    display: grid;
+  grid-template-columns: $space-around auto;
+  grid-template-rows: $space-around;
+  grid-auto-flow: row;
 
-    grid-template-columns: $space-around auto;
-    grid-template-rows: $space-around;
-    grid-auto-flow: row;
-
-    align-items: center;
-    padding-bottom: $std-grid-spacing;
+  align-items: center;
+  padding-bottom: $std-grid-spacing;
 }
 
 .icon {
-    font-size: 20px;
-    color: $md-indigo-500;
+  color: $md-indigo-400;
+  font-size: 20px;
 }
 
 .github-left-margin {
-    margin-left: $std-grid-spacing;
+  margin-left: $std-grid-spacing;
 }
-
 
 /** Content Styles **/
 
 .title {
-    font-size: 3.8em;
+  font-size: 3.8em;
 }
 
 .description {
-    margin-top: 2em;
-    font-size: 30px;
-    line-height: 40px;
-    font-weight: normal;
+  margin-top: 2em;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: normal;
 
-    color: grey;
+  color: $md-grey-500;
 
-    max-width: 600px;
+  max-width: 600px;
+}
+
+.main-content {
+  padding-bottom: 2*$large-grid-spacing;
+
+  @include respond-to(lg) {
+    padding-bottom: $std-grid-spacing;
+  }
 }
 
 .work-grid {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+
+  grid-gap: $large-grid-spacing $large-grid-spacing;
+
+  grid-auto-flow: row;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond-to(md) {
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-auto-rows: auto;
-
-    grid-gap:$large-grid-spacing $large-grid-spacing;
-
-    grid-auto-flow: row;
-
-    @include respond-to(sm) {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        justify-items: stretch;
-    }
+    justify-items: stretch;
+  }
 }
 
 .blog-grid {
-
 }

@@ -14,6 +14,7 @@ import {
   IoLogoLinkedin,
   IoMdLocate,
   IoMdMail,
+  IoIosPaper
 } from "react-icons/io"
 
 /**
@@ -28,35 +29,58 @@ export default ({ data }) => (
 
     <Grid>
       <Sidebar className={MainPageStyles.sidebarIntro}>
-        <div className={MainPageStyles.iconGrid}>
-          <IoMdMail className={MainPageStyles.icon} />{" "}
-          <span>tarakapranav@gmail.com</span>
-          <IoMdLocate className={MainPageStyles.icon} />{" "}
-          <span>Austin, TX USA</span>
-        </div>
-
-        <div className={MainPageStyles.iconGrid}>
-          <IoIosArrowForward className={MainPageStyles.icon} />
-          <Link to="/about">About Me</Link>
-          <IoIosArrowForward className={MainPageStyles.icon} />
-          <Link to="/about">Visit Blog</Link>
-        </div>
-
         <div>
-          <a href="https://www.linkedin.com/in/tarakapranav/">
-            <IoLogoLinkedin className="io" />
-          </a>
-          <a
-            href="https://github.com/FancyAlpha"
-            className={MainPageStyles.githubLeftMargin}
-          >
-            <IoLogoGithub className="io" />
-          </a>
+          <div className={MainPageStyles.iconGrid}>
+
+            <IoMdMail className={MainPageStyles.icon} />{" "}
+            <span>tarakapranav@gmail.com</span>
+
+            <IoMdLocate className={MainPageStyles.icon} />{" "}
+            <span>Austin, TX USA</span>
+
+            {/*<IoIosArrowForward className={MainPageStyles.icon} />*/}
+            {/*<Link to="/about">About Me</Link>*/}
+          </div>
+
+          <div className={MainPageStyles.iconGrid}>
+            <IoIosArrowForward className={MainPageStyles.icon} />
+            <Link to="/about">About Me</Link>
+          </div>
+
+          <div className="bottom-std-padded">
+            <a href="https://www.linkedin.com/in/tarakapranav/">
+              <IoLogoLinkedin className="io" />
+            </a>
+            <a
+              href="https://github.com/FancyAlpha"
+              className={MainPageStyles.githubLeftMargin}
+            >
+              <IoLogoGithub className="io" />
+            </a>
+          </div>
+
+          {/*<div className={MainPageStyles.iconGrid}>*/}
+          {/*  <IoIosArrowForward className={MainPageStyles.icon} />*/}
+          {/*  <Link to="/about">About Me</Link>*/}
+          {/*  <IoIosArrowForward className={MainPageStyles.icon} />*/}
+          {/*  <Link to="/about">Visit Blog</Link>*/}
+          {/*</div>*/}
+
+          <p className="no-margin">Recent Posts</p>
+
+          <div className={MainPageStyles.iconGrid}>
+            {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }) => (
+              <React.Fragment>
+                <IoIosPaper className={MainPageStyles.icon}/>
+                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+              </React.Fragment>
+              ))}
+          </div>
+
         </div>
-        {/*<Link to="/blog">> Blog</Link>*/}
       </Sidebar>
 
-      <Content>
+      <Content className={MainPageStyles.mainContent}>
         <h1 className={MainPageStyles.title}>
           Hello, I'm <Link to="/about">Pranav Rayudu</Link>
         </h1>
@@ -69,7 +93,11 @@ export default ({ data }) => (
 
     <ReverseGrid>
       <Sidebar className={MainPageStyles.sidebarWork}>
-        <h2>A bunch of stuff I did</h2>
+        <div className={MainPageStyles.sidebarDivider} />
+
+        <div className={MainPageStyles.stickyTitle}>
+          <h2>A Selection of my Projects</h2>
+        </div>
       </Sidebar>
 
       <Content className={MainPageStyles.workGrid}>
@@ -118,25 +146,25 @@ export default ({ data }) => (
       </Content>
     </ReverseGrid>
 
-    <ReverseGrid>
-    <Sidebar className={MainPageStyles.sidebarBlog}>
-      <h2>A bunch of stuff I did and wrote about [Blog]</h2>
-    </Sidebar>
+    {/*<ReverseGrid>*/}
+    {/*  <Sidebar className={MainPageStyles.sidebarBlog}>*/}
+    {/*    <div className={MainPageStyles.sidebarDivider} />*/}
 
-    <Content className={MainPageStyles.blogGrid}>
+    {/*    <h2>A bunch of stuff I did and wrote about [Blog]</h2>*/}
+    {/*  </Sidebar>*/}
 
-      {console.log(data)}
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-
-        <BlogSnippet
-          title={node.frontmatter.title}
-          subtitle={node.frontmatter.date}
-          body={node.frontmatter.description}
-          link={node.frontmatter.path}
-        />
-      ))}
-    </Content>
-  </ReverseGrid>
+    {/*  <Content className={MainPageStyles.blogGrid}>*/}
+    {/*    {console.log(data)}*/}
+    {/*    {data.allMarkdownRemark.edges.map(({ node }) => (*/}
+    {/*      <BlogSnippet*/}
+    {/*        title={node.frontmatter.title}*/}
+    {/*        subtitle={node.frontmatter.date}*/}
+    {/*        body={node.frontmatter.description}*/}
+    {/*        link={node.frontmatter.path}*/}
+    {/*      />*/}
+    {/*    ))}*/}
+    {/*  </Content>*/}
+    {/*</ReverseGrid>*/}
   </div>
 )
 
@@ -158,15 +186,14 @@ export const query = graphql`
       }
     }
 
-    allMarkdownRemark (
+    allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 1000
     ) {
       edges {
         node {
-        
-        excerpt
-        
+          excerpt
+
           frontmatter {
             path
             title
