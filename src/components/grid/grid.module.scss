@@ -7,7 +7,7 @@
   display: grid;
 
   grid-template-columns:
-    [sidebar-left-flush] 30% [sidebar-right-flush
+    [sidebar-left-flush] minmax(350px, 30%) [sidebar-right-flush
     content-left-flush] auto [content-right-flush];
 
   grid-template-rows: [content-top-flush] auto [content-bottom-flush];
@@ -36,7 +36,7 @@
   grid-area: sidebar;
 
   box-sizing: border-box;
-  max-width: 540px;
+  //max-width: 540px;
 
   display: grid;
   place-items: center;
@@ -52,5 +52,7 @@
 .content {
   grid-area: content;
 
-  padding: $std-grid-spacing $large-grid-spacing;
+  @include respond-to(md) {
+    padding: $std-grid-spacing;
+  }
 }

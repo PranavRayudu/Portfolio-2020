@@ -1,13 +1,17 @@
-
 /** colors **/
 @import "md-colors";
 
-
 /** breakpoints **/
 $grid-breakpoints: (
-  sm: (max-width: 600px),
-  md: (max-width: 900px),
-  lg: (max-width: 1300px)
+  sm: (
+    max-width: 600px,
+  ),
+  md: (
+    max-width: 900px,
+  ),
+  lg: (
+    max-width: 1300px,
+  ),
 );
 
 /** regular spacings **/
@@ -20,6 +24,6 @@ $large-grid-spacing: 70px;
       @content;
     }
   } @else {
-    @warn "no value retrieved from `#{$breakpoint}`" + "only #{map-keys($grid-breakpoints)} are available"
+    @warn "no value retrieved from `#{$breakpoint}`" + "only #{map-keys($grid-breakpoints)} are available";
   }
 }

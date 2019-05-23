@@ -5,10 +5,19 @@
 .sidebar-intro,
 .sidebar-work,
 .sidebar-blog {
-  padding: $std-grid-spacing;
+  padding: $large-grid-spacing;
 
-  background: $md-black;
-  color: $md-white;
+  background: $md-grey-900;
+  color: $md-blue-grey-200;
+  font-weight: bold;
+  text-align: right;
+  line-height: 40px;
+  justify-items: right;
+
+  @include respond-to(md) {
+    justify-items: center;
+    text-align: center;
+  }
 }
 
 .sidebar-intro {
@@ -16,18 +25,15 @@
 }
 
 .sidebar-work {
-
 }
 
 .sidebar-blog {
-
 }
 
 .sidebar-work,
 .sidebar-blog {
   grid-template-rows: min-content;
-  padding: $large-grid-spacing $std-grid-spacing;
-  padding-top: 0;
+  padding: 0 $large-grid-spacing $std-grid-spacing $large-grid-spacing;
 
   .sticky-title {
     place-self: start center;
@@ -41,24 +47,37 @@
   height: 3px;
   background: $md-yellow-400;
   margin-bottom: $large-grid-spacing;
+
+  @include respond-to(md) {
+    margin-bottom: $std-grid-spacing;
+  }
 }
 
-.icon-grid {
-  $space-around: 30px;
-  $large-space-around: 30px;
-  display: grid;
-
-  grid-template-columns: $space-around auto;
-  grid-template-rows: $space-around;
-  grid-auto-flow: row;
-
-  align-items: center;
-  padding-bottom: $std-grid-spacing;
+.blog-posts-links {
+  font-weight: normal;
 }
+
+//.icon-grid {
+//  $space-around: 30px;
+//  $large-space-around: 30px;
+//  display: grid;
+//
+//  grid-template-columns: $space-around auto;
+//  grid-template-rows: $space-around;
+//  grid-auto-flow: row;
+//
+//  align-items: center;
+//  padding-bottom: $std-grid-spacing;
+//}
 
 .icon {
-  color: $md-indigo-400;
+  color: $md-cyan-200;
   font-size: 20px;
+  vertical-align: middle;
+
+  @include respond-to(md) {
+    display: none;
+  }
 }
 
 .github-left-margin {
@@ -68,11 +87,10 @@
 /** Content Styles **/
 
 .title {
-  font-size: 3.8em;
+  font-size: 3.7em;
 }
 
 .description {
-  margin-top: 2em;
   font-size: 30px;
   line-height: 40px;
   font-weight: normal;
@@ -82,15 +100,24 @@
   max-width: 600px;
 }
 
-.main-content {
-  padding-bottom: 2*$large-grid-spacing;
-
-  @include respond-to(lg) {
-    padding-bottom: $std-grid-spacing;
-  }
+.main-content,
+.work-content {
+  //.about-content {
+  padding: 0 $large-grid-spacing $std-grid-spacing;
 }
 
-.work-grid {
+.main-content {
+  height: 100vh;
+  display: grid;
+  align-content: center;
+}
+
+.about-content {
+  padding: $std-grid-spacing;
+  //text-align: justify;
+}
+
+.work-content {
   display: grid;
 
   grid-template-columns: auto auto auto;
@@ -109,6 +136,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-items: stretch;
+
+    padding-top: $large-grid-spacing;
   }
 }
 

@@ -6,15 +6,16 @@ import Sidebar from "../components/grid/main-grid-sidebar"
 import Content from "../components/grid/main-grid-content"
 import MainPageStyles from "../styles/main-page.module.scss"
 import WorkSnippet from "../components/snippet/work-snippet"
-import BlogSnippet from "../components/snippet/blog-snippet"
+// import BlogSnippet from "../components/snippet/blog-snippet"
 
 import {
-  IoIosArrowForward,
+  // IoIosArrowForward,
+  IoIosArrowBack,
   IoLogoGithub,
   IoLogoLinkedin,
-  IoMdLocate,
-  IoMdMail,
-  IoIosPaper
+  // IoMdLocate,
+  // IoMdMail,
+  // IoIosPaper
 } from "react-icons/io"
 
 /**
@@ -28,24 +29,29 @@ export default ({ data }) => (
     </Helmet>
 
     <Grid>
+      {
+        //TODO: Modularize Sidebar so it can be used in about page too
+      }
       <Sidebar className={MainPageStyles.sidebarIntro}>
         <div>
-          <div className={MainPageStyles.iconGrid}>
-
-            <IoMdMail className={MainPageStyles.icon} />{" "}
+          <div>
+            {/*<IoMdMail className={MainPageStyles.icon} />{" "}*/}
             <span>tarakapranav@gmail.com</span>
+            <br />
 
-            <IoMdLocate className={MainPageStyles.icon} />{" "}
+            {/*<IoMdLocate className={MainPageStyles.icon} />{" "}*/}
             <span>Austin, TX USA</span>
 
             {/*<IoIosArrowForward className={MainPageStyles.icon} />*/}
             {/*<Link to="/about">About Me</Link>*/}
           </div>
 
-          <div className={MainPageStyles.iconGrid}>
-            <IoIosArrowForward className={MainPageStyles.icon} />
+          <p>
+            {/*<IoIosArrowForward className={MainPageStyles.icon} />*/}
             <Link to="/about">About Me</Link>
-          </div>
+            <IoIosArrowBack className={MainPageStyles.icon} />
+            <br />
+          </p>
 
           <div className="bottom-std-padded">
             <a href="https://www.linkedin.com/in/tarakapranav/">
@@ -68,18 +74,24 @@ export default ({ data }) => (
 
           <p className="no-margin">Recent Posts</p>
 
-          <div className={MainPageStyles.iconGrid}>
+          <div>
             {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }) => (
               <React.Fragment>
-                <IoIosPaper className={MainPageStyles.icon}/>
-                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-              </React.Fragment>
-              ))}
-          </div>
+                {/*<IoIosPaper className={MainPageStyles.icon}/>*/}
 
+                <Link
+                  to={node.frontmatter.path}
+                  className={MainPageStyles.blogPostsLinks}
+                >
+                  {node.frontmatter.title}
+                </Link>
+                <IoIosArrowBack className={MainPageStyles.icon} />
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </Sidebar>
-
       <Content className={MainPageStyles.mainContent}>
         <h1 className={MainPageStyles.title}>
           Hello, I'm <Link to="/about">Pranav Rayudu</Link>
@@ -100,46 +112,46 @@ export default ({ data }) => (
         </div>
       </Sidebar>
 
-      <Content className={MainPageStyles.workGrid}>
+      <Content className={MainPageStyles.workContent}>
         <WorkSnippet
           title="Yar Pirate Ipsum"
           subtitle="Pirate Ipsum"
-          body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties. Walk the plank scuppers lee cackle fruit Davy Jones' Locker chandler fore gun landlubber or just lubber carouser."
+          body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
           image={data.birdTest.childImageSharp.fluid}
           link="https://google.com"
         />
         <WorkSnippet
-          title="Tired of how boring Lorem Ipsum got?"
+          title="Tired of Lorem Ipsum?"
           subtitle="Cupcake Ipsum"
-          body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder. Sweet croissant cupcake croissant jujubes. Gummi bears macaroon pastry sesame snaps pudding cheesecake gingerbread."
+          body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder. Sweet croissant cupcake croissant jujubes."
           image={data.wireframeTest.childImageSharp.fluid}
           link="https://google.com"
         />
         <WorkSnippet
           title="Cheese Ipsum"
           subtitle="A Cheesy Lorem Ipsum Generator"
-          body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st. agur blue cheese manchego cheese strings red leicester. Cheesy grin the big cheese fondue hard cheese ricotta queso monterey jack feta."
+          body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st. agur blue cheese manchego cheese strings red leicester."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
         />
         <WorkSnippet
           title="Yar Pirate Ipsum"
           subtitle="Pirate Ipsum"
-          body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties. Walk the plank scuppers lee cackle fruit Davy Jones' Locker chandler fore gun landlubber or just lubber carouser."
+          body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
           image={data.birdTest.childImageSharp.fluid}
           link="https://google.com"
         />
         <WorkSnippet
-          title="Tired of how boring Lorem Ipsum got?"
+          title="Tired of Lorem Ipsum"
           subtitle="Cupcake Ipsum"
-          body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder. Sweet croissant cupcake croissant jujubes. Gummi bears macaroon pastry sesame snaps pudding cheesecake gingerbread."
+          body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder. Sweet croissant cupcake croissant jujubes."
           image={data.wireframeTest.childImageSharp.fluid}
           link="https://google.com"
         />
         <WorkSnippet
           title="Cheese Ipsum"
           subtitle="A Cheesy Lorem Ipsum Generator"
-          body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st. agur blue cheese manchego cheese strings red leicester. Cheesy grin the big cheese fondue hard cheese ricotta queso monterey jack feta."
+          body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st. agur blue cheese manchego cheese strings red leicester."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
         />
@@ -198,7 +210,6 @@ export const query = graphql`
             path
             title
             date
-            description
           }
         }
       }

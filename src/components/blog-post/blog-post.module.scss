@@ -1,4 +1,7 @@
+@import "../../styles/variables";
+
 .container {
   margin: auto;
   max-width: 1000px;
+  padding: $large-grid-spacing $std-grid-spacing;
 }
