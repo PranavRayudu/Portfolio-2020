@@ -42,6 +42,17 @@
   }
 }
 
+.sidebar-logo {
+  width: 100px;
+  float: right;
+  margin: $std-grid-spacing 0;
+
+  @include respond-to(md) {
+    float: none;
+    margin: 0 auto $std-grid-spacing;
+  }
+}
+
 .sidebar-divider {
   place-self: start stretch;
   height: 3px;

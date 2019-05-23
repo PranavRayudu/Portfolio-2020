@@ -17,6 +17,7 @@ import {
   // IoMdMail,
   // IoIosPaper
 } from "react-icons/io"
+import GatsbyImage from "gatsby-image"
 
 /**
  * TODO: add image support to page
@@ -34,6 +35,7 @@ export default ({ data }) => (
       }
       <Sidebar className={MainPageStyles.sidebarIntro}>
         <div>
+          <Link to="./"><GatsbyImage fluid={data.logo.childImageSharp.fluid} className={MainPageStyles.sidebarLogo} /></Link>
           <div>
             {/*<IoMdMail className={MainPageStyles.icon} />{" "}*/}
             <span>tarakapranav@gmail.com</span>
@@ -211,6 +213,14 @@ export const query = graphql`
             title
             date
           }
+        }
+      }
+    }
+
+    logo: file(relativePath: { eq: "images/logo-yellow.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 100, maxHeight: 100) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

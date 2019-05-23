@@ -19,10 +19,23 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Taraka Pranav's Portfolio`,
+        short_name: `Pranav's Portfolio`,
+        icon: `content/images/logo-blue.png`, // This path is relative to the root of the site.
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#80deea`,
+        display: `minimal-ui`,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`
   ],
-};
+}
