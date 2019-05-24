@@ -26,7 +26,7 @@ module.exports = {
         short_name: `Pranav's Portfolio`,
         icon: `content/images/logo-blue.png`, // This path is relative to the root of the site.
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#212121`,
         theme_color: `#80deea`,
         display: `minimal-ui`,
       },
