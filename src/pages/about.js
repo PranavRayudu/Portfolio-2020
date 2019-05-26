@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { Grid } from "../components/grid/main-grid"
-import Sidebar from "../components/grid/main-grid-sidebar"
-import Content from "../components/grid/main-grid-content"
+import { Grid } from "../components/layout/MainGrid"
+import Sidebar from "../components/layout/MainGridSidebar"
+import Content from "../components/layout/MainGridContent"
 import MainPageStyles from "../styles/main-page.module.scss"
 
 import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin } from "react-icons/io"

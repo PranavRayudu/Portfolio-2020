@@ -1,12 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import { Grid, ReverseGrid } from "../components/grid/main-grid"
-import Sidebar from "../components/grid/main-grid-sidebar"
-import Content from "../components/grid/main-grid-content"
+import { Grid, ReverseGrid } from "../components/layout/MainGrid"
+import Sidebar from "../components/layout/MainGridSidebar"
+import Content from "../components/layout/MainGridContent"
 import MainPageStyles from "../styles/main-page.module.scss"
-import WorkSnippet from "../components/snippet/work-snippet"
-// import BlogSnippet from "../components/snippet/blog-snippet"
+import WorkSnippet from "../components/common/WorkSnippet"
 
 import {
   // IoIosArrowForward,
@@ -67,18 +66,11 @@ export default ({ data }) => (
             </a>
           </div>
 
-          {/*<div className={MainPageStyles.iconGrid}>*/}
-          {/*  <IoIosArrowForward className={MainPageStyles.icon} />*/}
-          {/*  <Link to="/about">About Me</Link>*/}
-          {/*  <IoIosArrowForward className={MainPageStyles.icon} />*/}
-          {/*  <Link to="/about">Visit Blog</Link>*/}
-          {/*</div>*/}
-
           <p className="no-margin">Recent Posts</p>
 
           <div>
-            {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }) => (
-              <React.Fragment>
+            {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }, key) => (
+              <React.Fragment key={key.toString()}>
                 {/*<IoIosPaper className={MainPageStyles.icon}/>*/}
 
                 <Link
@@ -181,6 +173,8 @@ export default ({ data }) => (
     {/*</ReverseGrid>*/}
   </div>
 )
+
+//mediumZoom(document.querySelectorAll('.zoomable>picture>img'))
 
 export const fluidImage = graphql`
   fragment fluidImage on File {

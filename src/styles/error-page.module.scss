@@ -1,0 +1,26 @@
+@import "variables";
+
+.container {
+  background: $md-grey-900;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.contents {
+  padding: $std-grid-spacing;
+
+  text-align: center;
+}
+
+.title {
+  font-size: 5em;
+  color: $md-yellow-400;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: $md-blue-grey-200;
+  //color: $md-cyan-200;
+}

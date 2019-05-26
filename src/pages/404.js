@@ -1,9 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
+import ErrorPageStyles from "../styles/error-page.module.scss"
 
 export default () => (
-  <p className="horizontal-std-padded">
-    Error 404 No page detected. &nbsp;
-    <Link to="/">Go back to home.</Link>
-  </p>
+  <div className={ErrorPageStyles.container}>
+    <div className={ErrorPageStyles.contents}>
+      <h1 className={ErrorPageStyles.title}>Error 404</h1>
+      <p className={ErrorPageStyles.subtitle}>Couldn't find the page. <Link to="/">Go back home.</Link></p>
+    </div>
+  </div>
 )
