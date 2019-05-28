@@ -12,6 +12,7 @@ import {
   IoIosArrowBack,
   IoLogoGithub,
   IoLogoLinkedin,
+  //IoIosArrowDown
   // IoMdLocate,
   // IoMdMail,
   // IoIosPaper
@@ -34,7 +35,12 @@ export default ({ data }) => (
       }
       <Sidebar className={MainPageStyles.sidebarIntro}>
         <div>
-          <Link to="./"><GatsbyImage fluid={data.logo.childImageSharp.fluid} className={MainPageStyles.sidebarLogo} /></Link>
+          <Link to="./">
+            <GatsbyImage
+              fluid={data.logo.childImageSharp.fluid}
+              className={MainPageStyles.sidebarLogo}
+            />
+          </Link>
           <div>
             {/*<IoMdMail className={MainPageStyles.icon} />{" "}*/}
             <span>tarakapranav@gmail.com</span>
@@ -55,11 +61,17 @@ export default ({ data }) => (
           </p>
 
           <div className="bottom-std-padded">
-            <a href="https://www.linkedin.com/in/tarakapranav/">
+            <a
+              href="https://www.linkedin.com/in/tarakapranav/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IoLogoLinkedin className="io" />
             </a>
             <a
               href="https://github.com/FancyAlpha"
+              target="_blank"
+              rel="noopener noreferrer"
               className={MainPageStyles.githubLeftMargin}
             >
               <IoLogoGithub className="io" />
@@ -94,6 +106,7 @@ export default ({ data }) => (
           I build websites and love working on robots and creative programming
           projects.
         </h2>
+        {/*<IoIosArrowDown className={MainPageStyles.iconLarge}/>*/}
       </Content>
     </Grid>
 

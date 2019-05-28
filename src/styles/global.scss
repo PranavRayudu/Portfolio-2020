@@ -14,8 +14,8 @@ body {
 }
 
 ::selection {
-  background: $md-cyan-200;
-  color: white;
+  background: $primary-cyan;
+  color: $dark-grey;
 }
 
 .no-margin {
@@ -55,7 +55,7 @@ h1 {
 }
 
 a {
-  color: $md-red-400;
+  color: $primary-red;
   text-decoration: none;
 }
 

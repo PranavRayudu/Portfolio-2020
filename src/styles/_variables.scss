@@ -18,6 +18,15 @@ $grid-breakpoints: (
 $std-grid-spacing: 20px;
 $large-grid-spacing: 70px;
 
+$std-line-thickness: 3px;
+
+$primary-yellow: $md-yellow-400;
+$primary-red: $md-red-400;
+$primary-cyan:$md-cyan-200;
+$primary-grey: $md-grey-500;
+$dark-grey: $md-grey-900;
+$light-grey: $md-blue-grey-200;
+
 @mixin respond-to($breakpoint) {
   @if map-has-key($grid-breakpoints, $breakpoint) {
     @media #{inspect(map_get($grid-breakpoints, $breakpoint))} {
