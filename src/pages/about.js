@@ -1,143 +1,109 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import { Grid, ReverseGrid } from "../components/layout/MainGrid"
-import Sidebar from "../components/layout/MainGridSidebar"
-import Content from "../components/layout/MainGridContent"
-import MainPageStyles from "../styles/main-page.module.scss"
+import { graphql } from "gatsby"
+import { Grid, ReverseGrid } from "../components/grid/MainGrid"
+import Sidebar from "../components/grid/MainGridSidebar"
+import Content from "../components/grid/MainGridContent"
+import SidebarStyles from "../styles/sidebar.module.scss"
+import ContentStyles from "../styles/content.module.scss"
+import LandingSidebar from "../components/common/LandingSidebarContent"
 
-import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin } from "react-icons/io"
-import GatsbyImage from "gatsby-image"
-
-export default ({ data }) => (
+export default () => (
   <div>
     <Grid>
-      <Sidebar className={MainPageStyles.sidebarAbout}>
-        <div>
-          <Link to="./">
-            <GatsbyImage
-              fluid={data.logo.childImageSharp.fluid}
-              className={MainPageStyles.sidebarLogo}
-            />
-          </Link>
-
-          <div>
-            <span>tarakapranav@gmail.com</span>
-            <br />
-            <span>Austin, TX USA</span>
-          </div>
-
-          <p>
-            <Link to="./">Home</Link>
-            <IoIosArrowBack className={MainPageStyles.icon} />
-            <br />
-          </p>
-
-          <div className="bottom-std-padded">
-            <a
-              href="https://www.linkedin.com/in/tarakapranav/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IoLogoLinkedin className="io" />
-            </a>
-            <a
-              href="https://github.com/FancyAlpha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={MainPageStyles.githubLeftMargin}
-            >
-              <IoLogoGithub className="io" />
-            </a>
-          </div>
-
-          <p className="no-margin">Recent Posts</p>
-
-          <div>
-            {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }) => (
-              <React.Fragment>
-                <Link
-                  to={node.frontmatter.path}
-                  className={MainPageStyles.blogPostsLinks}
-                >
-                  {node.frontmatter.title}
-                </Link>
-                <IoIosArrowBack className={MainPageStyles.icon} />
-                <br />
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-      </Sidebar>
-      <Content className={MainPageStyles.aboutContent}>
-        <h1 className={MainPageStyles.title}>Pranav Rayudu</h1>
-        <h2 className={MainPageStyles.description}>
-          I am a student at the University of Texas @ Austin. I like creating
-          stuff. Also, here is some filler text about aliens: Ancient alien foo
-          fighter sun disc, the answer is a resounding YES... Ancient alien
-          space time Mayan, grey space time Vymaanika-Shaastra DNA manipulation.
-          The answer is a resounding YES..., Worm hole flying vessels
-          extraterrestrial origin, extraterrestrial origin alien space time.
-          Mahabharata NASA worm hole,, the answer is a resounding YES....
-        </h2>
+      <LandingSidebar link="/" linkText="Home" />
+      <Content className={ContentStyles.aboutContent}>
+        <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
+        <p className={ContentStyles.description}>
+          Pranav is a freshman at the University of Texas at Austin passionately
+          pursuing his B.S in Computer Science. He has been practicing web
+          design and programming since high school and has programmed in Java,
+          C#, Python, PHP, and Javascript and used various front-end web
+          frameworks and tools such as{" "}
+          <a href="https://reactjs.org/">React.js</a>,{" "}
+          <a href="https://p5js.org/">p5.js</a>,{" "}
+          <a href="https://processing.org">Processing</a>,{" "}
+          <a href="https://unity.com/">Unity Engine</a>,{" "}
+          <a href="https://dotnet.microsoft.com/apps/desktop">
+            .NET WPF Desktop Apps
+          </a>
+          , and more. Pranav placed 1<sup>st</sup> in the State and 4
+          <sup>th</sup> at Nationals for <a href="https://bpa.org/nlc/">BPA</a>{" "}
+          C# programming event and led team 7121's robot to the{" "}
+          <a href="https://www.firstchampionship.org/houston">
+            First Robotics (FRC) World Championships
+          </a>{" "}
+          in 2019 as the lead programmer. He also prefers diving right into the
+          meat of any project and loves working on creative ideas like
+          procedural terrain generation, particle effects, AI, and hardware like
+          Arduino.
+        </p>
       </Content>
     </Grid>
 
     <ReverseGrid>
-      <Sidebar className={MainPageStyles.sidebarWork}>
-        <div className={MainPageStyles.sidebarDivider} />
+      <Sidebar className={SidebarStyles.infoSidebar}>
+        <div className={SidebarStyles.divider} />
 
-        <div className={MainPageStyles.stickyTitle}>
-          <h2>Contact Me</h2>
+        <div className={SidebarStyles.stickyTitle}>
+          <h2 className={SidebarStyles.title}>Talk To Me</h2>
+          <p className={SidebarStyles.sidebarDescription}>
+            I am open to commissions for small websites, internships over the
+            summer, or research projects. Shoot me a message and I'll get back
+            to you!
+          </p>
         </div>
       </Sidebar>
 
-      <Content className={MainPageStyles.aboutContent}>
+      <Content className={ContentStyles.aboutFormContent}>
         <form
           action="/success"
-          method="get"
-          className={MainPageStyles.form}
+          method="POST"
+          encType="application/x-www-form-urlencoded"
+          className={ContentStyles.form}
+          id="contact-form"
+          name="Contact Form"
           autoComplete="on"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
           {
             // GET: see vars in address bar
-            //  POST: cannot see vars in address bar
+            // POST: cannot see vars in address bar
           }
+          <input type="hidden" name="form-name" value="Contact Form" />
+          <p hidden>
+            <label>
+              Humans, don't fill this out: <input name="bot-field" />
+            </label>
+          </p>
 
-          <div className={MainPageStyles.inputGroup}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name Here"
-              pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
-              onFocus={e => (e.target.placeholder = "")}
-              onBlur={e => (e.target.placeholder = "Your Name here")}
-              className={MainPageStyles.nameInput}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              onFocus={e => (e.target.placeholder = "")}
-              onBlur={e => (e.target.placeholder = "Email Address")}
-              className={MainPageStyles.emailInput}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Enter your message here"
-              onFocus={e => (e.target.placeholder = "")}
-              onBlur={e => (e.target.placeholder = "Enter your message here")}
-              required
-            />
-          </div>
           <input
-            type="submit"
-            value="submit"
-            className={MainPageStyles.submit}
+            type="text"
+            name="name"
+            placeholder="Name *"
+            pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
+            onFocus={e => (e.target.placeholder = "")}
+            onBlur={e => (e.target.placeholder = "Name *")}
+            className={ContentStyles.nameInput}
+            required
           />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email *"
+            onFocus={e => (e.target.placeholder = "")}
+            onBlur={e => (e.target.placeholder = "Email *")}
+            className={ContentStyles.emailInput}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Enter your message here *"
+            onFocus={e => (e.target.placeholder = "")}
+            onBlur={e => (e.target.placeholder = "Enter your message here *")}
+            required
+          />
+          <input type="submit" value="Send" className={ContentStyles.submit} />
         </form>
       </Content>
     </ReverseGrid>
@@ -149,31 +115,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
-      edges {
-        node {
-          excerpt
-
-          frontmatter {
-            path
-            title
-            date
-          }
-        }
-      }
-    }
-
-    logo: file(relativePath: { eq: "images/logo-yellow.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 100, maxHeight: 100) {
-          ...GatsbyImageSharpFluid
-        }
       }
     }
   }

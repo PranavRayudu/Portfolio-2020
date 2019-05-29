@@ -12,6 +12,9 @@ $grid-breakpoints: (
   lg: (
     max-width: 1300px,
   ),
+  larger-than-md: (
+    min-width: 900px,
+  ),
 );
 
 /** regular spacings **/

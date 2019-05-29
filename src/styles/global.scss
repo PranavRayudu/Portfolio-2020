@@ -18,6 +18,12 @@ body {
   color: $dark-grey;
 }
 
+em {
+  font-weight: normal;
+  font-style: normal;
+  color: $primary-yellow;
+}
+
 .no-margin {
   margin: 0;
 }

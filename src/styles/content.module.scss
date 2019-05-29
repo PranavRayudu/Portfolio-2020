@@ -1,0 +1,97 @@
+@import "variables";
+
+.title {
+  font-size: 3.7em;
+  margin-top: 0;
+}
+
+$description_size: 600px;
+
+.description {
+  //font-size: 30px;
+  line-height: 50px;
+  font-weight: normal;
+
+  color: $primary-grey;
+
+  max-width: $description_size;
+}
+
+.main-content,
+.work-content,
+.about-content,
+.about-form-content {
+  padding: $large-grid-spacing $large-grid-spacing $std-grid-spacing;
+}
+
+.main-content {
+  display: grid;
+  align-content: center;
+  min-height: 90vh;
+}
+
+.work-content {
+  display: grid;
+
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+
+  grid-gap: $large-grid-spacing $large-grid-spacing;
+
+  grid-auto-flow: row;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond-to(md) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: stretch;
+  }
+}
+
+.about-content {
+  @include respond-to(md) {
+    padding: $std-grid-spacing;
+  }
+}
+
+.about-form-content, .work-content {
+  @include respond-to(larger-than-md) {
+    padding-top: 0;
+  }
+}
+
+.about-form-content {
+  .form {
+    input,
+    textarea {
+      padding: 10px;
+      margin-bottom: $std-grid-spacing;
+
+      display: block;
+      min-width: $large-grid-spacing;
+      max-width: $description_size;
+      width: 100%;
+
+      border: $std-line-thickness solid $dark-grey;
+      transition: border 0.2s;
+
+      &:focus {
+        border: $std-line-thickness solid $primary-cyan;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit {
+      background: $primary-red;
+      color: $dark-grey;
+      width: 200px;//$large-grid-spacing;
+    }
+  }
+}

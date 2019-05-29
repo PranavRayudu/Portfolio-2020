@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import ErrorPageStyles from "../styles/error-page.module.scss"
+import ErrorPageStyles from "../styles/alt-page.module.scss"
 
 export default () => (
   <div className={ErrorPageStyles.container}>
