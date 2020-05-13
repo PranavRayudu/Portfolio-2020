@@ -75,16 +75,15 @@ h1 {
   font-style: italic;
 }
 
-a {
+a:not(.plain-link) {
   color: $primary-red;
   text-decoration: none;
 
-  transition: 0.1s border linear;
+  text-shadow:  0 0 10px rgba($primary-red, 0.3);
+  transition: 0.1s all ease-in;
   &:hover {
-    border-bottom: $std-line-thickness solid $primary-red;
+    color: lighten($primary-red, 10%);
+    text-shadow: 0 0 15px rgba($primary-red, 0.9),
+                 0 7px 5px $md-black;
   }
-}
-
-.io {
-  font-size: 40px;
 }

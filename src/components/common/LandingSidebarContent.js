@@ -62,16 +62,17 @@ export default props => (
               href="https://www.linkedin.com/in/tarakapranav/"
               target="_blank"
               rel="noopener noreferrer"
+              className={"plain-link"}
             >
-              <IoLogoLinkedin className="io" />
+              <IoLogoLinkedin className={SidebarStyles.io} />
             </a>
             <a
               href="https://github.com/FancyAlpha"
               target="_blank"
               rel="noopener noreferrer"
-              className={SidebarStyles.githubLeftMargin}
+              className={["plain-link", SidebarStyles.githubLeftMargin].join(" ")}
             >
-              <IoLogoGithub className="io"/>
+              <IoLogoGithub className={SidebarStyles.io} />
             </a>
           </div>
 

@@ -45,7 +45,7 @@ $small-shadow:  8px 8px 10px #0d0d0d,
 $inset-small-shadow: inset 8px 8px 20px #0f0f0f,
                       inset -8px -8px 20px #333333;
 
-@mixin shadow-glow($color, $size: 30px, $alpha: 1) {
+@mixin glow($color, $size: 30px, $alpha: 1) {
   box-shadow:  0 0 $size rgba($color, $alpha),
                0 5px 5px $md-black;
 }

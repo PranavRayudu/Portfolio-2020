@@ -76,6 +76,20 @@
     font-weight: normal;
   }
 
+  .io {
+    font-size: 40px;
+    color: $primary-red;
+
+    filter: drop-shadow(0 0 15px rgba($primary-red, 0.5))
+            drop-shadow(0 5px 5px $md-black);
+
+    transition: 0.1s all ease-in;
+    &:hover {
+      color: lighten($primary-red, 10%);
+      filter: drop-shadow(0 0 15px $primary-red)
+              drop-shadow(0 10px 5px $md-black);
+    }
+  }
 
   .icon, .highlight-icon {
     font-size: $std-grid-spacing;
@@ -103,10 +117,10 @@
     margin: $std-grid-spacing 0;
     border-radius: 50%;
     transition: 0.2s box-shadow linear;
-    @include shadow-glow($primary-yellow, 30px, 0.4);
+    @include glow($primary-yellow, 30px, 0.4);
 
     &:hover {
-      @include shadow-glow($primary-yellow, 30px, 0.6);
+      @include glow($primary-yellow, 30px, 0.8);
     }
 
     @include respond-to(md) {
@@ -171,17 +185,17 @@
 
     .chip-weak {
       background: $light-orange;
-      @include shadow-glow($light-orange, 8px, 0.5);
+      @include glow($light-orange, 8px, 0.5);
     }
 
     .chip {
       background: $primary-orange;
-      @include shadow-glow($primary-orange, 8px, 0.5);
+      @include glow($primary-orange, 8px, 0.5);
     }
 
     .chip-strong {
       background: $strong-orange;
-      @include shadow-glow($strong-orange, 8px, 0.5);
+      @include glow($strong-orange, 8px, 0.5);
     }
   }
 }

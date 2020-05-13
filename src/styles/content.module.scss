@@ -98,11 +98,12 @@ $description_size: 600px;
       background: $primary-red;
       color: $dark-grey;
       font-weight: bold;
-      @include shadow-glow($primary-red, 20px, 0.5);
-      transition: 0.1s box-shadow linear;
+      @include glow($primary-red, 20px, 0.5);
+      transition: 0.1s all ease-in;
 
       &:hover {
-        @include shadow-glow($primary-red, 30px, 0.7);
+        background: lighten($primary-red, 10%);
+        @include glow($primary-red, 30px, 0.7);
       }
     }
   }
