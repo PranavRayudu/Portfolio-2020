@@ -41,7 +41,7 @@
 .landing-sidebar,
 .info-sidebar {
   background: $darker-grey;
-  color: $light-grey;
+  color: $primary-grey;
 
   text-align: right;
   line-height: $medium-grid-spacing;
@@ -103,6 +103,9 @@
 
   .highlight-icon {
     color: $primary-yellow;
+
+    filter: drop-shadow(0 0 5px rgba($primary-yellow, 0.5))
+            drop-shadow(0 5px 5px $md-black);
   }
 
   .github-left-margin {

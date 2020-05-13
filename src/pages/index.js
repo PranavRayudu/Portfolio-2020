@@ -22,7 +22,7 @@ export default ({ data }) => (
       <LandingSidebar link="/about" linkText="About Me"/>
       <Content className={ContentStyles.mainContent}>
         <h1 className={ContentStyles.title}>
-          Hello, I'm <Link to="/about">Pranav Rayudu</Link>
+          Hello, I'm <br/><Link to="/about">Pranav Rayudu</Link>
         </h1>
         <h2 className={ContentStyles.description}>
           I build websites and love working on robots and creative programming
