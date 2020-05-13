@@ -4,7 +4,7 @@ import SidebarStyles from "../../styles/sidebar.module.scss"
 import { StaticQuery, graphql, Link } from "gatsby"
 import GatsbyImage from "gatsby-image"
 
-import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin } from "react-icons/io"
+import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin, IoMdPin, IoMdMail } from "react-icons/io"
 
 export default props => (
   <StaticQuery
@@ -46,14 +46,14 @@ export default props => (
             />
           </Link>
           <div>
-            <span>tarakapranav@gmail.com</span>
+            <span>tarakapranav@gmail.com  <IoMdMail className={SidebarStyles.highlightIcon} /></span>
             <br />
-            <span>Austin, TX USA</span>
+            <span>Austin, TX USA <IoMdPin className={SidebarStyles.highlightIcon} /></span>
           </div>
 
           <p>
             <Link to={props.link}> {props.linkText}</Link>
-            <IoIosArrowBack className={SidebarStyles.icon} />
+            <IoIosArrowBack className={SidebarStyles.highlightIcon} />
             <br />
           </p>
 
@@ -75,7 +75,7 @@ export default props => (
             </a>
           </div>
 
-          <p className="no-margin">Recent Posts</p>
+          <p className={["no-margin", SidebarStyles.sidebarHeader].join(" ")}>Current Projects</p>
 
           <div>
             {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }, key) => (
@@ -86,7 +86,7 @@ export default props => (
                 >
                   {node.frontmatter.title}
                 </Link>
-                <IoIosArrowBack className={SidebarStyles.icon} />
+                <IoIosArrowBack className={SidebarStyles.highlightIcon} />
                 <br />
               </React.Fragment>
             ))}

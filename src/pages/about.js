@@ -7,6 +7,8 @@ import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
 import LandingSidebar from "../components/common/LandingSidebarContent"
 
+import {MdSend} from "react-icons/md"
+
 export default () => (
   <div>
     <Grid>
@@ -84,7 +86,7 @@ export default () => (
             pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
             onFocus={e => (e.target.placeholder = "")}
             onBlur={e => (e.target.placeholder = "Name *")}
-            className={ContentStyles.nameInput}
+            // className={ContentStyles.nameInput}
             required
           />
           <input
@@ -93,7 +95,7 @@ export default () => (
             placeholder="Email *"
             onFocus={e => (e.target.placeholder = "")}
             onBlur={e => (e.target.placeholder = "Email *")}
-            className={ContentStyles.emailInput}
+            // className={ContentStyles.emailInput}
             required
           />
           <textarea
@@ -103,7 +105,9 @@ export default () => (
             onBlur={e => (e.target.placeholder = "Enter your message here *")}
             required
           />
-          <input type="submit" value="Send" className={ContentStyles.submit} />
+          <button type="submit" className={ContentStyles.submit} >
+            SEND <MdSend className={ContentStyles.icon}/>
+          </button>
         </form>
       </Content>
     </ReverseGrid>

@@ -9,6 +9,8 @@ import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
 import WorkSnippet from "../components/snippet/WorkSnippet"
 
+import { FaReact, FaFlask, FaNodeJs, FaJava, FaPython, FaJs} from "react-icons/fa"
+
 export default ({ data }) => (
   <div>
     <Helmet>
@@ -17,7 +19,7 @@ export default ({ data }) => (
     </Helmet>
 
     <Grid>
-      <LandingSidebar link="/about" linkText="About Me" />
+      <LandingSidebar link="/about" linkText="About Me"/>
       <Content className={ContentStyles.mainContent}>
         <h1 className={ContentStyles.title}>
           Hello, I'm <Link to="/about">Pranav Rayudu</Link>
@@ -25,7 +27,7 @@ export default ({ data }) => (
         <h2 className={ContentStyles.description}>
           I build websites and love working on robots and creative programming
           projects.
-          <br />
+          <br/>
           <Link to="/about#contact-form">Need a website?</Link>
         </h2>
       </Content>
@@ -33,14 +35,44 @@ export default ({ data }) => (
 
     <ReverseGrid>
       <Sidebar className={SidebarStyles.infoSidebar}>
-        <div className={SidebarStyles.divider} />
+        <div className={SidebarStyles.divider}/>
 
         <div className={SidebarStyles.stickyTitle}>
           <h2 className={SidebarStyles.title}>Featured Projects</h2>
 
-          <p className={SidebarStyles.sidebarDescription}>
-          I specialize in hand-crafted <em>front-end</em> web development and small-scale <em>responsive</em> websites for mobiles and desktops alike.
-        </p>
+          {/*<p className={SidebarStyles.sidebarDescription}>*/}
+          {/*  I specialize in hand-crafted <em>front-end</em> web development and small-scale <em>responsive</em> websites*/}
+          {/*  for mobiles and desktops alike.*/}
+          {/*</p>*/}
+
+          {/* List of skills */}
+          <p className={SidebarStyles.skills}>
+            <p className={SidebarStyles.sidebarDescription}>
+              I specialize in hand-crafted <em>front-end</em> web development and small-scale <em>responsive</em> websites for mobiles and desktops alike.
+            </p>
+
+            <section className={SidebarStyles.skillsSection}>
+              <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/>React.js</div>
+              <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
+              <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
+              <div className={SidebarStyles.chipStrong}>MongoDB</div>
+            </section>
+
+            <section className={SidebarStyles.skillsSection}>
+              <div className={SidebarStyles.chip}><FaJava className={SidebarStyles.icon}/> Java</div>
+              <div className={SidebarStyles.chip}>C / C++</div>
+              <div className={SidebarStyles.chip}><FaPython className={SidebarStyles.icon}/> Python</div>
+              <div className={SidebarStyles.chip}><FaJs className={SidebarStyles.icon}/> Javascript</div>
+            </section>
+
+            <section className={SidebarStyles.skillsSection}>
+              <div className={SidebarStyles.chipWeak}>Machine Learning</div>
+              <div className={SidebarStyles.chipWeak}>Full Stack</div>
+              <div className={SidebarStyles.chipWeak}>Robotics</div>
+              <div className={SidebarStyles.chipWeak}>Software Engineering</div>
+            </section>
+          </p>
+
         </div>
       </Sidebar>
 
@@ -50,36 +82,42 @@ export default ({ data }) => (
           body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
           image={data.birdTest.childImageSharp.fluid}
           link="https://google.com"
+          delay={0}
         />
         <WorkSnippet
           title="Tired of Lorem Ipsum?"
           body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
           image={data.wireframeTest.childImageSharp.fluid}
           link="https://google.com"
+          delay={100}
         />
         <WorkSnippet
           title="Cheese Ipsum"
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
+          delay={200}
         />
         <WorkSnippet
           title="Yar Pirate Ipsum"
           body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
           image={data.birdTest.childImageSharp.fluid}
           link="https://google.com"
+          delay={0}
         />
         <WorkSnippet
           title="Tired of Lorem Ipsum?"
           body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
           image={data.wireframeTest.childImageSharp.fluid}
           link="https://google.com"
+          delay={100}
         />
         <WorkSnippet
           title="Cheese Ipsum"
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
+          delay={200}
         />
       </Content>
     </ReverseGrid>

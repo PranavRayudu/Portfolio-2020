@@ -8,14 +8,30 @@
 
 html,
 body {
-  //background: color(mint-cream);
+  //background: $dark-grey;
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
+  //z-index: -10;
+  position: relative;
+  &:after {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    position: absolute;
+    z-index: -2;
+
+    background: linear-gradient(100deg,
+                    lighten($darker-grey, 2%),
+                    darken($darker-grey, 6%)
+            );
+  }
 }
 
 ::selection {
-  background: $primary-cyan;
-  color: $dark-grey;
+  background: $primary-orange;
+  color: $md-white;
 }
 
 em {
@@ -57,12 +73,16 @@ em {
 h1 {
   font-family: "Libre Baskerville", serif;
   font-style: italic;
-  //font-weight: bold;
 }
 
 a {
   color: $primary-red;
   text-decoration: none;
+
+  transition: 0.1s border linear;
+  &:hover {
+    border-bottom: $std-line-thickness solid $primary-red;
+  }
 }
 
 .io {

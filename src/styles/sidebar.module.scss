@@ -1,49 +1,94 @@
 @import "variables";
 
+.landing-sidebar {
+  padding: $large-grid-spacing $large-grid-spacing $std-grid-spacing $std-grid-spacing;
+  margin: $std-grid-spacing 0 0 $std-grid-spacing;
+
+  @include respond-to(md) {
+    margin: $std-grid-spacing $large-grid-spacing 0;
+  }
+
+  @include respond-to(sm) {
+    padding: $large-grid-spacing $std-grid-spacing $std-grid-spacing;
+    margin: $std-grid-spacing $std-grid-spacing 0;
+  }
+
+  border-radius: $medium-grid-spacing $medium-grid-spacing 0 0;
+  &:after {
+    border-radius: $medium-grid-spacing $medium-grid-spacing 0 0;
+  }
+}
+
+.info-sidebar {
+  padding: 0 $large-grid-spacing $large-grid-spacing $large-grid-spacing;
+  margin: 0 0 $large-grid-spacing $std-grid-spacing;
+
+  @include respond-to(md) {
+    margin: 0 $large-grid-spacing $std-grid-spacing;
+  }
+
+  @include respond-to(sm) {
+    padding: 0 $std-grid-spacing $large-grid-spacing;
+    margin: 0 $std-grid-spacing $std-grid-spacing;
+  }
+
+  border-radius:  0 0 $medium-grid-spacing $medium-grid-spacing;
+  &:after {
+    border-radius:  0 0 $medium-grid-spacing $medium-grid-spacing;
+    //border-radius: $large-grid-spacing;
+  }
+}
 .landing-sidebar,
 .info-sidebar {
-  padding: $large-grid-spacing;
-
-  background: $dark-grey;
+  background: $darker-grey;
   color: $light-grey;
-  font-weight: bold;
+
   text-align: right;
-  line-height: 40px;
+  line-height: $medium-grid-spacing;
   justify-items: right;
+
+  z-index: auto;
+  position: relative;
+
+  &:after {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    box-shadow: $large-shadow;
+  }
 
   @include respond-to(md) {
     justify-items: center;
     text-align: center;
   }
 
+  .sidebar-header {
+    font-weight: bold;
+  }
+
   .blog-posts-links,
   .sidebar-description {
     font-weight: normal;
   }
-}
 
-.landing-sidebar {
-  padding-top: $large-grid-spacing;
 
-  .logo {
-    width: 100px;
-    float: right;
-    margin: $std-grid-spacing 0;
-
-    @include respond-to(md) {
-      float: none;
-      margin: 0 auto $std-grid-spacing;
-    }
-  }
-
-  .icon {
-    color: $primary-yellow;
+  .icon, .highlight-icon {
     font-size: $std-grid-spacing;
     vertical-align: middle;
+    padding-bottom: 3px;
 
     @include respond-to(md) {
       display: none;
     }
+  }
+
+  .highlight-icon {
+    color: $primary-yellow;
   }
 
   .github-left-margin {
@@ -51,9 +96,28 @@
   }
 }
 
+.landing-sidebar {
+  .logo {
+    width: 100px;
+    float: right;
+    margin: $std-grid-spacing 0;
+    border-radius: 50%;
+    transition: 0.2s box-shadow linear;
+    @include shadow-glow($primary-yellow, 30px, 0.4);
+
+    &:hover {
+      @include shadow-glow($primary-yellow, 30px, 0.6);
+    }
+
+    @include respond-to(md) {
+      float: none;
+      margin: 0 auto $std-grid-spacing;
+    }
+  }
+}
+
 .info-sidebar {
   grid-template-rows: min-content;
-  padding: 0 $large-grid-spacing $std-grid-spacing $large-grid-spacing;
 
   .sticky-title {
     place-self: start end;
@@ -74,9 +138,50 @@
     height: $std-line-thickness;
     background: $primary-yellow;
     margin-bottom: $large-grid-spacing;
+    border-radius: $std-line-thickness;
 
     @include respond-to(md) {
       margin-bottom: $std-grid-spacing;
+    }
+  }
+}
+
+.skills {
+
+  .skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    line-height: normal;
+    margin: $std-line-thickness * 2 0;
+
+    @include respond-to(md) {
+      justify-content: center;
+    }
+
+    .chip-weak, .chip, .chip-strong {
+
+      vertical-align: middle;
+      padding: $std-line-thickness $std-line-thickness * 4;
+      margin: $std-line-thickness;
+      border-radius: $std-grid-spacing;
+      color: $dark-grey;
+      font-weight: bold;
+    }
+
+    .chip-weak {
+      background: $light-orange;
+      @include shadow-glow($light-orange, 8px, 0.5);
+    }
+
+    .chip {
+      background: $primary-orange;
+      @include shadow-glow($primary-orange, 8px, 0.5);
+    }
+
+    .chip-strong {
+      background: $strong-orange;
+      @include shadow-glow($strong-orange, 8px, 0.5);
     }
   }
 }
