@@ -11,7 +11,6 @@ import WorkSnippet from "../components/snippet/WorkSnippet"
 
 import { FaReact, FaFlask, FaNodeJs, FaJava, FaPython, FaJs, FaLayerGroup, FaRobot } from "react-icons/fa"
 import { DiMongodb } from "react-icons/di"
-import { RiMouseLine } from "react-icons/ri"
 
 export default ({ data }) => (
   <div>

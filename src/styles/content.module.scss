@@ -47,11 +47,6 @@ $description_size: 600px;
   .scroll-indicator {
     font-size: 70%;
     color: darken($primary-grey, 40%);
-
-    .icon {
-      vertical-align: middle;
-      //padding-bottom: 3px;
-    }
   }
 }
 
@@ -98,6 +93,8 @@ $description_size: 600px;
       min-width: $large-grid-spacing;
       max-width: $description_size;
 
+      -webkit-appearance: none;
+      color: $light-grey;
       background: $dark-grey;
       caret-color: $light-grey;
       box-shadow: $small-shadow;
@@ -130,4 +127,10 @@ $description_size: 600px;
       }
     }
   }
+}
+
+
+.icon {
+  vertical-align: middle;
+  padding-bottom: 3px;
 }
