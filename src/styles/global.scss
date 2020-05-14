@@ -72,18 +72,22 @@ em {
 
 h1 {
   font-family: "Libre Baskerville", serif;
-  font-style: italic;
 }
 
 a:not(.plain-link) {
   color: $primary-red;
   text-decoration: none;
 
-  text-shadow:  0 0 10px rgba($primary-red, 0.3);
+  text-shadow:  0 0 7px rgba($primary-red, 0.3);
   transition: 0.1s all ease-in;
   &:hover {
-    color: lighten($primary-red, 10%);
-    text-shadow: 0 0 15px rgba($primary-red, 0.9),
-                 0 7px 5px $md-black;
+    color: lighten($primary-red, 7%);
+    text-shadow: 0 0 15px rgba($primary-red, 0.5),
+                 0 5px 5px $md-black;
   }
+}
+
+.icon {
+  vertical-align: middle;
+  padding-bottom: 3px;
 }

@@ -7,12 +7,12 @@ import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
 import LandingSidebar from "../components/common/LandingSidebarContent"
 
-import {MdSend} from "react-icons/md"
+import { MdSend } from "react-icons/md"
 
 export default () => (
   <div>
     <Grid>
-      <LandingSidebar link="/" linkText="Home" />
+      <LandingSidebar link="/" linkText="Home"/>
       <Content className={ContentStyles.aboutContent}>
         <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
         <p className={ContentStyles.description}>
@@ -44,10 +44,10 @@ export default () => (
 
     <ReverseGrid>
       <Sidebar className={SidebarStyles.infoSidebar}>
-        <div className={SidebarStyles.divider} />
+        <div className={SidebarStyles.divider}/>
 
         <div className={SidebarStyles.stickyTitle}>
-          <h2 className={SidebarStyles.title}>Talk To Me</h2>
+          <h2 className={SidebarStyles.title}>Let's Talk</h2>
           <p className={SidebarStyles.sidebarDescription}>
             I am open to commissions for small websites, internships over the
             summer, or research projects. Shoot me a message and I'll get back
@@ -72,10 +72,10 @@ export default () => (
             // GET: see vars in address bar
             // POST: cannot see vars in address bar
           }
-          <input type="hidden" name="form-name" value="Contact Form" />
+          <input type="hidden" name="form-name" value="Contact Form"/>
           <p hidden>
             <label>
-              Humans, don't fill this out: <input name="bot-field" />
+              Humans, don't fill this out: <input name="bot-field"/>
             </label>
           </p>
 
@@ -105,7 +105,7 @@ export default () => (
             onBlur={e => (e.target.placeholder = "Enter your message here *")}
             required
           />
-          <button type="submit" className={ContentStyles.submit} >
+          <button type="submit" className={ContentStyles.submit}>
             SEND <MdSend className={ContentStyles.icon}/>
           </button>
         </form>

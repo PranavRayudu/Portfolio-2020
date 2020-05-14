@@ -3,6 +3,7 @@
 .title {
   font-size: 3.3em;
   margin-top: 0;
+  font-style: italic;
   color: white;
 
   @include respond-to(sm) {
@@ -42,6 +43,16 @@ $description_size: 600px;
   display: grid;
   align-content: center;
   min-height: 90vh;
+
+  .scroll-indicator {
+    font-size: 70%;
+    color: darken($primary-grey, 40%);
+
+    .icon {
+      vertical-align: middle;
+      //padding-bottom: 3px;
+    }
+  }
 }
 
 .work-content {
@@ -87,9 +98,18 @@ $description_size: 600px;
       min-width: $large-grid-spacing;
       max-width: $description_size;
 
+      background: $dark-grey;
+      caret-color: $light-grey;
       box-shadow: $small-shadow;
       border-radius: $std-grid-spacing;
       border: none;
+    }
+
+    input, textarea {
+      &:focus {
+        outline: none;
+        box-shadow: $inset-small-shadow;
+      }
     }
 
     textarea {
@@ -110,9 +130,4 @@ $description_size: 600px;
       }
     }
   }
-}
-
-.icon {
-  vertical-align: middle;
-  padding-bottom: 3px;
 }

@@ -9,7 +9,9 @@ import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
 import WorkSnippet from "../components/snippet/WorkSnippet"
 
-import { FaReact, FaFlask, FaNodeJs, FaJava, FaPython, FaJs} from "react-icons/fa"
+import { FaReact, FaFlask, FaNodeJs, FaJava, FaPython, FaJs, FaLayerGroup, FaRobot } from "react-icons/fa"
+import { DiMongodb } from "react-icons/di"
+import { RiMouseLine } from "react-icons/ri"
 
 export default ({ data }) => (
   <div>
@@ -25,10 +27,13 @@ export default ({ data }) => (
           Hello, I'm <br/><Link to="/about">Pranav Rayudu</Link>
         </h1>
         <h2 className={ContentStyles.description}>
-          I build websites and love working on robots and creative programming
-          projects.
+          I am a full-stack developer who loves building robots and creative programming.
           <br/>
-          <Link to="/about#contact-form">Need a website?</Link>
+          <Link to="/about">More about me. </Link>
+          <br/>
+          {/*<span className={ContentStyles.scrollIndicator}>*/}
+          {/*  <RiMouseLine classname={ContentStyles.icon}/> scroll*/}
+          {/*</span>*/}
         </h2>
       </Content>
     </Grid>
@@ -40,22 +45,18 @@ export default ({ data }) => (
         <div className={SidebarStyles.stickyTitle}>
           <h2 className={SidebarStyles.title}>Featured Projects</h2>
 
-          {/*<p className={SidebarStyles.sidebarDescription}>*/}
-          {/*  I specialize in hand-crafted <em>front-end</em> web development and small-scale <em>responsive</em> websites*/}
-          {/*  for mobiles and desktops alike.*/}
-          {/*</p>*/}
+          <p className={SidebarStyles.sidebarDescription}>
+            I specialize in hand-crafted <em>front-end</em> web development and small-scale <em>responsive</em> websites
+            for mobiles and desktops alike.
+          </p>
 
-          {/* List of skills */}
           <p className={SidebarStyles.skills}>
-            <p className={SidebarStyles.sidebarDescription}>
-              I specialize in hand-crafted <em>front-end</em> web development and small-scale <em>responsive</em> websites for mobiles and desktops alike.
-            </p>
 
             <section className={SidebarStyles.skillsSection}>
               <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/>React.js</div>
               <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
               <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
-              <div className={SidebarStyles.chipStrong}>MongoDB</div>
+              <div className={SidebarStyles.chipStrong}><DiMongodb classname={SidebarStyles.icon}/> MongoDB</div>
             </section>
 
             <section className={SidebarStyles.skillsSection}>
@@ -67,8 +68,8 @@ export default ({ data }) => (
 
             <section className={SidebarStyles.skillsSection}>
               <div className={SidebarStyles.chipWeak}>Machine Learning</div>
-              <div className={SidebarStyles.chipWeak}>Full Stack</div>
-              <div className={SidebarStyles.chipWeak}>Robotics</div>
+              <div className={SidebarStyles.chipWeak}><FaLayerGroup className={SidebarStyles.icon}/> Full Stack</div>
+              <div className={SidebarStyles.chipWeak}><FaRobot className={SidebarStyles.icon}/> Robotics</div>
               <div className={SidebarStyles.chipWeak}>Software Engineering</div>
             </section>
           </p>

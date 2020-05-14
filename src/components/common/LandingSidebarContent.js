@@ -5,6 +5,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import GatsbyImage from "gatsby-image"
 
 import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin, IoMdPin, IoMdMail } from "react-icons/io"
+import {FaUniversity} from "react-icons/fa"
 
 export default props => (
   <StaticQuery
@@ -39,16 +40,17 @@ export default props => (
     render={data => (
       <Sidebar className={SidebarStyles.landingSidebar}>
         <div>
-          <Link to="./">
-            <GatsbyImage
-              fluid={data.logo.childImageSharp.fluid}
-              className={SidebarStyles.logo}
-            />
-          </Link>
+            <Link to="./" className={SidebarStyles.logoLink}>
+              <GatsbyImage
+                fluid={data.logo.childImageSharp.fluid}
+                className={SidebarStyles.logo}
+              />
+            </Link>
+
           <div>
-            <span>tarakapranav@gmail.com  <IoMdMail className={SidebarStyles.highlightIcon} /></span>
-            <br />
-            <span>Austin, TX USA <IoMdPin className={SidebarStyles.highlightIcon} /></span>
+            <div>CS @ UT Austin <FaUniversity className={SidebarStyles.highlightIcon} /></div>
+            <div>tarakapranav@gmail.com <IoMdMail className={SidebarStyles.highlightIcon} /></div>
+            <div>Austin, TX USA <IoMdPin className={SidebarStyles.highlightIcon} /></div>
           </div>
 
           <p>
@@ -76,22 +78,22 @@ export default props => (
             </a>
           </div>
 
-          <p className={["no-margin", SidebarStyles.sidebarHeader].join(" ")}>Current Projects</p>
+          {/*<p className={["no-margin", SidebarStyles.sidebarHeader].join(" ")}>Current Projects</p>*/}
 
-          <div>
-            {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }, key) => (
-              <React.Fragment key={key.toString()}>
-                <Link
-                  to={node.frontmatter.path}
-                  className={SidebarStyles.blogPostsLinks}
-                >
-                  {node.frontmatter.title}
-                </Link>
-                <IoIosArrowBack className={SidebarStyles.highlightIcon} />
-                <br />
-              </React.Fragment>
-            ))}
-          </div>
+          {/*<div>*/}
+          {/*  {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }, key) => (*/}
+          {/*    <React.Fragment key={key.toString()}>*/}
+          {/*      <Link*/}
+          {/*        to={node.frontmatter.path}*/}
+          {/*        className={SidebarStyles.blogPostsLinks}*/}
+          {/*      >*/}
+          {/*        {node.frontmatter.title}*/}
+          {/*      </Link>*/}
+          {/*      <IoIosArrowBack className={SidebarStyles.highlightIcon} />*/}
+          {/*      <br />*/}
+          {/*    </React.Fragment>*/}
+          {/*  ))}*/}
+          {/*</div>*/}
         </div>
       </Sidebar>
     )}

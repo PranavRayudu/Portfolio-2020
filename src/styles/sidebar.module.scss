@@ -14,6 +14,7 @@
   }
 
   border-radius: $medium-grid-spacing $medium-grid-spacing 0 0;
+
   &:after {
     border-radius: $medium-grid-spacing $medium-grid-spacing 0 0;
   }
@@ -32,15 +33,17 @@
     margin: 0 $std-grid-spacing $std-grid-spacing;
   }
 
-  border-radius:  0 0 $medium-grid-spacing $medium-grid-spacing;
+  border-radius: 0 0 $medium-grid-spacing $medium-grid-spacing;
+
   &:after {
-    border-radius:  0 0 $medium-grid-spacing $medium-grid-spacing;
+    border-radius: 0 0 $medium-grid-spacing $medium-grid-spacing;
     //border-radius: $large-grid-spacing;
   }
 }
+
 .landing-sidebar,
 .info-sidebar {
-  background: $darker-grey;
+  background: $dark-grey;
   color: $primary-grey;
 
   text-align: right;
@@ -71,30 +74,28 @@
     font-weight: bold;
   }
 
-  .blog-posts-links,
   .sidebar-description {
-    font-weight: normal;
+    line-height: $std-grid-spacing * 1.5;
   }
 
   .io {
-    font-size: 40px;
+    font-size: $medium-grid-spacing;
     color: $primary-red;
 
-    filter: drop-shadow(0 0 15px rgba($primary-red, 0.5))
-            drop-shadow(0 5px 5px $md-black);
+    filter: drop-shadow(0 0 15px rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
 
     transition: 0.1s all ease-in;
+
     &:hover {
       color: lighten($primary-red, 10%);
-      filter: drop-shadow(0 0 15px $primary-red)
-              drop-shadow(0 10px 5px $md-black);
+      filter: drop-shadow(0 0 15px $primary-red) drop-shadow(0 10px 5px $md-black);
     }
   }
 
   .icon, .highlight-icon {
-    font-size: $std-grid-spacing;
     vertical-align: middle;
     padding-bottom: 3px;
+    font-size: $std-grid-spacing;
 
     @include respond-to(md) {
       display: none;
@@ -104,8 +105,7 @@
   .highlight-icon {
     color: $primary-yellow;
 
-    filter: drop-shadow(0 0 5px rgba($primary-yellow, 0.5))
-            drop-shadow(0 5px 5px $md-black);
+    filter: drop-shadow(0 0 5px rgba($primary-yellow, 0.5)) drop-shadow(0 5px 5px $md-black);
   }
 
   .github-left-margin {
@@ -114,21 +114,26 @@
 }
 
 .landing-sidebar {
-  .logo {
-    width: 100px;
-    float: right;
-    margin: $std-grid-spacing 0;
-    border-radius: 50%;
-    transition: 0.2s box-shadow linear;
-    @include glow($primary-yellow, 30px, 0.4);
 
-    &:hover {
-      @include glow($primary-yellow, 30px, 0.8);
-    }
+  .logoLink {
+    display: inline-block;
 
-    @include respond-to(md) {
-      float: none;
-      margin: 0 auto $std-grid-spacing;
+    .logo {
+      width: 100px;
+      float: right;
+      margin: $std-grid-spacing 0;
+      border-radius: 50%;
+      transition: 0.2s box-shadow linear;
+      @include glow($primary-yellow, 30px, 0.4);
+
+      &:hover {
+        @include glow($primary-yellow, 30px, 0.8);
+      }
+
+      @include respond-to(md) {
+        float: none;
+        margin: 0 auto $std-grid-spacing;
+      }
     }
   }
 }

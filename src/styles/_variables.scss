@@ -3,18 +3,18 @@
 
 /** breakpoints **/
 $grid-breakpoints: (
-  sm: (
-    max-width: 600px,
-  ),
-  md: (
-    max-width: 900px,
-  ),
-  lg: (
-    max-width: 1300px,
-  ),
-  larger-than-md: (
-    min-width: 900px,
-  ),
+        sm: (
+                max-width: 600px,
+        ),
+        md: (
+                max-width: 900px,
+        ),
+        lg: (
+                max-width: 1300px,
+        ),
+        larger-than-md: (
+                min-width: 900px,
+        ),
 );
 
 /** regular spacings **/
@@ -26,7 +26,7 @@ $std-line-thickness: 3px;
 
 $primary-yellow: $md-yellow-400;
 $primary-red: $md-red-400;
-$primary-cyan:$md-cyan-500;
+$primary-cyan: $md-cyan-500;
 $primary-teal: $md-teal-200;
 $light-orange: $md-orange-300;
 $primary-orange: $md-orange-500;
@@ -34,20 +34,20 @@ $strong-orange: $md-deep-orange-400;
 
 $light-grey: $md-blue-grey-200;
 $primary-grey: $md-grey-500;
-$dark-grey: $md-grey-900;
+$dark-grey: lighten($md-grey-900, 1%);
 $darker-grey: $md-grey-900;
 
 /** Shadow settings **/
-$large-shadow:  20px 20px 40px #0f0f0f,
-                -20px -20px 40px #333333;
-$small-shadow:  8px 8px 10px #0d0d0d,
-                -8px -8px 10px #353535;
+$large-shadow: 20px 20px 40px #0f0f0f,
+-20px -20px 40px #333333;
+$small-shadow: 6px 6px 10px #0d0d0d,
+-6px -6px 10px #353535;
 $inset-small-shadow: inset 8px 8px 20px #0f0f0f,
-                      inset -8px -8px 20px #333333;
+inset -8px -8px 20px #333333;
 
 @mixin glow($color, $size: 30px, $alpha: 1) {
-  box-shadow:  0 0 $size rgba($color, $alpha),
-               0 5px 5px $md-black;
+  box-shadow: 0 0 $size rgba($color, $alpha),
+  0 5px 5px $md-black;
 }
 
 @mixin respond-to($breakpoint) {
