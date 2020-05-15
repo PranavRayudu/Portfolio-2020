@@ -52,7 +52,7 @@ export default ({ data }) => (
           <p className={SidebarStyles.skills}>
 
             <section className={SidebarStyles.skillsSection}>
-              <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/>React.js</div>
+              <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/> React.js</div>
               <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
               <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
               <div className={SidebarStyles.chipStrong}><DiMongodb classname={SidebarStyles.icon}/> MongoDB</div>
