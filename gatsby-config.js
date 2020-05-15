@@ -7,9 +7,9 @@
 module.exports = {
   siteMetadata: {
     title: `Taraka Pranav's Portfolio`,
-    url: "https://tarakapranav.netlify.com/",
-    siteUrl: "https://tarakapranav.netlify.com/",
-    description: `A redesigned portfolio for Pranav Rayudu using Gatsby.js and react`,
+    url: "https://pranavrayudu.netlify.com/",
+    siteUrl: "https://pranavrayudu.netlify.com/",
+    description: `A redesigned portfolio for Pranav Rayudu using Gatsby.js`,
   },
 
   plugins: [
@@ -48,7 +48,13 @@ module.exports = {
         exitEventName: 'sal:out', // Exit event name
       }
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en'
+      }
+    },
+    'gatsby-plugin-robots-txt',
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,

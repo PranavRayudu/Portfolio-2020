@@ -5,7 +5,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import GatsbyImage from "gatsby-image"
 
 import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin, IoMdPin, IoMdMail } from "react-icons/io"
-import {FaUniversity} from "react-icons/fa"
+import { FaUniversity } from "react-icons/fa"
 
 export default props => (
   <StaticQuery
@@ -40,41 +40,44 @@ export default props => (
     render={data => (
       <Sidebar className={SidebarStyles.landingSidebar}>
         <div>
-            <Link to="./" className={SidebarStyles.logoLink}>
-              <GatsbyImage
-                fluid={data.logo.childImageSharp.fluid}
-                className={SidebarStyles.logo}
-              />
-            </Link>
+          <Link to="./" className={SidebarStyles.logoLink} aria-label={"Pranav Rayudu's Logo"}>
+            <GatsbyImage
+              fluid={data.logo.childImageSharp.fluid}
+              className={SidebarStyles.logo}
+              alt={"Pranav Rayudu's Logo"}
+            />
+          </Link>
 
           <div>
-            <div>CS @ UT Austin <FaUniversity className={SidebarStyles.highlightIcon} /></div>
-            <div>tarakapranav@gmail.com <IoMdMail className={SidebarStyles.highlightIcon} /></div>
-            <div>Austin, TX USA <IoMdPin className={SidebarStyles.highlightIcon} /></div>
+            <div>CS @ UT Austin <FaUniversity className={SidebarStyles.highlightIcon}/></div>
+            <div>tarakapranav@gmail.com <IoMdMail className={SidebarStyles.highlightIcon}/></div>
+            <div>Austin, TX USA <IoMdPin className={SidebarStyles.highlightIcon}/></div>
           </div>
 
           <p>
             <Link to={props.link}> {props.linkText}</Link>
-            <IoIosArrowBack className={SidebarStyles.highlightIcon} />
-            <br />
+            <IoIosArrowBack className={SidebarStyles.highlightIcon}/>
+            <br/>
           </p>
 
-          <div className="bottom-std-padded">
+          <div>
             <a
               href="https://www.linkedin.com/in/tarakapranav/"
               target="_blank"
               rel="noopener noreferrer"
               className={"plain-link"}
+              aria-label={"Linkedin link"}
             >
-              <IoLogoLinkedin className={SidebarStyles.io} />
+              <IoLogoLinkedin className={SidebarStyles.io}/>
             </a>
             <a
               href="https://github.com/FancyAlpha"
               target="_blank"
               rel="noopener noreferrer"
               className={["plain-link", SidebarStyles.githubLeftMargin].join(" ")}
+              aria-label={"Github link"}
             >
-              <IoLogoGithub className={SidebarStyles.io} />
+              <IoLogoGithub className={SidebarStyles.io}/>
             </a>
           </div>
 
@@ -93,7 +96,6 @@ export default props => (
           {/*      <br />*/}
           {/*    </React.Fragment>*/}
           {/*  ))}*/}
-          {/*</div>*/}
         </div>
       </Sidebar>
     )}

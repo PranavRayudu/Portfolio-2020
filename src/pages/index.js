@@ -15,8 +15,8 @@ import { DiMongodb } from "react-icons/di"
 export default ({ data }) => (
   <div>
     <Helmet>
-      {/*<meta charset="utf-8" />*/}
       <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
     </Helmet>
 
     <Grid>
@@ -139,6 +139,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
 

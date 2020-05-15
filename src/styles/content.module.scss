@@ -20,6 +20,10 @@ $description_size: 600px;
   color: $primary-grey;
 
   max-width: $description_size;
+
+  @include respond-to(md) {
+    max-width: 100%;
+  }
 }
 
 .main-content, .about-content {
@@ -79,6 +83,7 @@ $description_size: 600px;
 }
 
 .about-form-content {
+
   .form {
     display: flex;
     flex-direction: column;
@@ -100,6 +105,10 @@ $description_size: 600px;
       box-shadow: $small-shadow;
       border-radius: $std-grid-spacing;
       border: none;
+
+      @include respond-to(md) {
+        max-width: 100%;
+      }
     }
 
     input, textarea {
@@ -128,7 +137,6 @@ $description_size: 600px;
     }
   }
 }
-
 
 .icon {
   vertical-align: middle;

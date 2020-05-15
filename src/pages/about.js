@@ -8,9 +8,15 @@ import ContentStyles from "../styles/content.module.scss"
 import LandingSidebar from "../components/common/LandingSidebarContent"
 
 import { MdSend } from "react-icons/md"
+import { Helmet } from "react-helmet"
 
-export default () => (
+export default ({ data }) => (
   <div>
+    <Helmet>
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description}/>
+    </Helmet>
+
     <Grid>
       <LandingSidebar link="/" linkText="Home"/>
       <Content className={ContentStyles.aboutContent}>
@@ -82,6 +88,7 @@ export default () => (
           <input
             type="text"
             name="name"
+            aria-label={"name entry"}
             placeholder="Name *"
             pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
             onFocus={e => (e.target.placeholder = "")}
@@ -89,8 +96,10 @@ export default () => (
             // className={ContentStyles.nameInput}
             required
           />
+
           <input
             type="email"
+            aria-label={"email entry"}
             name="email"
             placeholder="Email *"
             onFocus={e => (e.target.placeholder = "")}
@@ -98,8 +107,10 @@ export default () => (
             // className={ContentStyles.emailInput}
             required
           />
+
           <textarea
             name="message"
+            aria-label={"message entry"}
             placeholder="Enter your message here *"
             onFocus={e => (e.target.placeholder = "")}
             onBlur={e => (e.target.placeholder = "Enter your message here *")}
@@ -119,6 +130,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
   }

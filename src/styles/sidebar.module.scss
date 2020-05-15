@@ -5,6 +5,7 @@
   margin: $std-grid-spacing 0 0 $std-grid-spacing;
 
   @include respond-to(md) {
+    padding: $large-grid-spacing $large-grid-spacing $std-grid-spacing;
     margin: $std-grid-spacing $large-grid-spacing 0;
   }
 
@@ -159,12 +160,9 @@
     place-self: start stretch;
     height: $std-line-thickness;
     background: $primary-yellow;
-    margin-bottom: $large-grid-spacing;
+    //margin-bottom: $std-grid-spacing;
     border-radius: $std-line-thickness;
 
-    @include respond-to(md) {
-      margin-bottom: $std-grid-spacing;
-    }
   }
 }
 
