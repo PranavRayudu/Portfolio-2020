@@ -23,7 +23,10 @@ function WorkSnippet(props) {
 
       <div>
         <h3 className={SnippetStyles.title}>{props.title}</h3>
-        <p className={[SnippetStyles.text, SnippetStyles.hideSm].join(" ")}>{props.superSnippet ? props.body : props.subtitle}</p>
+        <p
+          className={[SnippetStyles.text, SnippetStyles.hideSm].join(" ")}>
+          {props.superSnippet ? props.body : props.subtitle}
+        </p>
         <p className={[SnippetStyles.text, SnippetStyles.showSm].join(" ")}>{props.body}</p>
 
         {!props.superSnippet && <button
@@ -48,11 +51,8 @@ function WorkSnippet(props) {
                 onDismiss={() => setShowDialog(false)}
                 className={SnippetStyles.dialog}
                 style={{
-                  transform: styles.y.interpolate(
-                    value => `translate3d(0px, ${value}px, 0px)`,
-                  ),
-                }}
-              >
+                  transform: styles.y.interpolate(value => `translate3d(0px, ${value}px, 0px)`),
+                }}>
                 <h3 className={SnippetStyles.title}>{props.title}</h3>
                 <p>{props.body}</p>
                 <button

@@ -70,6 +70,7 @@
   box-shadow: 0 0 $medium-grid-spacing black;
 
   @include respond-to(md) {
+    max-width: 999999px;
     margin: $large-grid-spacing $std-grid-spacing !important;
     padding: $std-grid-spacing !important;
   }

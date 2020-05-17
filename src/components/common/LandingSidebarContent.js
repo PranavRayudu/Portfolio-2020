@@ -71,7 +71,7 @@ export default props => (
               <IoLogoLinkedin className={SidebarStyles.io}/>
             </a>
             <a
-              href="https://github.com/FancyAlpha"
+              href="https://github.com/PranavRayudu"
               target="_blank"
               rel="noopener noreferrer"
               className={["plain-link", SidebarStyles.githubLeftMargin].join(" ")}
@@ -80,9 +80,6 @@ export default props => (
               <IoLogoGithub className={SidebarStyles.io}/>
             </a>
           </div>
-
-          {/*<p className={["no-margin", SidebarStyles.sidebarHeader].join(" ")}>Current Projects</p>*/}
-
           {/*<div>*/}
           {/*  {data.allMarkdownRemark.edges.slice(0, 5).map(({ node }, key) => (*/}
           {/*    <React.Fragment key={key.toString()}>*/}
