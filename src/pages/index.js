@@ -16,7 +16,7 @@ export default ({ data }) => (
   <div>
     <Helmet>
       <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
+      <meta name="description" content={data.site.siteMetadata.description}/>
     </Helmet>
 
     <Grid>
@@ -28,11 +28,8 @@ export default ({ data }) => (
         <h2 className={ContentStyles.description}>
           I am a full-stack developer who loves building robots and creative programming.
           <br/>
-          <Link to="/about">More about me. </Link>
+          <Link to="/about#contact-form">Want to talk?</Link>
           <br/>
-          {/*<span className={ContentStyles.scrollIndicator}>*/}
-          {/*  <RiMouseLine classname={ContentStyles.icon}/> scroll*/}
-          {/*</span>*/}
         </h2>
       </Content>
     </Grid>
@@ -79,41 +76,40 @@ export default ({ data }) => (
       <Content className={ContentStyles.workContent}>
         <WorkSnippet
           title="Yar Pirate Ipsum"
-          body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
-          image={data.birdTest.childImageSharp.fluid}
+          subtitle={"CRUD application that crowd-sources affordable attractions around town."}
+          body="CRUD application that crowd-sources affordable attractions around town. How about some more description text here? This seems to affect the size of the box by quite a bit? Let's see her now ... did it grow bugger? It might have. This is a vey annoying development."
+          image={data.phoneTest.childImageSharp.fluid}
           link="https://google.com"
           delay={0}
-        />
-        <WorkSnippet
-          title="Tired of Lorem Ipsum?"
-          body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
-          image={data.wireframeTest.childImageSharp.fluid}
-          link="https://google.com"
-          delay={100}
+          superSnippet
         />
         <WorkSnippet
           title="Cheese Ipsum"
+          subtitle={"yar ye mates"}
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
-          delay={200}
+          delay={150}
         />
         <WorkSnippet
           title="Yar Pirate Ipsum"
+          subtitle={"yar ye mates"}
           body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
-          image={data.birdTest.childImageSharp.fluid}
+          image={data.wireframeTest.childImageSharp.fluid}
           link="https://google.com"
           delay={0}
         />
         <WorkSnippet
           title="Tired of Lorem Ipsum?"
+          subtitle={"yar ye mates"}
           body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
-          image={data.wireframeTest.childImageSharp.fluid}
+          image={data.phoneTest.childImageSharp.fluid}
           link="https://google.com"
           delay={100}
         />
         <WorkSnippet
           title="Cheese Ipsum"
+          subtitle={"yar ye mates"}
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
@@ -142,8 +138,13 @@ export const query = graphql`
         description
       }
     }
-
-    birdTest: file(relativePath: { eq: "images/bird-test.jpeg" }) {
+   
+    
+    appleTest: file(relativePath: { eq: "images/apple-notebook.jpg" }) {
+      ...fluidImage
+    }
+    
+    phoneTest: file(relativePath: { eq: "images/smartphone-with-application.jpg" }) {
       ...fluidImage
     }
 

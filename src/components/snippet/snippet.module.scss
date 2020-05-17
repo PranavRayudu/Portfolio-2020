@@ -1,7 +1,33 @@
 @import "../../styles/variables";
+@import "../../styles/global";
+
 
 .snippet {
 
+}
+
+.super-snippet {
+  grid-column: span 3;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+
+  grid-gap: $std-grid-spacing $large-grid-spacing;
+
+  @include respond-to(lg) {
+    grid-column: span 2;
+  }
+
+  @include respond-to(md) {
+    grid-column: span 1;
+  }
+
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .title {
@@ -18,7 +44,74 @@
   color: $primary-grey;
 }
 
-.img {
+.img, .dialog-img {
   border-radius: $std-grid-spacing;
+}
+
+.img {
   box-shadow: $small-shadow;
+}
+
+.dialog-img {
+  max-width: 400px;
+  margin: auto;
+}
+
+.dialog {
+  color: $primary-grey;
+  background: $dark-grey !important;
+
+  width: auto !important;
+  max-width: 600px;
+  margin: $large-grid-spacing auto !important;
+  padding: $large-grid-spacing !important;
+
+  border-radius: $std-grid-spacing;
+  box-shadow: 0 0 $medium-grid-spacing black;
+
+  @include respond-to(md) {
+    margin: $large-grid-spacing $std-grid-spacing !important;
+    padding: $std-grid-spacing !important;
+  }
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  @extend .clickable;
+  margin: $std-line-thickness $std-grid-spacing $std-line-thickness 0;
+  padding: $std-line-thickness $std-line-thickness $std-line-thickness 0;
+}
+
+.link {
+  display: inline-block;
+  margin: $std-line-thickness $std-line-thickness $std-line-thickness 0;
+  padding: $std-line-thickness $std-line-thickness $std-line-thickness 0;
+}
+
+.icon-button {
+
+  border: none; /* Remove borders */
+  cursor: pointer; /* Mouse pointer on hover */
+
+  vertical-align: middle;
+  background: none;
+  padding: $std-line-thickness;
+
+  @include action-icon;
+}
+
+.hide-sm {
+  @include respond-to(sm) {
+    display: none;
+  }
+}
+
+.show-sm {
+  display: none;
+  @include respond-to(sm) {
+    display: block;
+  }
 }

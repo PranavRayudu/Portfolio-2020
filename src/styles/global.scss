@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700$display=fallback");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700$display=swap");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap");
 @import "variables";
 
@@ -13,6 +13,9 @@ body {
   font-size: 20px;
   //z-index: -10;
   position: relative;
+
+  background-color: rgba(black, 0);
+
   &:after {
     top: 0;
     bottom: 0;
@@ -66,21 +69,26 @@ em {
   margin: $std-grid-spacing;
 }
 
-h1 {
+h1, h3 {
   font-family: "Libre Baskerville", serif;
 }
 
-a:not(.plain-link) {
+.clickable {
   color: $primary-red;
   text-decoration: none;
+  white-space: nowrap;
 
   text-shadow:  0 0 7px rgba($primary-red, 0.3);
   transition: 0.1s all ease-in;
   &:hover {
     color: lighten($primary-red, 7%);
     text-shadow: 0 0 15px rgba($primary-red, 0.5),
-                 0 5px 5px $md-black;
+    0 5px 5px $md-black;
   }
+}
+
+a:not(.plain-link) {
+  @extend .clickable;
 }
 
 .icon {

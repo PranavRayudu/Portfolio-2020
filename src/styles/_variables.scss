@@ -32,10 +32,10 @@ $light-orange: $md-orange-300;
 $primary-orange: $md-orange-500;
 $strong-orange: $md-deep-orange-400;
 
-$light-grey: $md-blue-grey-200;
+$light-grey: $md-grey-500;
 $primary-grey: $md-grey-500;
-$dark-grey: lighten($md-grey-900, 1%);
-$darker-grey: $md-grey-900;
+$dark-grey: $md-grey-900;
+$darker-grey: darken($md-grey-900, 2%);
 
 /** Shadow settings **/
 $large-shadow: 20px 20px 40px #0f0f0f,
@@ -48,6 +48,20 @@ inset -8px -8px 20px #333333;
 @mixin glow($color, $size: 30px, $alpha: 1) {
   box-shadow: 0 0 $size rgba($color, $alpha),
   0 5px 5px $md-black;
+}
+
+@mixin action-icon() {
+  font-size: $medium-grid-spacing;
+  color: $primary-red;
+
+  filter: drop-shadow(0 0 15px rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
+
+  transition: 0.1s all ease-in;
+
+  &:hover {
+    color: lighten($primary-red, 10%);
+    filter: drop-shadow(0 0 15px $primary-red) drop-shadow(0 10px 5px $md-black);
+  }
 }
 
 @mixin respond-to($breakpoint) {

@@ -45,13 +45,12 @@
 .landing-sidebar,
 .info-sidebar {
   background: $dark-grey;
-  color: $primary-grey;
+  color: $light-grey;
 
   text-align: right;
   line-height: $medium-grid-spacing;
   justify-items: right;
 
-  z-index: auto;
   position: relative;
 
   &:after {
@@ -80,17 +79,7 @@
   }
 
   .io {
-    font-size: $medium-grid-spacing;
-    color: $primary-red;
-
-    filter: drop-shadow(0 0 15px rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
-
-    transition: 0.1s all ease-in;
-
-    &:hover {
-      color: lighten($primary-red, 10%);
-      filter: drop-shadow(0 0 15px $primary-red) drop-shadow(0 10px 5px $md-black);
-    }
+    @include action-icon();
   }
 
   .icon, .highlight-icon {
@@ -105,7 +94,6 @@
 
   .highlight-icon {
     color: $primary-yellow;
-
     filter: drop-shadow(0 0 5px rgba($primary-yellow, 0.5)) drop-shadow(0 5px 5px $md-black);
   }
 

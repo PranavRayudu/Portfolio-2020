@@ -1,8 +1,8 @@
 @import "variables";
 
 .title {
-  font-size: 3.3em;
-  margin-top: 0;
+  font-size: 3em;
+  margin: 0;
   font-style: italic;
   color: white;
 
@@ -14,7 +14,7 @@
 $description_size: 600px;
 
 .description {
-  line-height: 50px;
+  line-height: $medium-grid-spacing;
   font-weight: normal;
 
   color: $primary-grey;
@@ -57,7 +57,7 @@ $description_size: 600px;
 .work-content {
   display: grid;
 
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-auto-rows: auto;
 
