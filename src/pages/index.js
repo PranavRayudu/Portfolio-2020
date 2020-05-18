@@ -89,7 +89,7 @@ export default ({ data }) => (
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
-          delay={150}
+          delay={0}
         />
         <WorkSnippet
           title="Paragon"
@@ -105,7 +105,7 @@ export default ({ data }) => (
           body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
           image={data.phoneTest.childImageSharp.fluid}
           link="https://google.com"
-          delay={100}
+          delay={0}
         />
         <WorkSnippet
           title="Neural Net for MNIST dataset"
@@ -113,7 +113,7 @@ export default ({ data }) => (
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           // image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
-          delay={200}
+          delay={0}
         />
       </Content>
     </ReverseGrid>
