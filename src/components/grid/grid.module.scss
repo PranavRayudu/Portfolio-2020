@@ -50,6 +50,6 @@
   grid-area: content;
 
   @include respond-to(md) {
-    padding: $std-grid-spacing;
+    padding: $space-small;
   }
 }

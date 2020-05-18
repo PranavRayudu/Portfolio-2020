@@ -75,43 +75,43 @@ export default ({ data }) => (
 
       <Content className={ContentStyles.workContent}>
         <WorkSnippet
-          title="Yar Pirate Ipsum"
-          subtitle={"CRUD application that crowd-sources affordable attractions around town."}
-          body="CRUD application that crowd-sources affordable attractions around town. How about some more description text here? This seems to affect the size of the box by quite a bit? Let's see her now ... did it grow bugger? It might have. This is a vey annoying development."
+          title="Picture This"
+          subtitle={"CRUD app that crowd-sources affordable attractions around town. Uses a React Native and Flask + MongoDB stack."}
+          body="CRUD application that crowd-sources affordable attractions around town. How about some more description text here? This seems to affect the size of the box by quite a bit? Let's see her now ... did it grow bigger? It might have. This is a vey annoying development."
           image={data.phoneTest.childImageSharp.fluid}
           link="https://google.com"
           delay={0}
           superSnippet
         />
         <WorkSnippet
-          title="Cheese Ipsum"
-          subtitle={"yar ye mates"}
+          title="Kinetic Keys"
+          subtitle={"Pose Detection game implemented in React and Tensorflow.js"}
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
           delay={150}
         />
         <WorkSnippet
-          title="Yar Pirate Ipsum"
-          subtitle={"yar ye mates"}
+          title="Paragon"
+          subtitle={"Slackbot that monitors channels for aggressive behaviour using Natural Language Processing; Uses React.js and Node + MongoDB stack."}
           body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
           image={data.wireframeTest.childImageSharp.fluid}
           link="https://google.com"
           delay={0}
         />
         <WorkSnippet
-          title="Tired of Lorem Ipsum?"
-          subtitle={"yar ye mates"}
+          title="Hurricane Hero"
+          subtitle={"Hurricane damage detector and reported implemented using React.js and Flask + CNN classifier running on Azure Cloud"}
           body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
           image={data.phoneTest.childImageSharp.fluid}
           link="https://google.com"
           delay={100}
         />
         <WorkSnippet
-          title="Cheese Ipsum"
-          subtitle={"yar ye mates"}
+          title="Neural Net for MNIST dataset"
+          subtitle={"Self-contained multilayer perceptron written in C++"}
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
-          image={data.computerTest.childImageSharp.fluid}
+          // image={data.computerTest.childImageSharp.fluid}
           link="https://google.com"
           delay={200}
         />

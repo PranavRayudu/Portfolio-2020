@@ -14,7 +14,7 @@
 $description_size: 600px;
 
 .description {
-  line-height: $medium-grid-spacing;
+  line-height: $space-medium;
   font-weight: normal;
 
   color: $primary-grey;
@@ -27,19 +27,27 @@ $description_size: 600px;
 }
 
 .main-content, .about-content {
-  padding: $large-grid-spacing $large-grid-spacing $std-grid-spacing;
+  padding: $space-large $space-large $space-small;
 
-  @include respond-to(sm) {
-    padding: $large-grid-spacing $std-grid-spacing $std-grid-spacing;
+  @include respond-to(lg) {
+    padding: $space-large $space-medium $space-small;
+  }
+
+    @include respond-to(sm) {
+    padding: $space-large $space-small $space-small;
   }
 }
 
 .work-content,
 .about-form-content {
-  padding: $large-grid-spacing;
+  padding: $space-large;
+
+  @include respond-to(lg) {
+    padding: $space-medium;
+  }
 
   @include respond-to(sm) {
-    padding: $std-grid-spacing $std-grid-spacing $large-grid-spacing $std-grid-spacing;
+    padding: $space-small $space-small $space-large $space-small;
   }
 }
 
@@ -61,7 +69,7 @@ $description_size: 600px;
   grid-template-rows: auto;
   grid-auto-rows: auto;
 
-  grid-gap: $large-grid-spacing $large-grid-spacing;
+  grid-gap: $space-large $space-medium;
 
   grid-auto-flow: row;
 
@@ -91,11 +99,11 @@ $description_size: 600px;
     input, button,
     textarea {
       flex: 1;
-      padding: $std-grid-spacing;
-      margin-bottom: $std-grid-spacing;
+      padding: $space-small;
+      margin-bottom: $space-small;
 
       display: block;
-      min-width: $large-grid-spacing;
+      min-width: $space-large;
       max-width: $description_size;
 
       -webkit-appearance: none;
@@ -103,7 +111,7 @@ $description_size: 600px;
       background: $dark-grey;
       caret-color: $light-grey;
       box-shadow: $small-shadow;
-      border-radius: $std-grid-spacing;
+      border-radius: $space-small;
       border: none;
 
       @include respond-to(md) {
@@ -141,4 +149,24 @@ $description_size: 600px;
 .icon {
   vertical-align: middle;
   padding-bottom: 3px;
+}
+
+.icon-list {
+  max-width: $description_size;
+  font-size: $space-medium;
+  color: $primary-yellow;
+  filter: drop-shadow(0 0 5px rgba($primary-yellow, 0.3)) drop-shadow(0 5px 5px $md-black);
+
+  display: flex;
+  justify-content: space-evenly;
+
+  div {
+    width: $space-medium;
+
+    .icon {
+      display: block;
+      vertical-align: middle;
+      padding-bottom: 3px;
+    }
+  }
 }

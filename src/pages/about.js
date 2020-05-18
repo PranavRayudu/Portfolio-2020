@@ -10,6 +10,8 @@ import LandingSidebar from "../components/common/LandingSidebarContent"
 import { MdSend } from "react-icons/md"
 import { Helmet } from "react-helmet"
 
+import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
+
 export default ({ data }) => (
   <div>
     <Helmet>
@@ -44,6 +46,12 @@ export default ({ data }) => (
           meat of any project and loves working on creative ideas like
           procedural terrain generation, particle effects, AI, and hardware like
           Arduino.
+        </p>
+
+        <p className={ContentStyles.iconList}>
+          <div><FaPaintBrush className={ContentStyles.icon}/></div>
+          <div><FaBiking className={ContentStyles.icon}/></div>
+          <div><FaMicrochip className={ContentStyles.icon}/></div>
         </p>
       </Content>
     </Grid>

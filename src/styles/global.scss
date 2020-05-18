@@ -52,21 +52,21 @@ em {
 }
 
 .vertical-std-padded {
-  padding-top: $std-grid-spacing;
-  padding-bottom: $std-grid-spacing;
+  padding-top: $space-small;
+  padding-bottom: $space-small;
 }
 
 .bottom-std-padded {
-  padding-bottom: $std-grid-spacing;
+  padding-bottom: $space-small;
 }
 
 .horizontal-std-padded {
-  padding-left: $std-grid-spacing;
-  padding-right: $std-grid-spacing;
+  padding-left: $space-small;
+  padding-right: $space-small;
 }
 
 .std-margin {
-  margin: $std-grid-spacing;
+  margin: $space-small;
 }
 
 h1, h3 {

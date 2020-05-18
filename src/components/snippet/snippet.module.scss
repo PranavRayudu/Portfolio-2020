@@ -15,13 +15,14 @@
   grid-template-rows: auto;
   grid-auto-rows: auto;
 
-  grid-gap: $std-grid-spacing $large-grid-spacing;
+  grid-gap: $space-small $space-medium;
 
   @include respond-to(lg) {
     grid-column: span 2;
   }
 
   @include respond-to(md) {
+    //grid-gap: $std-grid-spacing;
     grid-column: span 1;
   }
 
@@ -31,12 +32,11 @@
 }
 
 .title {
-  margin-bottom: 0;
+  margin: 0;
   color: white;
 }
 
 .subtitle {
-  margin-top: 0;
   color: $primary-grey;
 }
 
@@ -45,10 +45,11 @@
 }
 
 .img, .dialog-img {
-  border-radius: $std-grid-spacing;
+  border-radius: $space-small;
 }
 
 .img {
+  margin-bottom: 1em;
   box-shadow: $small-shadow;
 }
 
@@ -63,16 +64,23 @@
 
   width: auto !important;
   max-width: 600px;
-  margin: $large-grid-spacing auto !important;
-  padding: $large-grid-spacing !important;
+  margin: $space-large auto !important;
+  padding: $space-large !important;
 
-  border-radius: $std-grid-spacing;
-  box-shadow: 0 0 $medium-grid-spacing black;
+  border-radius: $space-small;
+  box-shadow: 0 0 $space-medium black;
+
+  @include respond-to(lg) {
+    padding: $space-medium !important;
+  }
 
   @include respond-to(md) {
     max-width: 999999px;
-    margin: $large-grid-spacing $std-grid-spacing !important;
-    padding: $std-grid-spacing !important;
+    margin: $space-large $space-small !important;
+  }
+
+  @include respond-to(sm) {
+    padding: $space-small !important;
   }
 }
 
@@ -82,7 +90,7 @@
   cursor: pointer;
 
   @extend .clickable;
-  margin: $std-line-thickness $std-grid-spacing $std-line-thickness 0;
+  margin: $std-line-thickness $space-small $std-line-thickness 0;
   padding: $std-line-thickness $std-line-thickness $std-line-thickness 0;
 }
 

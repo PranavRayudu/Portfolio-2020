@@ -1,43 +1,51 @@
 @import "variables";
 
 .landing-sidebar {
-  padding: $large-grid-spacing $large-grid-spacing $std-grid-spacing $std-grid-spacing;
-  margin: $std-grid-spacing 0 0 $std-grid-spacing;
+  padding: $space-large $space-large $space-small $space-small;
+  margin: $space-small 0 0 $space-small;
+
+  @include respond-to(lg) {
+    padding: $space-medium $space-medium $space-small $space-small;
+  }
 
   @include respond-to(md) {
-    padding: $large-grid-spacing $large-grid-spacing $std-grid-spacing;
-    margin: $std-grid-spacing $large-grid-spacing 0;
+    padding: $space-large $space-large $space-small;
+    margin: $space-small $space-large 0;
   }
 
   @include respond-to(sm) {
-    padding: $large-grid-spacing $std-grid-spacing $std-grid-spacing;
-    margin: $std-grid-spacing $std-grid-spacing 0;
+    padding: $space-large $space-small $space-small;
+    margin: $space-small $space-small 0;
   }
 
-  border-radius: $medium-grid-spacing $medium-grid-spacing 0 0;
+  border-radius: $space-medium $space-medium 0 0;
 
   &:after {
-    border-radius: $medium-grid-spacing $medium-grid-spacing 0 0;
+    border-radius: $space-medium $space-medium 0 0;
   }
 }
 
 .info-sidebar {
-  padding: 0 $large-grid-spacing $large-grid-spacing $large-grid-spacing;
-  margin: 0 0 $large-grid-spacing $std-grid-spacing;
+  padding: 0 $space-large $space-large $space-large;
+  margin: 0 0 $space-large $space-small;
+
+  @include respond-to(lg) {
+    padding: 0 $space-medium $space-medium $space-medium;
+  }
 
   @include respond-to(md) {
-    margin: 0 $large-grid-spacing $std-grid-spacing;
+    margin: 0 $space-large $space-small;
   }
 
   @include respond-to(sm) {
-    padding: 0 $std-grid-spacing $large-grid-spacing;
-    margin: 0 $std-grid-spacing $std-grid-spacing;
+    padding: 0 $space-small $space-large;
+    margin: 0 $space-small $space-small;
   }
 
-  border-radius: 0 0 $medium-grid-spacing $medium-grid-spacing;
+  border-radius: 0 0 $space-medium $space-medium;
 
   &:after {
-    border-radius: 0 0 $medium-grid-spacing $medium-grid-spacing;
+    border-radius: 0 0 $space-medium $space-medium;
     //border-radius: $large-grid-spacing;
   }
 }
@@ -48,7 +56,7 @@
   color: $light-grey;
 
   text-align: right;
-  line-height: $medium-grid-spacing;
+  line-height: $space-medium;
   justify-items: right;
 
   position: relative;
@@ -75,7 +83,7 @@
   }
 
   .sidebar-description {
-    line-height: $std-grid-spacing * 1.5;
+    line-height: $space-small * 1.5;
   }
 
   .io {
@@ -85,7 +93,7 @@
   .icon, .highlight-icon {
     vertical-align: middle;
     padding-bottom: 3px;
-    font-size: $std-grid-spacing;
+    font-size: $space-small;
 
     @include respond-to(md) {
       display: none;
@@ -98,7 +106,7 @@
   }
 
   .github-left-margin {
-    margin-left: $std-grid-spacing;
+    margin-left: $space-small;
   }
 }
 
@@ -110,7 +118,7 @@
     .logo {
       width: 100px;
       float: right;
-      margin: $std-grid-spacing 0;
+      margin: $space-small 0;
       border-radius: 50%;
       transition: 0.2s box-shadow linear;
       @include glow($primary-yellow, 30px, 0.4);
@@ -121,7 +129,7 @@
 
       @include respond-to(md) {
         float: none;
-        margin: 0 auto $std-grid-spacing;
+        margin: 0 auto $space-small;
       }
     }
   }
@@ -133,7 +141,7 @@
   .sticky-title {
     place-self: start end;
     position: sticky;
-    top: $large-grid-spacing;
+    top: $space-large;
 
     @include respond-to(md) {
       place-self: start center;
@@ -148,7 +156,7 @@
     place-self: start stretch;
     height: $std-line-thickness;
     background: $primary-yellow;
-    margin-bottom: $std-grid-spacing;
+    margin-bottom: $space-small;
     border-radius: $std-line-thickness;
   }
 }
@@ -160,7 +168,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     line-height: normal;
-    margin: $std-line-thickness * 2 0;
+    //margin: $std-line-thickness * 2 0;
 
     @include respond-to(md) {
       justify-content: center;
@@ -171,7 +179,7 @@
       vertical-align: middle;
       padding: $std-line-thickness $std-line-thickness * 4;
       margin: $std-line-thickness;
-      border-radius: $std-grid-spacing;
+      border-radius: $space-small;
       color: $dark-grey;
       font-weight: bold;
     }

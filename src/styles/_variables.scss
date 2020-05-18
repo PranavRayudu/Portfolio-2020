@@ -10,7 +10,7 @@ $grid-breakpoints: (
                 max-width: 900px,
         ),
         lg: (
-                max-width: 1300px,
+                max-width: 1250px,
         ),
         larger-than-md: (
                 min-width: 900px,
@@ -18,9 +18,9 @@ $grid-breakpoints: (
 );
 
 /** regular spacings **/
-$std-grid-spacing: 20px;
-$medium-grid-spacing: 40px;
-$large-grid-spacing: 70px;
+$space-small: 20px;
+$space-medium: 40px;
+$space-large: 70px;
 
 $std-line-thickness: 3px;
 
@@ -34,14 +34,14 @@ $strong-orange: $md-deep-orange-400;
 
 $light-grey: $md-grey-500;
 $primary-grey: $md-grey-500;
-$dark-grey: $md-grey-900;
+$dark-grey: lighten($md-grey-900, 1%);
 $darker-grey: darken($md-grey-900, 2%);
 
 /** Shadow settings **/
 $large-shadow: 20px 20px 40px #0f0f0f,
 -20px -20px 40px #333333;
-$small-shadow: 6px 6px 10px #0d0d0d,
--6px -6px 10px #353535;
+$small-shadow: 6px 6px 10px #141414,
+-6px -6px 10px #2e2e2e;
 $inset-small-shadow: inset 8px 8px 20px #0f0f0f,
 inset -8px -8px 20px #333333;
 
@@ -50,8 +50,10 @@ inset -8px -8px 20px #333333;
   0 5px 5px $md-black;
 }
 
+// todo move text-shadow effect here as well?
+
 @mixin action-icon() {
-  font-size: $medium-grid-spacing;
+  font-size: $space-medium;
   color: $primary-red;
 
   filter: drop-shadow(0 0 15px rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
