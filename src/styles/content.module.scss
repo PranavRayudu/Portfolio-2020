@@ -106,14 +106,14 @@ $description_size: 600px;
       caret-color: $light-grey;
       border-radius: $space-small;
 
-      @include raised-surface;
-
       @include respond-to(md) {
         max-width: 100%;
       }
     }
 
     input, textarea {
+
+      @include raised-surface;
       &:focus {
         outline: none;
         box-shadow: $inset-small-shadow;
@@ -129,6 +129,7 @@ $description_size: 600px;
       background: $primary-red;
       color: $dark-grey;
       font-weight: bold;
+      border: none;
       @include glow($primary-red, 20px, 0.5);
       transition: 0.1s all ease-in;
 
