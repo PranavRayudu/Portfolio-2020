@@ -2,8 +2,50 @@
 @import "../../styles/global";
 
 
+$variant: 3;
+
+.snippet, .super-snippet {
+
+  @if ($variant == 1) {
+
+  }
+  @if ($variant == 2) {
+    border: 1px solid $md-grey-800;
+  }
+  @if ($variant == 3) {
+    //box-shadow: 1px 3px 3px black,
+    //inset 0.5px 1px 1px rgba(white, 0.15);
+    //box-shadow: $small-shadow;
+    @include raised-surface;
+  }
+
+  border-radius: $space-small;
+  padding: $space-small;
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .body {
+      flex: 1;
+    }
+
+    .footer {
+
+    }
+  }
+}
+
 .snippet {
 
+  display: flex;
+  flex-direction: column;
+
+  .img {
+    flex: 1;
+  }
 }
 
 .super-snippet {
@@ -32,7 +74,7 @@
 }
 
 .title {
-  margin: 0;
+  //margin: 0;
   color: white;
 }
 
@@ -49,8 +91,7 @@
 }
 
 .img {
-  margin-bottom: 1em;
-  box-shadow: $small-shadow;
+
 }
 
 .dialog-img {

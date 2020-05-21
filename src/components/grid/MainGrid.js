@@ -1,24 +1,23 @@
 import React from "react"
 import masterGridStyles from "./grid.module.scss"
 
-class Grid extends React.Component {
-  render() {
-    return (
-      <main className={masterGridStyles.gridStraight}>
-        {this.props.children}
-      </main>
-    )
-  }
+function Grid(props) {
+
+  return (
+    <main className={[masterGridStyles.gridStraight, props.class].join(" ")}>
+      {props.children}
+    </main>
+  )
 }
 
-class ReverseGrid extends React.Component {
-  render() {
-    return (
-      <main className={masterGridStyles.gridReverse}>
-        {this.props.children}
-      </main>
-    )
-  }
+function ReverseGrid(props) {
+
+  return (
+    <main className={[masterGridStyles.gridReverse, props.className].join(" ")}>
+      {props.children}
+    </main>
+  )
+
 }
 
 export { Grid, ReverseGrid }

@@ -33,21 +33,21 @@ $description_size: 600px;
     padding: $space-large $space-medium $space-small;
   }
 
-    @include respond-to(sm) {
+  @include respond-to(sm) {
     padding: $space-large $space-small $space-small;
   }
 }
 
 .work-content,
 .about-form-content {
-  padding: $space-large;
+  padding: 0 $space-large;
 
   @include respond-to(lg) {
-    padding: $space-medium;
+    padding: 0 $space-medium;
   }
 
   @include respond-to(sm) {
-    padding: $space-small $space-small $space-large $space-small;
+    padding: 0 $space-small;
   }
 }
 
@@ -69,24 +69,19 @@ $description_size: 600px;
   grid-template-rows: auto;
   grid-auto-rows: auto;
 
-  grid-gap: $space-large $space-medium;
+  grid-gap: $space-medium $space-small;
 
   grid-auto-flow: row;
 
   @include respond-to(lg) {
     grid-template-columns: 1fr 1fr;
+    //grid-gap: $space-large $space-small;
   }
 
   @include respond-to(md) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-items: stretch;
-  }
-}
-
-.about-form-content, .work-content {
-  @include respond-to(larger-than-md) {
-    padding-top: 0;
   }
 }
 
@@ -108,11 +103,10 @@ $description_size: 600px;
 
       -webkit-appearance: none;
       color: $light-grey;
-      background: $dark-grey;
       caret-color: $light-grey;
-      box-shadow: $small-shadow;
       border-radius: $space-small;
-      border: none;
+
+      @include raised-surface;
 
       @include respond-to(md) {
         max-width: 100%;
@@ -168,5 +162,12 @@ $description_size: 600px;
       vertical-align: middle;
       padding-bottom: 3px;
     }
+  }
+}
+
+.content-container {
+  margin-bottom: $space-small;
+  @include respond-to(larger-than-md) {
+    margin-bottom: $space-medium;
   }
 }

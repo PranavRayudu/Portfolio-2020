@@ -21,28 +21,38 @@ function WorkSnippet(props) {
          data-sal={"slide-up"} data-sal-delay={props.delay}>
       {props.image && <Img fluid={props.image} className={SnippetStyles.img}/>}
 
-      <div>
-        <h3 className={SnippetStyles.title}>{props.title}</h3>
-        <p
-          className={[SnippetStyles.text, SnippetStyles.hideSm].join(" ")}>
-          {props.superSnippet ? props.body : props.subtitle}
-        </p>
-        <p className={[SnippetStyles.text, SnippetStyles.showSm].join(" ")}>{props.body}</p>
+      <div className={SnippetStyles.content}>
 
-        {!props.superSnippet && <button
-          type="button"
-          className={[SnippetStyles.button, SnippetStyles.hideSm].join(" ")}
-          onClick={() => setShowDialog(true)}>
-          More info
-        </button>
-        }
+        <div className={SnippetStyles.body}>
+          <h3 className={SnippetStyles.title}>{props.title}</h3>
 
-        <a href={props.link} target="_blank" rel="noopener noreferrer" className={SnippetStyles.link}>
-          Visit Site
-        </a>
+          {(props.body || props.subtitle) &&
+          <p className={[SnippetStyles.text, SnippetStyles.hideSm].join(" ")}>
+            {props.subtitle ? props.subtitle : props.body}
+          </p>}
+
+          <p className={[SnippetStyles.text, SnippetStyles.showSm].join(" ")}>
+            {props.body ? props.body : props.subtitle}
+          </p>
+
+        </div>
+
+        <div className={SnippetStyles.footer}>
+          {!props.superSnippet && props.body && <button
+            type="button"
+            className={[SnippetStyles.button, SnippetStyles.hideSm].join(" ")}
+            onClick={() => setShowDialog(true)}>
+            More info
+          </button>
+          }
+
+          <a href={props.link} target="_blank" rel="noopener noreferrer" className={SnippetStyles.link}>
+            {props.linkText ? props.linkText : "Visit Site"}
+          </a>
+        </div>
       </div>
 
-      {!props.superSnippet && transitions.map(
+      {!props.superSnippet && props.body && transitions.map(
         ({ item, props: styles }) =>
           item && (
             <AnimatedDialogOverlay style={{ opacity: styles.opacity }}>
