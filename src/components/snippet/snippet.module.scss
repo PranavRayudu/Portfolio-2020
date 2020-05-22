@@ -22,7 +22,7 @@ $img-variant: 2;
 
   border-radius: $space-small;
 
-  @if($img-variant == 1) {
+  @if ($img-variant == 1) {
     padding: $space-small;
   }
 
@@ -32,7 +32,7 @@ $img-variant: 2;
     flex-direction: column;
     justify-content: space-between;
 
-    @if($img-variant == 2) {
+    @if ($img-variant == 2) {
       padding: $space-small;
     }
 
@@ -51,14 +51,37 @@ $img-variant: 2;
   display: flex;
   flex-direction: column;
 
+  //@include respond-to(md-only) {
+  //  outline: 1px solid red;
+  //}
+
+  &.has-img {
+    @include respond-to(md-only) {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-auto-rows: auto;
+
+      grid-gap: $space-small;
+
+      grid-column: span 1;
+    }
+  }
+
   .img {
     flex: 1;
 
-    @if($img-variant == 1) {
+    @if ($img-variant == 1) {
       border-radius: $space-small;
     }
-    @if($img-variant == 2) {
+    @if ($img-variant == 2) {
       border-radius: $space-small $space-small 0 0;
+
+      @include respond-to(md-only) {
+        border-radius: $space-small 0 0 $space-small;
+      }
     }
   }
 }
@@ -79,7 +102,7 @@ $img-variant: 2;
   }
 
   @include respond-to(md) {
-    //grid-gap: $std-grid-spacing;
+    grid-gap: $space-small;
     grid-column: span 1;
   }
 
@@ -89,10 +112,10 @@ $img-variant: 2;
 
   .img {
 
-    @if($img-variant == 1) {
+    @if ($img-variant == 1) {
       border-radius: $space-small;
     }
-    @if($img-variant == 2) {
+    @if ($img-variant == 2) {
       border-radius: $space-small 0 0 $space-small;
 
       @include respond-to(sm) {

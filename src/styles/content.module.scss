@@ -95,7 +95,6 @@ $description_size: 600px;
     textarea {
       flex: 1;
       padding: $space-small;
-      margin-bottom: $space-small;
 
       display: block;
       min-width: $space-large;
@@ -112,7 +111,7 @@ $description_size: 600px;
     }
 
     input, textarea {
-
+      margin-bottom: $space-small;
       @include raised-surface;
       &:focus {
         outline: none;
@@ -147,13 +146,16 @@ $description_size: 600px;
 }
 
 .icon-list {
-  max-width: $description_size;
   font-size: $space-medium;
   color: $primary-yellow;
   filter: drop-shadow(0 0 5px rgba($primary-yellow, 0.3)) drop-shadow(0 5px 5px $md-black);
 
   display: flex;
   justify-content: space-evenly;
+
+  @include respond-to(larger-than-md) {
+    max-width: $description_size;
+  }
 
   div {
     width: $space-medium;

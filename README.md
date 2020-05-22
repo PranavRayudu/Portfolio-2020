@@ -1,11 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Taraka Pranav's Portfolio Site 2019
+  Taraka Pranav's Portfolio Site 2020
 </h1>
 
 Portfolio site showcasing Pranav's works and projects.
@@ -22,7 +17,7 @@ Portfolio site showcasing Pranav's works and projects.
 
     ```sh
     # create a new Gatsby site using the this portfolio's git
-    gatsby new my-portfolio https://github.com/FancyAlpha/Portfolio-2019
+    gatsby new my-portfolio https://github.com/PranavRayudu/Portfolio-2020
     ```
 
 1.  **Start developing.**
@@ -31,6 +26,7 @@ Portfolio site showcasing Pranav's works and projects.
 
     ```sh
     cd my-portfolio/
+    npm install  # install required packages
     gatsby develop
     ```
 
@@ -52,5 +48,5 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Check Status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/22db80d2-06bb-464e-8188-78509b0a0736/deploy-status)](https://app.netlify.com/sites/tarakapranav/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/22db80d2-06bb-464e-8188-78509b0a0736/deploy-status)](https://app.netlify.com/sites/pranavrayudu/deploys)
 <!-- AUTO-GENERATED-CONTENT:END -->

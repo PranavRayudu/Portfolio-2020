@@ -2,7 +2,7 @@
 
 .landing-sidebar {
   padding: $space-large $space-large $space-small $space-small;
-  margin: $space-small 0 0 $space-small;
+  margin: $space-medium 0 0 $space-small;
 
   @include respond-to(lg) {
     padding: $space-medium $space-medium $space-small $space-small;
@@ -34,7 +34,7 @@
   }
 
   @include respond-to(md) {
-    margin: 0 $space-medium $space-small;
+    margin: 0 $space-medium $space-medium;
   }
 
   @include respond-to(sm) {

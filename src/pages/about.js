@@ -56,7 +56,7 @@ export default ({ data }) => (
       </Content>
     </Grid>
 
-    <ReverseGrid>
+    <ReverseGrid className={ContentStyles.contentContainer}>
       <Sidebar className={SidebarStyles.infoSidebar}>
         <div className={SidebarStyles.divider}/>
 

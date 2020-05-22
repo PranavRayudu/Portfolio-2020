@@ -17,8 +17,15 @@ function WorkSnippet(props) {
   })
 
   return (
-    <div className={props.superSnippet ? SnippetStyles.superSnippet : SnippetStyles.snippet}
-         data-sal={"slide-up"} data-sal-delay={props.delay}>
+    <div className={[
+      props.superSnippet ? SnippetStyles.superSnippet : SnippetStyles.snippet,
+      props.image ? SnippetStyles.hasImg : "",
+    ].join(" ")}
+
+         data-sal={"slide-up"}
+         data-sal-delay={props.delay}>
+
+
       {props.image && <Img fluid={props.image} className={SnippetStyles.img}/>}
 
       <div className={SnippetStyles.content}>

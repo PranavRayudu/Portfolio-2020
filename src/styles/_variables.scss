@@ -4,17 +4,20 @@
 /** breakpoints **/
 $grid-breakpoints: (
         sm: (
-                max-width: 600px,
+                max-width: 600px
         ),
         md: (
-                max-width: 900px,
+                max-width: 900px
         ),
         lg: (
-                max-width: 1300px,
+                max-width: 1300px
         ),
         larger-than-md: (
-                min-width: 900px,
+                min-width: 900px
         ),
+        'md-only': (
+                '(min-width: 600px) and (max-width: 900px)'
+        )
 );
 
 /** regular spacings **/
@@ -48,26 +51,21 @@ $darker-grey: #121212;
 //               0 0 8px rgba(black, 1);
 
 
-$large-shadow:
-                //0 0 1px rgba(white, 0.5),
-               4px 4px 16px rgba(black, 1),
-               //2px 2px 1px rgba(black, 1),
-              -4px -4px 16px rgba(white, 0.18),
-              //-2px -2px 1px rgba(white, 0.05),
+$large-shadow: //0 0 1px rgba(white, 0.5),
+        4px 4px 16px rgba(black, 1),
+          //2px 2px 1px rgba(black, 1),
+        -4px -4px 16px rgba(white, 0.18),//-2px -2px 1px rgba(white, 0.05),
 ;
 
-$small-shadow:
-                4px 4px 6px rgba(black, 1),
-              -4px -4px 6px rgba(white, 0.07),
-
-               1px 1px 2px rgba(black, 1),
-              //-2px -2px 1px rgba(white, 0.08),
-              //inset 2px 2px 10px rgba(white, 0.1),
-              //  0 0 10px rgba(black, 1)
+$small-shadow: 4px 4px 6px rgba(black, 1),
+-4px -4px 6px rgba(white, 0.07),
+1px 1px 2px rgba(black, 1),//-2px -2px 1px rgba(white, 0.08),
+//inset 2px 2px 10px rgba(white, 0.1),
+//  0 0 10px rgba(black, 1)
 ;
 
 $inset-small-shadow: inset 4px 4px 15px rgba(black, 1),
-                     inset -4px -4px 15px rgba(white, 0.2);
+inset -4px -4px 15px rgba(white, 0.2);
 
 @mixin raised-surface() {
   border: 1px solid lighten($darker-grey, 7%);
@@ -87,7 +85,7 @@ $inset-small-shadow: inset 4px 4px 15px rgba(black, 1),
   font-size: $space-medium;
   color: $primary-red;
 
-  filter: drop-shadow(0 0 15px  rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
+  filter: drop-shadow(0 0 15px rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
 
   transition: 0.1s all ease-in;
 
