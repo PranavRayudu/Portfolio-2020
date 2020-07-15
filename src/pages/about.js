@@ -60,9 +60,9 @@ export default ({ data }) => (
         </div>
 
         <p className={ContentStyles.iconList}>
-          <div><FaPaintBrush className={ContentStyles.icon}/></div>
-          <div><FaBiking className={ContentStyles.icon}/></div>
-          <div><FaMicrochip className={ContentStyles.icon}/></div>
+          <span><FaPaintBrush className={ContentStyles.icon}/></span>
+          <span><FaBiking className={ContentStyles.icon}/></span>
+          <span><FaMicrochip className={ContentStyles.icon}/></span>
         </p>
       </Content>
     </Grid>

@@ -70,12 +70,12 @@ export default ({ data }) => (
 
           {/*<div className={SidebarStyles.divider}/>*/}
 
-          <p className={SidebarStyles.skills}>
+          <div className={SidebarStyles.skills}>
             <section className={SidebarStyles.skillsSection}>
               <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/> React.js</div>
               <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
               <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
-              <div className={SidebarStyles.chipStrong}><DiMongodb classname={SidebarStyles.icon}/> MongoDB</div>
+              <div className={SidebarStyles.chipStrong}><DiMongodb className={SidebarStyles.icon}/> MongoDB</div>
             </section>
 
             <section className={SidebarStyles.skillsSection}>
@@ -92,7 +92,7 @@ export default ({ data }) => (
               <div className={SidebarStyles.chipWeak}><FaRobot className={SidebarStyles.icon}/> Robotics</div>
               <div className={SidebarStyles.chipWeak}>Software Engineering</div>
             </section>
-          </p>
+          </div>
 
         </div>
       </Sidebar>

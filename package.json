@@ -42,7 +42,6 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.1.1",
     "tar": "^6.0.2"
   },
   "repository": {
