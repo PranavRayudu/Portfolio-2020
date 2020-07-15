@@ -20,11 +20,7 @@ function WorkSnippet(props) {
     <div className={[
       props.superSnippet ? SnippetStyles.superSnippet : SnippetStyles.snippet,
       props.image ? SnippetStyles.hasImg : "",
-    ].join(" ")}
-
-         data-sal={"slide-up"}
-         data-sal-delay={props.delay}>
-
+    ].join(" ")}>
 
       {props.image && <Img fluid={props.image} className={SnippetStyles.img}/>}
 
@@ -62,10 +58,12 @@ function WorkSnippet(props) {
       {!props.superSnippet && props.body && transitions.map(
         ({ item, props: styles }) =>
           item && (
-            <AnimatedDialogOverlay style={{ opacity: styles.opacity }}>
+            <AnimatedDialogOverlay
+              className={SnippetStyles.overlay}
+              onDismiss={() => setShowDialog(false)}
+              style={{ opacity: styles.opacity }}>
               <AnimatedDialogContent
                 isOpen={showDialog}
-                onDismiss={() => setShowDialog(false)}
                 className={SnippetStyles.dialog}
                 style={{
                   transform: styles.y.interpolate(value => `translate3d(0px, ${value}px, 0px)`),

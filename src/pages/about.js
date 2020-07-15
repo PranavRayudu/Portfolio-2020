@@ -23,30 +23,41 @@ export default ({ data }) => (
       <LandingSidebar link="/" linkText="Home"/>
       <Content className={ContentStyles.aboutContent}>
         <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
-        <p className={ContentStyles.description}>
-          Pranav is a freshman at the University of Texas at Austin passionately
-          pursuing his B.S in Computer Science. He has been practicing web
-          design and programming since high school and has programmed in Java,
-          C#, Python, PHP, and Javascript and used various front-end web
-          frameworks and tools such as{" "}
-          <a href="https://reactjs.org/">React.js</a>,{" "}
-          <a href="https://p5js.org/">p5.js</a>,{" "}
-          <a href="https://processing.org">Processing</a>,{" "}
-          <a href="https://unity.com/">Unity Engine</a>,{" "}
-          <a href="https://dotnet.microsoft.com/apps/desktop">
-            .NET WPF Desktop Apps
-          </a>
-          , and more. Pranav placed 1<sup>st</sup> in the State and 4
-          <sup>th</sup> at Nationals for <a href="https://bpa.org/nlc/">BPA</a>{" "}
-          C# programming event and led team 7121's robot to the{" "}
-          <a href="https://www.firstchampionship.org/houston">
-            First Robotics (FRC) World Championships
-          </a>{" "}
-          in 2019 as the lead programmer. He also prefers diving right into the
-          meat of any project and loves working on creative ideas like
-          procedural terrain generation, particle effects, AI, and hardware like
-          Arduino.
-        </p>
+        <div className={ContentStyles.description}>
+          <p>
+            Pranav is a freshman at the University of Texas at Austin passionately
+            pursuing his B.S in Computer Science. He has been practicing web
+            design and programming since high school and has programmed in Java,
+            C#, Python, PHP, and Javascript and used various front-end web
+            frameworks and tools such as{" "}
+            <a href="https://reactjs.org/">React.js</a>,{" "}
+            <a href="https://p5js.org/">p5.js</a>,{" "}
+            <a href="https://processing.org">Processing</a>,{" "}
+            <a href="https://unity.com/">Unity Engine</a>,{" "}
+            <a href="https://dotnet.microsoft.com/apps/desktop">
+              .NET WPF Desktop Apps
+            </a>
+            , and more.
+          </p>
+
+          <p>
+
+            Pranav placed 1<sup>st</sup> in the State and 4
+            <sup>th</sup> at Nationals for <a href="https://bpa.org/nlc/">BPA</a>{" "}
+            C# programming event and led team 7121's robot to the{" "}
+            <a href="https://www.firstchampionship.org/houston">
+              First Robotics (FRC) World Championships
+            </a>{" "}
+            in 2019 as the lead programmer.
+          </p>
+
+          <p>
+            He also prefers diving right into the
+            meat of any project and loves working on creative ideas like
+            procedural terrain generation, particle effects, AI, and hardware like
+            Arduino.
+          </p>
+        </div>
 
         <p className={ContentStyles.iconList}>
           <div><FaPaintBrush className={ContentStyles.icon}/></div>

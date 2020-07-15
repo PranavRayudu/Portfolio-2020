@@ -9,6 +9,9 @@ import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
 import WorkSnippet from "../components/snippet/WorkSnippet"
 
+import { TransitionLink, TransitionState } from "gatsby-plugin-transition-link";
+
+
 import {
   FaReact,
   FaFlask,
@@ -38,6 +41,15 @@ export default ({ data }) => (
         <h2 className={ContentStyles.description}>
           I'm a full-stack developer who loves building robots and creative programming.
           <br/>
+
+          {/*<TransitionLink*/}
+          {/*  to={"/about"}*/}
+          {/*  exit={{ length: 0.5 }}*/}
+          {/*  entry={{ delay: 0.5 }}*/}
+          {/*>*/}
+          {/*  Go to page 2*/}
+          {/*</TransitionLink>*/}
+
           <Link to="/about#contact-form">Let's talk.</Link>
           <br/>
         </h2>
@@ -161,12 +173,12 @@ export const query = graphql`
         description
       }
     }
-   
-    
+
+
     appleTest: file(relativePath: { eq: "images/apple-notebook.jpg" }) {
       ...fluidImage
     }
-    
+
     phoneTest: file(relativePath: { eq: "images/smartphone-with-application.jpg" }) {
       ...fluidImage
     }
