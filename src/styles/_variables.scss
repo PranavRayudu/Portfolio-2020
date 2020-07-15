@@ -68,8 +68,8 @@ $inset-small-shadow: inset 4px 4px 15px rgba(black, 1),
 inset -4px -4px 15px rgba(white, 0.2);
 
 @mixin raised-surface() {
-  border: 1px solid lighten($darker-grey, 7%);
-  background: lighten($darker-grey, 3%);
+  border: 1px solid lighten($darker-grey, 8%);
+  background: lighten($darker-grey, 4%);
 
   box-shadow: $small-shadow;
 }

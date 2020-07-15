@@ -1,11 +1,11 @@
 @import "variables";
 
 .landing-sidebar {
-  padding: $space-large $space-large $space-small $space-small;
+  padding: $space-large $space-large $space-large $space-small;
   margin: $space-medium 0 0 $space-small;
 
   @include respond-to(lg) {
-    padding: $space-medium $space-medium $space-small $space-small;
+    padding: $space-large $space-medium $space-small $space-small;
   }
 
   @include respond-to(md) {

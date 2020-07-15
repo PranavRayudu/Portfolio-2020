@@ -36,10 +36,7 @@
   grid-area: sidebar;
 
   box-sizing: border-box;
-  //max-width: 540px;
-
   display: grid;
-  place-items: center;
 
   @include respond-to(md) {
     max-width: 100%;

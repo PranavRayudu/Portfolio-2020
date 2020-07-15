@@ -7,7 +7,7 @@ $img-variant: 2;
 .snippet, .super-snippet {
 
   @if ($variant == 1) {
-
+    padding: $space-small;
   }
   @if ($variant == 2) {
     border: 1px solid $md-grey-800;
@@ -21,10 +21,6 @@ $img-variant: 2;
   }
 
   border-radius: $space-small;
-
-  @if ($img-variant == 1) {
-    padding: $space-small;
-  }
 
   .content {
     flex: 1;
@@ -147,7 +143,19 @@ $img-variant: 2;
   margin: auto;
 }
 
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
 .dialog {
+  //z-index: 100;
+  //position: absolute;
   color: $primary-grey;
   background: $dark-grey !important;
 
