@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { Helmet } from "react-helmet"
 import { Grid, ReverseGrid } from "../components/grid/MainGrid"
 import Sidebar from "../components/grid/MainGridSidebar"
 import Content from "../components/grid/MainGridContent"
@@ -8,9 +7,6 @@ import LandingSidebar from "../components/common/LandingSidebarContent"
 import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
 import WorkSnippet from "../components/snippet/WorkSnippet"
-
-import { TransitionLink, TransitionState } from "gatsby-plugin-transition-link";
-
 
 import {
   FaReact,
@@ -27,11 +23,6 @@ import { DiMongodb } from "react-icons/di"
 
 export default ({ data }) => (
   <div>
-    <Helmet>
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description}/>
-    </Helmet>
-
     <Grid>
       <LandingSidebar link="/about" linkText="About Me"/>
       <Content className={ContentStyles.mainContent}>
@@ -41,14 +32,6 @@ export default ({ data }) => (
         <h2 className={ContentStyles.description}>
           I'm a full-stack developer who loves building robots and creative programming.
           <br/>
-
-          {/*<TransitionLink*/}
-          {/*  to={"/about"}*/}
-          {/*  exit={{ length: 0.5 }}*/}
-          {/*  entry={{ delay: 0.5 }}*/}
-          {/*>*/}
-          {/*  Go to page 2*/}
-          {/*</TransitionLink>*/}
 
           <Link to="/about#contact-form">Let's talk.</Link>
           <br/>
@@ -105,7 +88,6 @@ export default ({ data }) => (
           image={data.phoneTest.childImageSharp.fluid}
           linkText="Visit Github"
           link="https://github.com/txconvergent/s20-community-culture"
-          delay={0}
           superSnippet
         />
         <WorkSnippet
@@ -114,7 +96,6 @@ export default ({ data }) => (
           body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           image={data.computerTest.childImageSharp.fluid}
           link="https://kinetickeys.netlify.com/"
-          delay={0}
         />
         <WorkSnippet
           title="Paragon"
@@ -123,7 +104,6 @@ export default ({ data }) => (
           image={data.wireframeTest.childImageSharp.fluid}
           linkText={"View Github"}
           link="https://github.com/PranavRayudu/Aggression-Chat-Reporter-LeapHacks2020"
-          delay={0}
         />
         <WorkSnippet
           title="Hurricane Hero"
@@ -132,7 +112,6 @@ export default ({ data }) => (
           linkText={"View Github"}
           image={data.phoneTest.childImageSharp.fluid}
           link="https://github.com/sahiljain11/HACKTX19"
-          delay={0}
         />
         <WorkSnippet
           title="Realtime Identity Tracking Research"
@@ -140,7 +119,6 @@ export default ({ data }) => (
           body="Developed and benchmarked software on top YOLOv3 and Deepsort to recognize and track people; written in Python"
           linkText={"Read Paper"}
           link="https://google.com"
-          delay={0}
         />
         <WorkSnippet
           title="Neural Net for MNIST dataset"
@@ -148,7 +126,6 @@ export default ({ data }) => (
           // body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
           linkText={"View Github"}
           link="https://github.com/PranavRayudu/FeedforwardNeuralNetwork"
-          delay={0}
         />
       </Content>
     </ReverseGrid>
@@ -167,14 +144,7 @@ export const fluidImage = graphql`
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-
-
+ 
     appleTest: file(relativePath: { eq: "images/apple-notebook.jpg" }) {
       ...fluidImage
     }

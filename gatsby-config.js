@@ -69,7 +69,7 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-layout`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,

@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { Grid, ReverseGrid } from "../components/grid/MainGrid"
 import Sidebar from "../components/grid/MainGridSidebar"
 import Content from "../components/grid/MainGridContent"
@@ -8,17 +7,11 @@ import ContentStyles from "../styles/content.module.scss"
 import LandingSidebar from "../components/common/LandingSidebarContent"
 
 import { MdSend } from "react-icons/md"
-import { Helmet } from "react-helmet"
 
 import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
 
-export default ({ data }) => (
+export default () => (
   <div>
-    <Helmet>
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description}/>
-    </Helmet>
-
     <Grid>
       <LandingSidebar link="/" linkText="Home"/>
       <Content className={ContentStyles.aboutContent}>
@@ -143,14 +136,3 @@ export default ({ data }) => (
     </ReverseGrid>
   </div>
 )
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-  }
-`
