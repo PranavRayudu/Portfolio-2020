@@ -1,36 +1,14 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 import Sidebar from "../grid/MainGridSidebar"
 import SidebarStyles from "../../styles/sidebar.module.scss"
 import { StaticQuery, graphql, Link } from "gatsby"
+import SpecialLogo from "./TiltLink"
 import GatsbyImage from "gatsby-image"
-import { useSpring, animated } from "react-spring"
 
 import { IoIosArrowBack, IoLogoGithub, IoLogoLinkedin, IoMdPin, IoMdMail } from "react-icons/io"
 import { FaUniversity } from "react-icons/fa"
 
-
-const sensitivity = 0.3
-
 export default function(props) {
-
-  let bounds = [250, 110, 100, 140]
-
-  const calc = (x, y) => {
-    console.log(bounds)
-    console.log(x - bounds[0] - (bounds[2] / 2),
-      y - bounds[1] - (bounds[3] / 2))
-    return [x - bounds[0] - (bounds[2] / 2),
-      y - bounds[1] - (bounds[3] / 2)]
-  }
-
-  const trans = (x, y) => `perspective(100px) rotateY(${x * sensitivity}deg) rotateX(${-y * sensitivity}deg) scale(1)`
-  // `translate3d(${x * sensitivity}px,${y * sensitivity}px,0)`
-  const [pos, set] = useSpring(() => ({
-    xy: [0, 0],
-    config: { mass: 10, tension: 550, friction: 140 },
-  }))
-
-  const AnimatedLink = animated(Link)
   return (
     <StaticQuery
       query={graphql`
@@ -64,29 +42,13 @@ export default function(props) {
       render={data => (
         <Sidebar className={SidebarStyles.landingSidebar}>
           <div>
-            <div>
-              <AnimatedLink
-                to="/"
-                className={SidebarStyles.logoLink}
-                aria-label={"Pranav Rayudu's Logo"}
-                ref={el => {
-                  if (!el) return
-                  console.log(el)
-                  let bound = el.getBoundingClientRect()
-                  bounds = [bound.x, bound.y, bound.width, bound.height]
-                  console.log(bounds)
-                }}
-                onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-                onMouseLeave={() => set({ xy: [0, 0] })}
-                style={{ transform: pos.xy.interpolate(trans) }}
-              >
-                <GatsbyImage
-                  fluid={data.logo.childImageSharp.fluid}
-                  className={SidebarStyles.logo}
-                  alt={"Pranav Rayudu's Logo"}
-                />
-              </AnimatedLink>
-            </div>
+            <SpecialLogo to={"/"}>
+              <GatsbyImage
+                fluid={data.logo.childImageSharp.fluid}
+                className={SidebarStyles.logo}
+                alt={"Pranav Rayudu's Logo"}
+              />
+            </SpecialLogo>
 
             <div>
               <div>CS @ UT Austin <FaUniversity className={SidebarStyles.highlightIcon}/></div>
@@ -106,8 +68,7 @@ export default function(props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={"plain-link"}
-                aria-label={"Linkedin link"}
-              >
+                aria-label={"Linkedin link"}>
                 <IoLogoLinkedin className={SidebarStyles.io}/>
               </a>
               <a
@@ -115,8 +76,7 @@ export default function(props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={["plain-link", SidebarStyles.githubLeftMargin].join(" ")}
-                aria-label={"Github link"}
-              >
+                aria-label={"Github link"}>
                 <IoLogoGithub className={SidebarStyles.io}/>
               </a>
             </div>

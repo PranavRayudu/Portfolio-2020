@@ -1,140 +1,140 @@
 import React from "react"
-import { Grid, ReverseGrid } from "../components/grid/MainGrid"
-import Sidebar from "../components/grid/MainGridSidebar"
+import Layout from "../components/common/Layout"
 import Content from "../components/grid/MainGridContent"
 import SidebarStyles from "../styles/sidebar.module.scss"
 import ContentStyles from "../styles/content.module.scss"
-import LandingSidebar from "../components/common/LandingSidebarContent"
 
 import { MdSend } from "react-icons/md"
-
 import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
 
-export default () => (
-  <div>
-    <Grid>
-      <LandingSidebar link="/" linkText="Go Home"/>
-      <Content className={`${ContentStyles.aboutContent} animate`}>
-        <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
-        <div className={ContentStyles.description}>
-          <p>
-            Pranav is a freshman at the University of Texas at Austin passionately
-            pursuing his B.S in Computer Science. He has been practicing web
-            design and programming since high school and has programmed in Java,
-            C#, Python, PHP, and Javascript and used various front-end web
-            frameworks and tools such as{" "}
-            <a href="https://reactjs.org/">React.js</a>,{" "}
-            <a href="https://p5js.org/">p5.js</a>,{" "}
-            <a href="https://processing.org">Processing</a>,{" "}
-            <a href="https://unity.com/">Unity Engine</a>,{" "}
-            <a href="https://dotnet.microsoft.com/apps/desktop">
-              .NET WPF Desktop Apps
-            </a>
-            , and more.
-          </p>
-
-          <p>
-
-            Pranav placed 1<sup>st</sup> in the State and 4
-            <sup>th</sup> at Nationals for <a href="https://bpa.org/nlc/">BPA</a>{" "}
-            C# programming event and led team 7121's robot to the{" "}
-            <a href="https://www.firstchampionship.org/houston">
-              First Robotics (FRC) World Championships
-            </a>{" "}
-            in 2019 as the lead programmer.
-          </p>
-
-          <p>
-            He also prefers diving right into the
-            meat of any project and loves working on creative ideas like
-            procedural terrain generation, particle effects, AI, and hardware like
-            Arduino.
-          </p>
-        </div>
-
-        <p className={ContentStyles.iconList}>
-          <span><FaPaintBrush className={ContentStyles.icon}/></span>
-          <span><FaBiking className={ContentStyles.icon}/></span>
-          <span><FaMicrochip className={ContentStyles.icon}/></span>
+function Hero() {
+  return (
+    <Content className={`${ContentStyles.aboutContent} animate`}>
+      <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
+      <div className={ContentStyles.description}>
+        <p>
+          Pranav is a freshman at the University of Texas at Austin passionately
+          pursuing his B.S in Computer Science. He has been practicing web
+          design and programming since high school and has programmed in Java,
+          C#, Python, PHP, and Javascript and used various front-end web
+          frameworks and tools such as{" "}
+          <a href="https://reactjs.org/">React.js</a>,{" "}
+          <a href="https://p5js.org/">p5.js</a>,{" "}
+          <a href="https://processing.org">Processing</a>,{" "}
+          <a href="https://unity.com/">Unity Engine</a>,{" "}
+          <a href="https://dotnet.microsoft.com/apps/desktop">
+            .NET WPF Desktop Apps
+          </a>
+          , and more.
         </p>
-      </Content>
-    </Grid>
 
-    <ReverseGrid className={ContentStyles.contentContainer}>
-      <Sidebar className={SidebarStyles.infoSidebar}>
-        <div className={"animate"}>
-          <div className={SidebarStyles.divider}/>
+        <p>
 
-          <div className={SidebarStyles.stickyTitle}>
-            <h2 className={SidebarStyles.title}>Let's Talk</h2>
-            <p className={SidebarStyles.sidebarDescription}>
-              I am open to commissions for small websites, internships over the
-              summer, or research projects. Shoot me a message and I'll get back
-              to you!
-            </p>
-          </div>
-        </div>
-      </Sidebar>
+          Pranav placed 1<sup>st</sup> in the State and 4
+          <sup>th</sup> at Nationals for <a href="https://bpa.org/nlc/">BPA</a>{" "}
+          C# programming event and led team 7121's robot to the{" "}
+          <a href="https://www.firstchampionship.org/houston">
+            First Robotics (FRC) World Championships
+          </a>{" "}
+          in 2019 as the lead programmer.
+        </p>
 
-      <Content className={`${ContentStyles.aboutFormContent} animate`}>
-        <form
-          action="/success"
-          method="POST"
-          encType="application/x-www-form-urlencoded"
-          className={ContentStyles.form}
-          id="contact-form"
-          name="Contact Form"
-          autoComplete="on"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          {
-            // GET: see vars in address bar
-            // POST: cannot see vars in address bar
-          }
-          <input type="hidden" name="form-name" value="Contact Form"/>
-          <p hidden>
-            <label>
-              Humans, don't fill this out: <input name="bot-field"/>
-            </label>
-          </p>
+        <p>
+          He also prefers diving right into the
+          meat of any project and loves working on creative ideas like
+          procedural terrain generation, particle effects, AI, and hardware like
+          Arduino.
+        </p>
+      </div>
 
-          <input
-            type="text"
-            name="name"
-            aria-label={"name entry"}
-            placeholder="Name *"
-            pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
-            onFocus={e => (e.target.placeholder = "")}
-            onBlur={e => (e.target.placeholder = "Name *")}
-            // className={ContentStyles.nameInput}
-            required
-          />
+      <p className={ContentStyles.iconList}>
+        <span><FaPaintBrush className={ContentStyles.icon}/></span>
+        <span><FaBiking className={ContentStyles.icon}/></span>
+        <span><FaMicrochip className={ContentStyles.icon}/></span>
+      </p>
+    </Content>
+  )
+}
 
-          <input
-            type="email"
-            aria-label={"email entry"}
-            name="email"
-            placeholder="Email *"
-            onFocus={e => (e.target.placeholder = "")}
-            onBlur={e => (e.target.placeholder = "Email *")}
-            // className={ContentStyles.emailInput}
-            required
-          />
+function SidebarContent() {
+  return (<div className={"animate"}>
+    <div className={SidebarStyles.divider}/>
 
-          <textarea
-            name="message"
-            aria-label={"message entry"}
-            placeholder="Enter your message here *"
-            onFocus={e => (e.target.placeholder = "")}
-            onBlur={e => (e.target.placeholder = "Enter your message here *")}
-            required
-          />
-          <button type="submit" className={ContentStyles.submit}>
-            SEND <MdSend className={ContentStyles.icon}/>
-          </button>
-        </form>
-      </Content>
-    </ReverseGrid>
-  </div>
+    <div className={SidebarStyles.stickyTitle}>
+      <h2 className={SidebarStyles.title}>Let's Talk</h2>
+      <p className={SidebarStyles.sidebarDescription}>
+        I am open to commissions for small websites, internships over the
+        summer, or research projects. Shoot me a message and I'll get back
+        to you!
+      </p>
+    </div>
+  </div>)
+}
+
+export default () => (
+  <Layout
+    link={"/"}
+    linkText={"Go Home"}
+    hero={<Hero/>}
+    sidebar={<SidebarContent/>}>
+    <Content className={`${ContentStyles.aboutFormContent} animate`}>
+      <form
+        action="/success"
+        method="POST"
+        encType="application/x-www-form-urlencoded"
+        className={ContentStyles.form}
+        id="contact-form"
+        name="Contact Form"
+        autoComplete="on"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        {
+          // GET: see vars in address bar
+          // POST: cannot see vars in address bar
+        }
+        <input type="hidden" name="form-name" value="Contact Form"/>
+        <p hidden>
+          <label>
+            Humans, don't fill this out: <input name="bot-field"/>
+          </label>
+        </p>
+
+        <input
+          type="text"
+          name="name"
+          aria-label={"name entry"}
+          placeholder="Name *"
+          pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Name *")}
+          // className={ContentStyles.nameInput}
+          required
+        />
+
+        <input
+          type="email"
+          aria-label={"email entry"}
+          name="email"
+          placeholder="Email *"
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Email *")}
+          // className={ContentStyles.emailInput}
+          required
+        />
+
+        <textarea
+          name="message"
+          aria-label={"message entry"}
+          placeholder="Enter your message here *"
+          onFocus={e => (e.target.placeholder = "")}
+          onBlur={e => (e.target.placeholder = "Enter your message here *")}
+          required
+        />
+        <button type="submit" className={ContentStyles.submit}>
+          SEND <MdSend className={ContentStyles.icon}/>
+        </button>
+      </form>
+    </Content>
+  </Layout>
 )
