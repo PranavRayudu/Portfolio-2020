@@ -100,3 +100,42 @@ a:not(.plain-link) {
   vertical-align: middle;
   padding-bottom: 3px;
 }
+
+.animateContainer {
+  @include respond-to(larger-than-md) {
+    &-enter {
+      &-active {
+        position: absolute;
+        opacity: 1;
+
+        .animate {
+          opacity: 0;
+        }
+      }
+
+      &-done {
+        opacity: 1;
+        transition: opacity 250ms ease-in;
+
+        .animate {
+          opacity: 1;
+          transition: opacity 250ms ease-in;
+        }
+      }
+    }
+
+    &-exit {
+      opacity: 1;
+
+      &-active {
+        transition: opacity 250ms ease-out;
+        opacity: 1;
+
+        .animate {
+          transition: opacity 250ms ease-out;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

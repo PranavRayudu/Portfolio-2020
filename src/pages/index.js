@@ -25,7 +25,7 @@ export default ({ data }) => (
   <div>
     <Grid>
       <LandingSidebar link="/about" linkText="About Me"/>
-      <Content className={ContentStyles.mainContent}>
+      <Content className={`${ContentStyles.mainContent} animate`}>
         <h1 className={ContentStyles.title}>
           Hello, I'm <br/><Link to="/about">Pranav Rayudu</Link>
         </h1>
@@ -41,46 +41,43 @@ export default ({ data }) => (
 
     <ReverseGrid className={ContentStyles.contentContainer}>
       <Sidebar className={SidebarStyles.infoSidebar}>
-        <div className={SidebarStyles.divider}/>
 
-        <div className={SidebarStyles.stickyTitle}>
-          <h2 className={SidebarStyles.title}>Featured Projects</h2>
+        <div className={"animate"}>
+          <div className={SidebarStyles.divider}/>
+          <div className={SidebarStyles.stickyTitle}>
+            <h2 className={SidebarStyles.title}>Featured Projects</h2>
+            <p className={[SidebarStyles.sidebarDescription].join(" ")}>
+              I specialize in building beautiful <em>Full Stack</em> apps integrated
+              with <em>Machine Learning</em>.
+            </p>
+            <div className={SidebarStyles.skills}>
+              <section className={SidebarStyles.skillsSection}>
+                <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/> React.js</div>
+                <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
+                <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
+                <div className={SidebarStyles.chipStrong}><DiMongodb className={SidebarStyles.icon}/> MongoDB</div>
+              </section>
 
-          <p className={[SidebarStyles.sidebarDescription].join(" ")}>
-            I specialize in building beautiful <em>Full Stack</em> apps integrated
-            with <em>Machine Learning</em>.
-          </p>
+              <section className={SidebarStyles.skillsSection}>
+                <div className={SidebarStyles.chip}><FaJava className={SidebarStyles.icon}/> Java</div>
+                <div className={SidebarStyles.chip}>C / C++</div>
+                <div className={SidebarStyles.chip}><FaPython className={SidebarStyles.icon}/> Python</div>
+                <div className={SidebarStyles.chip}><FaJsSquare className={SidebarStyles.icon}/> Javascript</div>
+                <div className={SidebarStyles.chip}><FaCss3Alt className={SidebarStyles.icon}/> HTML5 / CSS3</div>
+              </section>
 
-          {/*<div className={SidebarStyles.divider}/>*/}
-
-          <div className={SidebarStyles.skills}>
-            <section className={SidebarStyles.skillsSection}>
-              <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/> React.js</div>
-              <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
-              <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
-              <div className={SidebarStyles.chipStrong}><DiMongodb className={SidebarStyles.icon}/> MongoDB</div>
-            </section>
-
-            <section className={SidebarStyles.skillsSection}>
-              <div className={SidebarStyles.chip}><FaJava className={SidebarStyles.icon}/> Java</div>
-              <div className={SidebarStyles.chip}>C / C++</div>
-              <div className={SidebarStyles.chip}><FaPython className={SidebarStyles.icon}/> Python</div>
-              <div className={SidebarStyles.chip}><FaJsSquare className={SidebarStyles.icon}/> Javascript</div>
-              <div className={SidebarStyles.chip}><FaCss3Alt className={SidebarStyles.icon}/> HTML5 / CSS3</div>
-            </section>
-
-            <section className={SidebarStyles.skillsSection}>
-              <div className={SidebarStyles.chipWeak}>Machine Learning</div>
-              <div className={SidebarStyles.chipWeak}><FaLayerGroup className={SidebarStyles.icon}/> Full Stack</div>
-              <div className={SidebarStyles.chipWeak}><FaRobot className={SidebarStyles.icon}/> Robotics</div>
-              <div className={SidebarStyles.chipWeak}>Software Engineering</div>
-            </section>
+              <section className={SidebarStyles.skillsSection}>
+                <div className={SidebarStyles.chipWeak}>Machine Learning</div>
+                <div className={SidebarStyles.chipWeak}><FaLayerGroup className={SidebarStyles.icon}/> Full Stack</div>
+                <div className={SidebarStyles.chipWeak}><FaRobot className={SidebarStyles.icon}/> Robotics</div>
+                <div className={SidebarStyles.chipWeak}>Software Engineering</div>
+              </section>
+            </div>
           </div>
-
         </div>
       </Sidebar>
 
-      <Content className={ContentStyles.workContent}>
+      <Content className={`${ContentStyles.workContent} animate`}>
         <WorkSnippet
           title="Picture This"
           subtitle={"App that crowd-sources affordable attractions around town. Uses a React Native and Flask + MongoDB stack"}

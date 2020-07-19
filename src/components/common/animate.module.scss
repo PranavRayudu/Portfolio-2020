@@ -1,0 +1,33 @@
+//.animateContainer {
+//  //border: 1px solid red;
+//  opacity: 1;
+//  &-enter {
+//    //opacity: 0;
+//    //transition: opacity 250ms ease-in;
+//    &-active .animate {
+//      position: absolute;
+//      opacity: 0;
+//      //transition: opacity 250ms ease-in-out;
+//    }
+//
+//    &-done .animate {
+//      opacity: 1;
+//      transition: opacity 250ms ease-in;
+//    }
+//  }
+//
+//  &-exit {
+//    //opacity: 1;
+//    //transition: opacity 250ms ease-out;
+//
+//    &-active .animate {
+//      transition: opacity 250ms ease-out;
+//      opacity: 0;
+//    }
+//
+//    &-done .animate {
+//      //transition: opacity 250ms ease-out;
+//      //opacity: 0;
+//    }
+//  }
+//}

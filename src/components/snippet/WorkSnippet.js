@@ -14,6 +14,7 @@ function WorkSnippet(props) {
     from: { opacity: 0, y: -10 },
     enter: { opacity: 1, y: 0 },
     leave: { opacity: 0, y: 10 },
+    config: { duration: 100 },
   })
 
   return (

@@ -40,7 +40,7 @@ export default props => (
     render={data => (
       <Sidebar className={SidebarStyles.landingSidebar}>
         <div>
-          <Link to="./" className={SidebarStyles.logoLink} aria-label={"Pranav Rayudu's Logo"}>
+          <Link to="/" className={SidebarStyles.logoLink} aria-label={"Pranav Rayudu's Logo"}>
             <GatsbyImage
               fluid={data.logo.childImageSharp.fluid}
               className={SidebarStyles.logo}
@@ -55,7 +55,7 @@ export default props => (
           </div>
 
           <p>
-            <Link to={props.link}> {props.linkText}</Link>
+            <Link to={props.link} className={"animate"}> {props.linkText}</Link>
             <IoIosArrowBack className={SidebarStyles.highlightIcon}/>
             <br/>
           </p>

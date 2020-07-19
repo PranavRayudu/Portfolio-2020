@@ -13,8 +13,8 @@ import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
 export default () => (
   <div>
     <Grid>
-      <LandingSidebar link="/" linkText="Home"/>
-      <Content className={ContentStyles.aboutContent}>
+      <LandingSidebar link="/" linkText="Go Home"/>
+      <Content className={`${ContentStyles.aboutContent} animate`}>
         <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
         <div className={ContentStyles.description}>
           <p>
@@ -62,19 +62,21 @@ export default () => (
 
     <ReverseGrid className={ContentStyles.contentContainer}>
       <Sidebar className={SidebarStyles.infoSidebar}>
-        <div className={SidebarStyles.divider}/>
+        <div className={"animate"}>
+          <div className={SidebarStyles.divider}/>
 
-        <div className={SidebarStyles.stickyTitle}>
-          <h2 className={SidebarStyles.title}>Let's Talk</h2>
-          <p className={SidebarStyles.sidebarDescription}>
-            I am open to commissions for small websites, internships over the
-            summer, or research projects. Shoot me a message and I'll get back
-            to you!
-          </p>
+          <div className={SidebarStyles.stickyTitle}>
+            <h2 className={SidebarStyles.title}>Let's Talk</h2>
+            <p className={SidebarStyles.sidebarDescription}>
+              I am open to commissions for small websites, internships over the
+              summer, or research projects. Shoot me a message and I'll get back
+              to you!
+            </p>
+          </div>
         </div>
       </Sidebar>
 
-      <Content className={ContentStyles.aboutFormContent}>
+      <Content className={`${ContentStyles.aboutFormContent} animate`}>
         <form
           action="/success"
           method="POST"
