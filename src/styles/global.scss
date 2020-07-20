@@ -131,6 +131,10 @@ a:not(.plain-link) {
         transition: opacity 250ms ease-out;
         opacity: 1;
 
+        div:after {
+          box-shadow: none !important;
+        }
+
         .animate {
           transition: opacity 250ms ease-out;
           opacity: 0;
