@@ -20,7 +20,7 @@ function WorkSnippet(props) {
     <div className={[
       props.superSnippet ? SnippetStyles.superSnippet : SnippetStyles.snippet,
       props.image ? SnippetStyles.hasImg : "",
-    ].join(" ")}>
+    ].join(" ")} id={props.title.replace(" ", "-")}>
 
       {props.image && <Img fluid={props.image} className={SnippetStyles.img}/>}
 

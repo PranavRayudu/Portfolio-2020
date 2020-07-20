@@ -135,6 +135,7 @@ $description_size: 600px;
       color: $dark-grey;
       font-weight: bold;
       border: none;
+      cursor: pointer;
       @include glow($primary-red, 20px, 0.5);
       transition: 0.1s all ease-in;
 
