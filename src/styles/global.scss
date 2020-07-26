@@ -9,7 +9,7 @@
 html,
 body {
   //background: $dark-grey;
-  font-family: "PT Sans", sans-serif;
+  font-family: $default-font;
   font-size: 20px;
   //z-index: -10;
   position: relative;
@@ -74,7 +74,7 @@ em {
 }
 
 h1 {
-  font-family: "Libre Baskerville", serif;
+  font-family: $fancy-font;
 }
 
 .clickable {
@@ -141,5 +141,16 @@ a:not(.plain-link) {
         }
       }
     }
+  }
+}
+
+
+.icon {
+  vertical-align: middle;
+  padding-bottom: 3px;
+  font-size: $space-small;
+
+  @include respond-to(md) {
+    display: none;
   }
 }

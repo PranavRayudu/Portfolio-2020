@@ -22,7 +22,7 @@ import { DiMongodb } from "react-icons/di"
 
 function Hero() {
   return (
-    <Content className={`${ContentStyles.mainContent} animate`}>
+    <>
       <h1 className={ContentStyles.title}>
         Hello, I'm <br/><Link to="/about">Pranav Rayudu</Link>
       </h1>
@@ -33,7 +33,7 @@ function Hero() {
         <Link to="/about#contact-form">Let's talk.</Link>
         <br/>
       </h2>
-    </Content>
+    </>
   )
 }
 
@@ -49,24 +49,24 @@ function SidebarContent() {
         </p>
         <div className={SidebarStyles.skills}>
           <section className={SidebarStyles.skillsSection}>
-            <div className={SidebarStyles.chipStrong}><FaReact className={SidebarStyles.icon}/> React.js</div>
-            <div className={SidebarStyles.chipStrong}><FaFlask className={SidebarStyles.icon}/> Flask</div>
-            <div className={SidebarStyles.chipStrong}><FaNodeJs className={SidebarStyles.icon}/> Node.js</div>
-            <div className={SidebarStyles.chipStrong}><DiMongodb className={SidebarStyles.icon}/> MongoDB</div>
+            <div className={SidebarStyles.chipStrong}><FaReact className={"icon"}/> React.js</div>
+            <div className={SidebarStyles.chipStrong}><FaFlask className={"icon"}/> Flask</div>
+            <div className={SidebarStyles.chipStrong}><FaNodeJs className={"icon"}/> Node.js</div>
+            <div className={SidebarStyles.chipStrong}><DiMongodb className={"icon"}/> MongoDB</div>
           </section>
 
           <section className={SidebarStyles.skillsSection}>
-            <div className={SidebarStyles.chip}><FaJava className={SidebarStyles.icon}/> Java</div>
+            <div className={SidebarStyles.chip}><FaJava className={"icon"}/> Java</div>
             <div className={SidebarStyles.chip}>C / C++</div>
-            <div className={SidebarStyles.chip}><FaPython className={SidebarStyles.icon}/> Python</div>
-            <div className={SidebarStyles.chip}><FaJsSquare className={SidebarStyles.icon}/> Javascript</div>
-            <div className={SidebarStyles.chip}><FaCss3Alt className={SidebarStyles.icon}/> HTML5 / CSS3</div>
+            <div className={SidebarStyles.chip}><FaPython className={"icon"}/> Python</div>
+            <div className={SidebarStyles.chip}><FaJsSquare className={"icon"}/> Javascript</div>
+            <div className={SidebarStyles.chip}><FaCss3Alt className={"icon"}/> HTML5 / CSS3</div>
           </section>
 
           <section className={SidebarStyles.skillsSection}>
             <div className={SidebarStyles.chipWeak}>Machine Learning</div>
-            <div className={SidebarStyles.chipWeak}><FaLayerGroup className={SidebarStyles.icon}/> Full Stack</div>
-            <div className={SidebarStyles.chipWeak}><FaRobot className={SidebarStyles.icon}/> Robotics</div>
+            <div className={SidebarStyles.chipWeak}><FaLayerGroup className={"icon"}/> Full Stack</div>
+            <div className={SidebarStyles.chipWeak}><FaRobot className={"icon"}/> Robotics</div>
             <div className={SidebarStyles.chipWeak}>Software Engineering</div>
           </section>
         </div>
@@ -82,7 +82,7 @@ export default ({ data }) => (
 
     hero={<Hero/>}
     sidebar={<SidebarContent/>}>
-    <Content className={`${ContentStyles.workContent} animate`}>
+    <Content className={`${ContentStyles.bodyContent} ${ContentStyles.workContent} animate`}>
       <WorkSnippet
         title="Picture This"
         subtitle={"App that crowd-sources affordable attractions around town. Uses a React Native and Flask + MongoDB stack"}
@@ -145,7 +145,7 @@ export const fluidImage = graphql`
 
 export const query = graphql`
   query {
- 
+
     appleTest: file(relativePath: { eq: "images/apple-notebook.jpg" }) {
       ...fluidImage
     }

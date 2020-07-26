@@ -1,23 +1,17 @@
-/** colors **/
+/** color helper imports **/
 @import "md-colors";
+
+/** fonts **/
+$default-font: "PT Sans", sans-serif;
+$fancy-font: "Libre Baskerville", serif;
 
 /** breakpoints **/
 $grid-breakpoints: (
-        sm: (
-                max-width: 600px
-        ),
-        md: (
-                max-width: 900px
-        ),
-        lg: (
-                max-width: 1300px
-        ),
-        larger-than-md: (
-                min-width: 900px
-        ),
-        'md-only': (
-                '(min-width: 600px) and (max-width: 900px)'
-        )
+        sm: (max-width: 600px),
+        md: (max-width: 900px),
+        lg: (max-width: 1300px),
+        larger-than-md: (min-width: 900px),
+        md-only: ('(min-width: 600px) and (max-width: 900px)')
 );
 
 /** regular spacings **/
@@ -27,6 +21,7 @@ $space-large: 70px;
 
 $std-line-thickness: 3px;
 
+/** color **/
 $primary-yellow: $md-yellow-400;
 $primary-red: $md-red-400;
 $primary-cyan: $md-cyan-500;
@@ -79,7 +74,9 @@ inset -4px -4px 15px rgba(white, 0.2);
   0 5px 5px $md-black;
 }
 
-// todo move text-shadow effect here as well?
+@mixin text-glow($color: $primary-yellow, $alpha: 0.3) {
+  filter: drop-shadow(0 0 5px rgba($color, $alpha)) drop-shadow(0 5px 5px $md-black);
+}
 
 @mixin action-icon() {
   font-size: $space-medium;

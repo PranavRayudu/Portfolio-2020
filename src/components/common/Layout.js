@@ -1,20 +1,22 @@
 import React from "react"
-import LandingSidebar from "./LandingSidebarContent"
 import { Grid, ReverseGrid } from "../grid/MainGrid"
 import ContentStyles from "../../styles/content.module.scss"
-import Content from "../grid/MainGridContent"
 import Sidebar from "../grid/MainGridSidebar"
+import LandingSidebar from "./LandingSidebarContent"
 import SidebarStyles from "../../styles/sidebar.module.scss"
+import Content from "../grid/MainGridContent"
 
 export default ({ link, linkText, hero, sidebar, children }) => (
   <>
     <Grid>
       <LandingSidebar link={link} linkText={linkText}/>
-      {hero}
+      <Content className={`${ContentStyles.heroContent} animate`}>
+        {hero}
+      </Content>
     </Grid>
 
-    <ReverseGrid className={ContentStyles.contentContainer}>
-      <Sidebar className={SidebarStyles.infoSidebar}>
+    <ReverseGrid className={ContentStyles.bodyContentContainer}>
+      <Sidebar className={`${SidebarStyles.sidebar} ${SidebarStyles.infoSidebar}`}>
         {sidebar}
       </Sidebar>
 

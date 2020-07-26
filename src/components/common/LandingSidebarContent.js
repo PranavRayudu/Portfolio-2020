@@ -40,7 +40,7 @@ export default function(props) {
       }
     `}
       render={data => (
-        <Sidebar className={SidebarStyles.landingSidebar}>
+        <Sidebar className={`${SidebarStyles.sidebar} ${SidebarStyles.landingSidebar}`}>
           <div>
             <SpecialLogo to={"/"}>
               <GatsbyImage
@@ -51,14 +51,14 @@ export default function(props) {
             </SpecialLogo>
 
             <div>
-              <div>CS @ UT Austin <FaUniversity className={SidebarStyles.highlightIcon}/></div>
-              <div>tarakapranav@gmail.com <IoMdMail className={SidebarStyles.highlightIcon}/></div>
-              <div>Austin, TX USA <IoMdPin className={SidebarStyles.highlightIcon}/></div>
+              <div>CS @ UT Austin&nbsp;<FaUniversity className={`icon ${SidebarStyles.highlightIcon}`}/></div>
+              <div>tarakapranav@gmail.com&nbsp;<IoMdMail className={`icon ${SidebarStyles.highlightIcon}`}/></div>
+              <div>Austin, TX USA&nbsp;<IoMdPin className={`icon ${SidebarStyles.highlightIcon}`}/></div>
             </div>
 
             <p>
-              <Link to={props.link} className={"animate"}> {props.linkText}</Link>
-              <IoIosArrowBack className={SidebarStyles.highlightIcon}/>
+              <Link to={props.link} className={"animate"}>{props.linkText}</Link>
+              &nbsp;<IoIosArrowBack className={`icon ${SidebarStyles.highlightIcon}`}/>
               <br/>
             </p>
 
@@ -67,17 +67,17 @@ export default function(props) {
                 href="https://www.linkedin.com/in/tarakapranav/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={"plain-link"}
+                className={`plain-link ${SidebarStyles.io}`}
                 aria-label={"Linkedin link"}>
-                <IoLogoLinkedin className={SidebarStyles.io}/>
+                <IoLogoLinkedin/>
               </a>
               <a
                 href="https://github.com/PranavRayudu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={["plain-link", SidebarStyles.githubLeftMargin].join(" ")}
+                className={`plain-link ${SidebarStyles.io}`}
                 aria-label={"Github link"}>
-                <IoLogoGithub className={SidebarStyles.io}/>
+                <IoLogoGithub/>
               </a>
             </div>
             {/*<div>*/}

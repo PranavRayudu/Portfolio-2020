@@ -4,7 +4,7 @@ import masterGridStyles from "./grid.module.scss"
 function Grid(props) {
 
   return (
-    <main className={[masterGridStyles.gridStraight, props.class].join(" ")}>
+    <main className={`${masterGridStyles.gridStraight} ${props.class}`}>
       {props.children}
     </main>
   )
@@ -13,11 +13,10 @@ function Grid(props) {
 function ReverseGrid(props) {
 
   return (
-    <main className={[masterGridStyles.gridReverse, props.className].join(" ")}>
+    <main className={`${masterGridStyles.gridReverse} ${props.className}`}>
       {props.children}
     </main>
   )
-
 }
 
 export { Grid, ReverseGrid }

@@ -9,7 +9,7 @@ import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
 
 function Hero() {
   return (
-    <Content className={`${ContentStyles.aboutContent} animate`}>
+    <>
       <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
       <div className={ContentStyles.description}>
         <p>
@@ -48,11 +48,11 @@ function Hero() {
       </div>
 
       <p className={ContentStyles.iconList}>
-        <span><FaPaintBrush className={ContentStyles.icon}/></span>
-        <span><FaBiking className={ContentStyles.icon}/></span>
-        <span><FaMicrochip className={ContentStyles.icon}/></span>
+        <span><FaPaintBrush className={"icon"}/></span>
+        <span><FaBiking className={"icon"}/></span>
+        <span><FaMicrochip className={"icon"}/></span>
       </p>
-    </Content>
+    </>
   )
 }
 
@@ -77,7 +77,7 @@ export default () => (
     linkText={"Go Home"}
     hero={<Hero/>}
     sidebar={<SidebarContent/>}>
-    <Content className={`${ContentStyles.aboutFormContent} animate`}>
+    <Content className={`${ContentStyles.bodyContent} ${ContentStyles.aboutFormContent} animate`}>
       <form
         action="/success"
         method="POST"
@@ -132,7 +132,7 @@ export default () => (
           required
         />
         <button type="submit" className={ContentStyles.submit}>
-          SEND <MdSend className={ContentStyles.icon}/>
+          SEND&nbsp;<MdSend className={"icon"}/>
         </button>
       </form>
     </Content>
