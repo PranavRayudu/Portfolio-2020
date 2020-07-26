@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../components/common/Layout"
 import Content from "../components/grid/MainGridContent"
 import SidebarStyles from "../styles/sidebar.module.scss"
@@ -75,7 +75,7 @@ function SidebarContent() {
   )
 }
 
-export default ({ data }) => (
+export default () => (
   <Layout
     link={"/about"}
     linkText={"About Me"}
@@ -87,7 +87,7 @@ export default ({ data }) => (
         title="Picture This"
         subtitle={"App that crowd-sources affordable attractions around town. Uses a React Native and Flask + MongoDB stack"}
         // body="CRUD application that "
-        image={data.phoneTest.childImageSharp.fluid}
+        image={"images/smartphone-with-application.jpg"}
         linkText="Visit Github"
         link="https://github.com/txconvergent/s20-community-culture"
         superSnippet
@@ -96,14 +96,14 @@ export default ({ data }) => (
         title="Kinetic Keys"
         subtitle={"Pose Detection game implemented in React.js and Tensorflow.js; Showcased at Convergent Side-Project Expo"}
         body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
-        image={data.computerTest.childImageSharp.fluid}
+        image={"images/computer-mockup-test.jpg"}
         link="https://kinetickeys.netlify.com/"
       />
       <WorkSnippet
         title="Paragon"
         subtitle={"Slackbot that monitors channels for aggressive behaviour using Natural Language Processing; Uses React.js and Node + MongoDB stack."}
         body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
-        image={data.wireframeTest.childImageSharp.fluid}
+        image={"images/website-wireframe-test.jpg"}
         linkText={"View Github"}
         link="https://github.com/PranavRayudu/Aggression-Chat-Reporter-LeapHacks2020"
       />
@@ -112,7 +112,7 @@ export default ({ data }) => (
         subtitle={"Hurricane damage detector and reported implemented using React.js and Flask + CNN classifier running on Azure Cloud"}
         body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
         linkText={"View Github"}
-        image={data.phoneTest.childImageSharp.fluid}
+        image={"images/smartphone-with-application.jpg"}
         link="https://github.com/sahiljain11/HACKTX19"
       />
       <WorkSnippet
@@ -132,38 +132,3 @@ export default ({ data }) => (
     </Content>)
   </Layout>
 )
-
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 550, maxHeight: 400) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
-
-export const query = graphql`
-  query {
-
-    appleTest: file(relativePath: { eq: "images/apple-notebook.jpg" }) {
-      ...fluidImage
-    }
-
-    phoneTest: file(relativePath: { eq: "images/smartphone-with-application.jpg" }) {
-      ...fluidImage
-    }
-
-    wireframeTest: file(
-      relativePath: { eq: "images/website-wireframe-test.jpg" }
-    ) {
-      ...fluidImage
-    }
-
-    computerTest: file(
-      relativePath: { eq: "images/computer-mockup-test.jpg" }
-    ) {
-      ...fluidImage
-    }
-  }
-`

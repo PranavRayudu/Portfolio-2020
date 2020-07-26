@@ -4,9 +4,26 @@ import SnippetStyles from "./snippet.module.scss"
 import { useTransition, animated } from "react-spring"
 import { DialogOverlay, DialogContent } from "@reach/dialog"
 import "@reach/dialog/styles.css"
+import { graphql, StaticQuery } from "gatsby"
 
 function WorkSnippet(props) {
 
+  const imagesQuery = graphql`
+          query {
+            images: allFile(filter: {extension: {regex:  "/jpeg|jpg|png|gif/"}}) {
+              edges {
+                node {
+                  relativePath
+                  childImageSharp {
+                    fluid(maxWidth: 550, maxHeight: 400) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                } 
+              }
+            }
+          }
+      `
   const AnimatedDialogOverlay = animated(DialogOverlay)
   const AnimatedDialogContent = animated(DialogContent)
   const [showDialog, setShowDialog] = React.useState(false)
@@ -20,9 +37,22 @@ function WorkSnippet(props) {
     <div className={[
       props.superSnippet ? SnippetStyles.superSnippet : SnippetStyles.snippet,
       props.image ? SnippetStyles.hasImg : "",
-    ].join(" ")} id={props.title.replace(" ", "-")}>
+    ].join(" ")} id={props.title.toLowerCase().replace(" ", "-")}>
 
-      {props.image && <Img fluid={props.image} className={SnippetStyles.img}/>}
+      <StaticQuery
+        query={imagesQuery}
+        render={(data) => {
+          const image = data.images.edges.find(n => {
+            return n.node.relativePath.includes(props.image)
+          })
+
+          if (!image) {
+            return null
+          }
+
+          return (<Img fluid={image.node.childImageSharp.fluid} className={SnippetStyles.img}/>)
+        }}
+      />
 
       <div className={SnippetStyles.content}>
 
@@ -30,11 +60,11 @@ function WorkSnippet(props) {
           <h3 className={SnippetStyles.title}>{props.title}</h3>
 
           {(props.body || props.subtitle) &&
-          <p className={[SnippetStyles.text, SnippetStyles.hideSm].join(" ")}>
+          <p className={`${SnippetStyles.text} ${SnippetStyles.hideSm}`}>
             {props.subtitle ? props.subtitle : props.body}
           </p>}
 
-          <p className={[SnippetStyles.text, SnippetStyles.showSm].join(" ")}>
+          <p className={`${SnippetStyles.text} ${SnippetStyles.showSm}`}>
             {props.body ? props.body : props.subtitle}
           </p>
 
@@ -43,7 +73,7 @@ function WorkSnippet(props) {
         <div className={SnippetStyles.footer}>
           {!props.superSnippet && props.body && <button
             type="button"
-            className={[SnippetStyles.button, SnippetStyles.hideSm].join(" ")}
+            className={`${SnippetStyles.button} ${SnippetStyles.hideSm}`}
             onClick={() => setShowDialog(true)}>
             More info
           </button>
