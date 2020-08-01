@@ -14,6 +14,13 @@ body {
   //z-index: -10;
   position: relative;
 
+  $dark-subtle-bk: linear-gradient(95deg,
+          lighten($darker-grey, 3%),
+          darken($darker-grey, 0%));
+
+  //background: $darker-grey;
+  //background: $dark-subtle-bk;
+
   &:after {
     top: 0;
     bottom: 0;
@@ -24,9 +31,7 @@ body {
     z-index: -2;
 
     background: $darker-grey;
-    background: linear-gradient(95deg,
-            lighten($darker-grey, 3%),
-            darken($darker-grey, 0%));
+    background: $dark-subtle-bk;
   }
 }
 
@@ -100,33 +105,41 @@ a:not(.plain-link) {
 }
 
 .animateContainer {
+
+  $translate-strength: 12px;
   @include respond-to(larger-than-md) {
     &-enter {
       &-active {
         position: absolute;
         opacity: 1;
+        transform: translateY(0);
 
         .animate {
           opacity: 0;
+          transform: translateY(-$translate-strength);
         }
       }
 
       &-done {
         opacity: 1;
-        transition: opacity 250ms ease-in;
+        transform: translateY(0);
+        transition: opacity 250ms ease-in, transform 250ms ease-in;
 
         .animate {
+          transform: translateY(0);
           opacity: 1;
-          transition: opacity 250ms ease-in;
+          transition: opacity 250ms ease-in, transform 250ms ease-in;
         }
       }
     }
 
     &-exit {
       opacity: 1;
+      transform: translateY(0);
 
       &-active {
-        transition: opacity 250ms ease-out;
+        transform: translateY(0);
+        transition: opacity 250ms ease-out, transform 250ms ease-out;
         opacity: 1;
 
         div:after {
@@ -134,7 +147,8 @@ a:not(.plain-link) {
         }
 
         .animate {
-          transition: opacity 250ms ease-out;
+          transform: translateY($translate-strength);
+          transition: opacity 250ms ease-out, transform 250ms ease-out;
           opacity: 0;
         }
       }

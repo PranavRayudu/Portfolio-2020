@@ -127,6 +127,6 @@ export default () => (
         linkText={"View Github"}
         link="https://github.com/PranavRayudu/FeedforwardNeuralNetwork"
       />
-    </>)
+    </>
   </Layout>
 )
