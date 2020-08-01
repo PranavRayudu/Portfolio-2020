@@ -1,8 +1,6 @@
 import React from "react"
 import Layout from "../components/common/Layout"
-import Content from "../components/grid/MainGridContent"
-import SidebarStyles from "../styles/sidebar.module.scss"
-import ContentStyles from "../styles/content.module.scss"
+import PageStyles from "../styles/pages.module.scss"
 
 import { MdSend } from "react-icons/md"
 import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
@@ -10,8 +8,8 @@ import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
 function Hero() {
   return (
     <>
-      <h1 className={ContentStyles.title}>Pranav Rayudu</h1>
-      <div className={ContentStyles.description}>
+      <h1 className={PageStyles.title}>Pranav Rayudu</h1>
+      <div className={PageStyles.description}>
         <p>
           Pranav is a freshman at the University of Texas at Austin passionately
           pursuing his B.S in Computer Science. He has been practicing web
@@ -47,7 +45,7 @@ function Hero() {
         </p>
       </div>
 
-      <p className={ContentStyles.iconList}>
+      <p className={PageStyles.iconList}>
         <span><FaPaintBrush className={"icon"}/></span>
         <span><FaBiking className={"icon"}/></span>
         <span><FaMicrochip className={"icon"}/></span>
@@ -58,11 +56,11 @@ function Hero() {
 
 function SidebarContent() {
   return (<div className={"animate"}>
-    <div className={SidebarStyles.divider}/>
+    <div className={PageStyles.divider}/>
 
-    <div className={SidebarStyles.stickyTitle}>
-      <h2 className={SidebarStyles.title}>Let's Talk</h2>
-      <p className={SidebarStyles.sidebarDescription}>
+    <div className={PageStyles.stickyTitle}>
+      <h2>Let's Talk</h2>
+      <p className={PageStyles.sidebarDescription}>
         I am open to commissions for small websites, internships over the
         summer, or research projects. Shoot me a message and I'll get back
         to you!
@@ -76,13 +74,14 @@ export default () => (
     link={"/"}
     linkText={"Go Home"}
     hero={<Hero/>}
-    sidebar={<SidebarContent/>}>
-    <Content className={`${ContentStyles.bodyContent} ${ContentStyles.aboutFormContent} animate`}>
+    sidebar={<SidebarContent/>}
+    contentClass={PageStyles.aboutFormContent}>
+
       <form
         action="/success"
         method="POST"
         encType="application/x-www-form-urlencoded"
-        className={ContentStyles.form}
+        className={PageStyles.form}
         id="contact-form"
         name="Contact Form"
         autoComplete="on"
@@ -131,10 +130,10 @@ export default () => (
           onBlur={e => (e.target.placeholder = "Enter your message here *")}
           required
         />
-        <button type="submit" className={ContentStyles.submit}>
+        <button type="submit" className={PageStyles.submit}>
           SEND&nbsp;<MdSend className={"icon"}/>
         </button>
       </form>
-    </Content>
+    {/*</Content>*/}
   </Layout>
 )

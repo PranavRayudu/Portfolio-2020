@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+
+
+.hero-content {
+  display: grid;
+  align-content: center;
+
+  padding: $space-large $space-large $space-small;
+
+  @include respond-to(lg) {
+    padding: $space-large $space-medium $space-small;
+  }
+
+  @include respond-to(sm) {
+    padding: $space-large $space-small $space-small;
+  }
+}
+
+.body-content {
+  padding: 0 $space-large;
+
+  @include respond-to(lg) {
+    padding: 0 $space-medium;
+  }
+
+  @include respond-to(sm) {
+    padding: 0 $space-small;
+  }
+}
+
+.body-content-container {
+  margin-bottom: $space-small;
+  @include respond-to(larger-than-md) {
+    margin-bottom: $space-medium;
+  }
+}

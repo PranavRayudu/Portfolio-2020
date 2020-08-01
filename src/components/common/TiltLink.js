@@ -1,6 +1,6 @@
 import { animated, useSpring } from "react-spring"
 import { Link } from "gatsby"
-import SidebarStyles from "../../styles/sidebar.module.scss"
+import SidebarStyles from "./sidebar.module.scss"
 import React from "react"
 
 export default function({ to, children }) {

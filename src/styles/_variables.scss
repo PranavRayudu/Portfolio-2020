@@ -22,13 +22,13 @@ $space-large: 70px;
 $std-line-thickness: 3px;
 
 /** color **/
-$primary-yellow: $md-yellow-400;
-$primary-red: $md-red-400;
-$primary-cyan: $md-cyan-500;
-$primary-teal: $md-teal-200;
-$light-orange: $md-orange-300;
-$primary-orange: $md-orange-500;
-$strong-orange: $md-deep-orange-400;
+$highlight-color: $md-yellow-400;
+$action-color: $md-red-400;
+//$primary-cyan: $md-cyan-500;
+//$primary-teal: $md-teal-200;
+$accent-1: $md-orange-300;
+$accent-2: $md-orange-500;
+$accent-3: $md-deep-orange-400;
 
 $light-grey: $md-grey-500;
 $primary-grey: $md-grey-500;
@@ -74,21 +74,21 @@ inset -4px -4px 15px rgba(white, 0.2);
   0 5px 5px $md-black;
 }
 
-@mixin text-glow($color: $primary-yellow, $alpha: 0.3) {
+@mixin text-glow($color: $highlight-color, $alpha: 0.3) {
   filter: drop-shadow(0 0 5px rgba($color, $alpha)) drop-shadow(0 5px 5px $md-black);
 }
 
 @mixin action-icon() {
   font-size: $space-medium;
-  color: $primary-red;
+  color: $action-color;
 
-  filter: drop-shadow(0 0 15px rgba($primary-red, 0.5)) drop-shadow(0 5px 5px $md-black);
+  filter: drop-shadow(0 0 15px rgba($action-color, 0.5)) drop-shadow(0 5px 5px $md-black);
 
   transition: 0.1s all ease-in;
 
   &:hover {
-    color: lighten($primary-red, 10%);
-    filter: drop-shadow(0 0 15px $primary-red) drop-shadow(0 10px 5px $md-black);
+    color: lighten($action-color, 10%);
+    filter: drop-shadow(0 0 15px $action-color) drop-shadow(0 10px 5px $md-black);
   }
 }
 

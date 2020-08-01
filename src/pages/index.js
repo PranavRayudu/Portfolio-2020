@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/common/Layout"
-import Content from "../components/grid/MainGridContent"
-import SidebarStyles from "../styles/sidebar.module.scss"
-import ContentStyles from "../styles/content.module.scss"
 import WorkSnippet from "../components/snippet/WorkSnippet"
+import PageStyles from "../styles/pages.module.scss"
 
 import {
   FaReact,
@@ -19,14 +17,13 @@ import {
 } from "react-icons/fa"
 import { DiMongodb } from "react-icons/di"
 
-
 function Hero() {
   return (
     <>
-      <h1 className={ContentStyles.title}>
+      <h1 className={PageStyles.title}>
         Hello, I'm <br/><Link to="/about">Pranav Rayudu</Link>
       </h1>
-      <h2 className={ContentStyles.description}>
+      <h2 className={PageStyles.description}>
         I'm a full-stack developer who loves building robots and creative programming.
         <br/>
 
@@ -40,34 +37,34 @@ function Hero() {
 function SidebarContent() {
   return (
     <div className={"animate"}>
-      <div className={SidebarStyles.divider}/>
-      <div className={SidebarStyles.stickyTitle}>
-        <h2 className={SidebarStyles.title}>Featured Projects</h2>
-        <p className={[SidebarStyles.sidebarDescription].join(" ")}>
+      <div className={PageStyles.divider}/>
+      <div className={PageStyles.stickyTitle}>
+        <h2>Featured Projects</h2>
+        <p className={PageStyles.sidebarDescription}>
           I specialize in building beautiful <em>Full Stack</em> apps integrated
           with <em>Machine Learning</em>.
         </p>
-        <div className={SidebarStyles.skills}>
-          <section className={SidebarStyles.skillsSection}>
-            <div className={SidebarStyles.chipStrong}><FaReact className={"icon"}/> React.js</div>
-            <div className={SidebarStyles.chipStrong}><FaFlask className={"icon"}/> Flask</div>
-            <div className={SidebarStyles.chipStrong}><FaNodeJs className={"icon"}/> Node.js</div>
-            <div className={SidebarStyles.chipStrong}><DiMongodb className={"icon"}/> MongoDB</div>
+        <div className={PageStyles.skills}>
+          <section className={PageStyles.skillsSection}>
+            <div className={PageStyles.chipStrong}><FaReact className={"icon"}/> React.js</div>
+            <div className={PageStyles.chipStrong}><FaFlask className={"icon"}/> Flask</div>
+            <div className={PageStyles.chipStrong}><FaNodeJs className={"icon"}/> Node.js</div>
+            <div className={PageStyles.chipStrong}><DiMongodb className={"icon"}/> MongoDB</div>
           </section>
 
-          <section className={SidebarStyles.skillsSection}>
-            <div className={SidebarStyles.chip}><FaJava className={"icon"}/> Java</div>
-            <div className={SidebarStyles.chip}>C / C++</div>
-            <div className={SidebarStyles.chip}><FaPython className={"icon"}/> Python</div>
-            <div className={SidebarStyles.chip}><FaJsSquare className={"icon"}/> Javascript</div>
-            <div className={SidebarStyles.chip}><FaCss3Alt className={"icon"}/> HTML5 / CSS3</div>
+          <section className={PageStyles.skillsSection}>
+            <div className={PageStyles.chip}><FaJava className={"icon"}/> Java</div>
+            <div className={PageStyles.chip}>C / C++</div>
+            <div className={PageStyles.chip}><FaPython className={"icon"}/> Python</div>
+            <div className={PageStyles.chip}><FaJsSquare className={"icon"}/> Javascript</div>
+            <div className={PageStyles.chip}><FaCss3Alt className={"icon"}/> HTML5 / CSS3</div>
           </section>
 
-          <section className={SidebarStyles.skillsSection}>
-            <div className={SidebarStyles.chipWeak}>Machine Learning</div>
-            <div className={SidebarStyles.chipWeak}><FaLayerGroup className={"icon"}/> Full Stack</div>
-            <div className={SidebarStyles.chipWeak}><FaRobot className={"icon"}/> Robotics</div>
-            <div className={SidebarStyles.chipWeak}>Software Engineering</div>
+          <section className={PageStyles.skillsSection}>
+            <div className={PageStyles.chipWeak}>Machine Learning</div>
+            <div className={PageStyles.chipWeak}><FaLayerGroup className={"icon"}/> Full Stack</div>
+            <div className={PageStyles.chipWeak}><FaRobot className={"icon"}/> Robotics</div>
+            <div className={PageStyles.chipWeak}>Software Engineering</div>
           </section>
         </div>
       </div>
@@ -81,8 +78,9 @@ export default () => (
     linkText={"About Me"}
 
     hero={<Hero/>}
-    sidebar={<SidebarContent/>}>
-    <Content className={`${ContentStyles.bodyContent} ${ContentStyles.workContent} animate`}>
+    sidebar={<SidebarContent/>}
+    contentClass={PageStyles.workContent}>
+    <>
       <WorkSnippet
         title="Picture This"
         subtitle={"App that crowd-sources affordable attractions around town. Uses a React Native and Flask + MongoDB stack"}
@@ -129,6 +127,6 @@ export default () => (
         linkText={"View Github"}
         link="https://github.com/PranavRayudu/FeedforwardNeuralNetwork"
       />
-    </Content>)
+    </>)
   </Layout>
 )

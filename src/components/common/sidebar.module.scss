@@ -1,4 +1,4 @@
-@import "variables";
+@import "../../styles/variables";
 
 .landing-sidebar {
   padding: $space-large $space-large $space-large $space-small;
@@ -88,9 +88,6 @@
     font-weight: bold;
   }
 
-  .sidebar-description {
-    line-height: 1.15em;
-  }
 
   .io {
     @include action-icon();
@@ -101,8 +98,8 @@
   }
 
   .highlight-icon {
-    color: $primary-yellow;
-    @include text-glow($primary-yellow);
+    color: $highlight-color;
+    @include text-glow($highlight-color);
   }
 
   &.landing-sidebar {
@@ -118,10 +115,10 @@
         margin: $space-small 0;
         border-radius: 50%;
         transition: 0.2s box-shadow linear;
-        @include glow($primary-yellow, 30px, 0.4);
+        @include glow($highlight-color, 30px, 0.4);
 
         &:hover {
-          @include glow($primary-yellow, 30px, 0.8);
+          @include glow($highlight-color, 30px, 0.8);
         }
 
         @include respond-to(md) {
@@ -135,63 +132,5 @@
   &.info-sidebar {
     border-top: none;
     grid-template-rows: min-content;
-
-    .sticky-title {
-      place-self: start end;
-      position: sticky;
-      top: $space-small;
-
-      @include respond-to(md) {
-        place-self: start center;
-      }
-    }
-
-    .divider {
-      place-self: start stretch;
-      height: $std-line-thickness;
-      background: $primary-yellow;
-      //margin-bottom: $space-small;
-      border-radius: $std-line-thickness;
-    }
-
-    .skills {
-      margin-bottom: $space-small;
-
-      .skills-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        line-height: normal;
-
-        @include respond-to(md) {
-          justify-content: center;
-        }
-
-        .chip-weak, .chip, .chip-strong {
-
-          vertical-align: middle;
-          padding: $std-line-thickness $std-line-thickness * 3;
-          margin: $std-line-thickness;
-          border-radius: $space-small;
-          color: $dark-grey;
-          font-weight: bold;
-        }
-
-        .chip-weak {
-          background: $light-orange;
-          @include glow($light-orange, 8px, 0.5);
-        }
-
-        .chip {
-          background: $primary-orange;
-          @include glow($primary-orange, 8px, 0.5);
-        }
-
-        .chip-strong {
-          background: $strong-orange;
-          @include glow($strong-orange, 8px, 0.5);
-        }
-      }
-    }
   }
 }

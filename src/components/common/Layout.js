@@ -1,12 +1,12 @@
 import React from "react"
-import { Grid, ReverseGrid } from "../grid/MainGrid"
-import ContentStyles from "../../styles/content.module.scss"
-import Sidebar from "../grid/MainGridSidebar"
-import LandingSidebar from "./LandingSidebarContent"
-import SidebarStyles from "../../styles/sidebar.module.scss"
-import Content from "../grid/MainGridContent"
+import { Grid, ReverseGrid } from "../grid/Grid"
+import Sidebar from "../grid/GridSidebar"
+import LandingSidebar from "./LandingSidebar"
+import SidebarStyles from "./sidebar.module.scss"
+import Content from "../grid/GridContent"
+import ContentStyles from "./content.module.scss"
 
-export default ({ link, linkText, hero, sidebar, children }) => (
+export default ({ link, linkText, hero, sidebar, contentClass, children }) => (
   <>
     <Grid>
       <LandingSidebar link={link} linkText={linkText}/>
@@ -19,8 +19,9 @@ export default ({ link, linkText, hero, sidebar, children }) => (
       <Sidebar className={`${SidebarStyles.sidebar} ${SidebarStyles.infoSidebar}`}>
         {sidebar}
       </Sidebar>
-
-      {children}
+      <Content className={`${ContentStyles.bodyContent} ${contentClass} animate`}>
+        {children}
+      </Content>
     </ReverseGrid>
   </>
 )

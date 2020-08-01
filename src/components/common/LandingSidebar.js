@@ -1,6 +1,6 @@
 import React from "react"
-import Sidebar from "../grid/MainGridSidebar"
-import SidebarStyles from "../../styles/sidebar.module.scss"
+import Sidebar from "../grid/GridSidebar"
+import SidebarStyles from "./sidebar.module.scss"
 import { StaticQuery, graphql, Link } from "gatsby"
 import SpecialLogo from "./TiltLink"
 import GatsbyImage from "gatsby-image"

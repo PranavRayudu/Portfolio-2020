@@ -1,0 +1,190 @@
+@import "variables";
+
+.sidebar-description {
+  line-height: 1.15em;
+}
+
+.sticky-title {
+  place-self: start end;
+  position: sticky;
+  top: $space-small;
+
+  @include respond-to(md) {
+    place-self: start center;
+  }
+}
+
+.divider {
+  place-self: start stretch;
+  height: $std-line-thickness;
+  background: $highlight-color;
+  //margin-bottom: $space-small;
+  border-radius: $std-line-thickness;
+}
+
+.skills {
+  margin-bottom: $space-small;
+
+  .skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    line-height: normal;
+
+    @include respond-to(md) {
+      justify-content: center;
+    }
+
+    .chip-weak, .chip, .chip-strong {
+
+      vertical-align: middle;
+      padding: $std-line-thickness $std-line-thickness * 3;
+      margin: $std-line-thickness;
+      border-radius: $space-small;
+      color: $dark-grey;
+      font-weight: bold;
+    }
+
+    .chip-weak {
+      background: $accent-1;
+      @include glow($accent-1, 8px, 0.5);
+    }
+
+    .chip {
+      background: $accent-2;
+      @include glow($accent-2, 8px, 0.5);
+    }
+
+    .chip-strong {
+      background: $accent-3;
+      @include glow($accent-3, 8px, 0.5);
+    }
+  }
+}
+
+$description_size: 600px;
+
+.title {
+  font-size: 3em;
+  font-style: italic;
+  color: white;
+
+  @include respond-to(sm) {
+    font-size: 2.3em;
+  }
+}
+
+.description {
+  line-height: $space-medium;
+  font-weight: normal;
+
+  color: $primary-grey;
+
+  max-width: $description_size;
+
+  @include respond-to(md) {
+    max-width: 100%;
+  }
+
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+    //text-indent: 0.5in;
+  }
+}
+
+.icon-list {
+  color: $highlight-color;
+  @include text-glow($highlight-color, 0.5);
+
+  display: flex;
+  justify-content: space-evenly;
+
+  :global(.icon) {
+    font-size: $space-medium;
+  }
+
+  @include respond-to(larger-than-md) {
+    max-width: $description_size;
+  }
+}
+
+.work-content {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+
+  grid-gap: $space-medium $space-small;
+
+  grid-auto-flow: row;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+    //grid-gap: $space-large $space-small;
+  }
+
+  @include respond-to(md) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: stretch;
+  }
+}
+
+.about-form-content {
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    input, button,
+    textarea {
+      flex: 1;
+      padding: $space-small;
+
+      display: block;
+      min-width: $space-large;
+      max-width: $description_size;
+
+      -webkit-appearance: none;
+      color: $light-grey;
+      caret-color: $light-grey;
+      border-radius: $space-small;
+
+      @include respond-to(md) {
+        max-width: 100%;
+      }
+    }
+
+    input, textarea {
+      margin-bottom: $space-small;
+      @include raised-surface;
+
+      &:focus {
+        outline: none;
+        box-shadow: $inset-small-shadow;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit {
+      width: 200px;
+      background: $action-color;
+      color: $dark-grey;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      @include glow($action-color, 20px, 0.5);
+      transition: 0.1s all ease-in;
+
+      &:hover {
+        background: lighten($action-color, 10%);
+        @include glow($action-color, 30px, 0.7);
+      }
+    }
+  }
+}

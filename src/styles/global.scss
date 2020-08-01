@@ -14,8 +14,6 @@ body {
   //z-index: -10;
   position: relative;
 
-  background-color: rgba(black, 0);
-
   &:after {
     top: 0;
     bottom: 0;
@@ -33,14 +31,14 @@ body {
 }
 
 ::selection {
-  background: $primary-orange;
+  background: $accent-2;
   color: $md-white;
 }
 
 em {
   font-weight: normal;
   font-style: normal;
-  color: $primary-yellow;
+  color: $highlight-color;
 }
 
 .no-margin {
@@ -78,16 +76,16 @@ h1 {
 }
 
 .clickable {
-  color: $primary-red;
+  color: $action-color;
   text-decoration: none;
   white-space: nowrap;
 
-  text-shadow: 0 0 7px rgba($primary-red, 0.3);
+  text-shadow: 0 0 7px rgba($action-color, 0.3);
   transition: 0.1s all ease-in;
 
   &:hover {
-    color: lighten($primary-red, 10%);
-    text-shadow: 0 0 15px rgba($primary-red, 0.5),
+    color: lighten($action-color, 10%);
+    text-shadow: 0 0 15px rgba($action-color, 0.5),
     0 5px 5px $md-black;
   }
 }
