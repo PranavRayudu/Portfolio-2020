@@ -13,24 +13,7 @@ export default function(props) {
     <StaticQuery
       query={graphql`
       query StuffQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              excerpt
-
-              frontmatter {
-                path
-                title
-                date
-              }
-            }
-          }
-        }
-
-        logo: file(relativePath: { eq: "images/logo-yellow.png" }) {
+        logo: file(relativePath: { eq: "logo-yellow.png" }) {
           childImageSharp {
             fluid(maxWidth: 100, maxHeight: 100) {
               ...GatsbyImageSharpFluid

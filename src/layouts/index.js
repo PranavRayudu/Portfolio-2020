@@ -4,6 +4,9 @@ import { graphql, StaticQuery } from "gatsby"
 import Animate from "../components/common/Animate"
 
 export default function({ location, children }) {
+
+  console.log("Hello fellow developer! Visit my Github https://github.com/PranavRayudu/")
+
   return (
     <>
       <StaticQuery

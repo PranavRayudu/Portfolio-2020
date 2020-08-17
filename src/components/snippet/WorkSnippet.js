@@ -4,26 +4,9 @@ import SnippetStyles from "./snippet.module.scss"
 import { useTransition, animated } from "react-spring"
 import { DialogOverlay, DialogContent } from "@reach/dialog"
 import "@reach/dialog/styles.css"
-import { graphql, StaticQuery } from "gatsby"
 
 function WorkSnippet(props) {
 
-  const imagesQuery = graphql`
-          query {
-            images: allFile(filter: {extension: {regex:  "/jpeg|jpg|png|gif/"}}) {
-              edges {
-                node {
-                  relativePath
-                  childImageSharp {
-                    fluid(maxWidth: 550, maxHeight: 400) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                } 
-              }
-            }
-          }
-      `
   const AnimatedDialogOverlay = animated(DialogOverlay)
   const AnimatedDialogContent = animated(DialogContent)
   const [showDialog, setShowDialog] = React.useState(false)
@@ -39,20 +22,7 @@ function WorkSnippet(props) {
       props.image ? SnippetStyles.hasImg : "",
     ].join(" ")} id={props.title.toLowerCase().replace(" ", "-")}>
 
-      <StaticQuery
-        query={imagesQuery}
-        render={(data) => {
-          const image = data.images.edges.find(n => {
-            return n.node.relativePath.includes(props.image)
-          })
-
-          if (!image) {
-            return null
-          }
-
-          return (<Img fluid={image.node.childImageSharp.fluid} className={SnippetStyles.img}/>)
-        }}
-      />
+      {props.image && <Img fluid={props.image.childImageSharp.fluid} className={SnippetStyles.img}/>}
 
       <div className={SnippetStyles.content}>
 
@@ -65,7 +35,7 @@ function WorkSnippet(props) {
           </p>}
 
           <p className={`${SnippetStyles.text} ${SnippetStyles.showSm}`}>
-            {props.body ? props.body : props.subtitle}
+            {props.body ? <span dangerouslySetInnerHTML={{__html: props.body}}/> : props.subtitle}
           </p>
 
         </div>
@@ -79,9 +49,10 @@ function WorkSnippet(props) {
           </button>
           }
 
-          <a href={props.link} target="_blank" rel="noopener noreferrer" className={SnippetStyles.link}>
-            {props.linkText ? props.linkText : "Visit Site"}
-          </a>
+          {props.link &&
+          <a href={props.link.url} target="_blank" rel="noopener noreferrer" className={SnippetStyles.link}>
+            {props.link.text}
+          </a>}
         </div>
       </div>
 
@@ -99,7 +70,7 @@ function WorkSnippet(props) {
                   transform: styles.y.interpolate(value => `translate3d(0px, ${value}px, 0px)`),
                 }}>
                 <h3 className={SnippetStyles.title}>{props.title}</h3>
-                <p>{props.body}</p>
+                <p dangerouslySetInnerHTML={{ __html: props.body }}/>
                 <button
                   type="button"
                   className={SnippetStyles.button}

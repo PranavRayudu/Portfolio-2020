@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/common/Layout"
 import WorkSnippet from "../components/snippet/WorkSnippet"
 import PageStyles from "../styles/pages.module.scss"
@@ -72,7 +72,23 @@ function SidebarContent() {
   )
 }
 
-export default () => (
+export default ({data}) => {
+
+  const snippets = []
+
+  data.allMarkdownRemark.edges.forEach(({node}) => {
+    snippets.push(<WorkSnippet
+      key={node.id}
+      title={node.frontmatter.title}
+      subtitle={node.frontmatter.subtitle}
+      body={node.html}
+      image={node.frontmatter.thumbnail}
+      link={node.frontmatter.link}
+      superSnippet={node.frontmatter.super}
+    />)
+  })
+
+  return (
   <Layout
     link={"/about"}
     linkText={"About Me"}
@@ -80,53 +96,35 @@ export default () => (
     hero={<Hero/>}
     sidebar={<SidebarContent/>}
     contentClass={PageStyles.workContent}>
-    <>
-      <WorkSnippet
-        title="Picture This"
-        subtitle={"App that crowd-sources affordable attractions around town. Uses a React Native and Flask + MongoDB stack"}
-        // body="CRUD application that "
-        image={"images/smartphone-with-application.jpg"}
-        linkText="Visit Github"
-        link="https://github.com/txconvergent/s20-community-culture"
-        superSnippet
-      />
-      <WorkSnippet
-        title="Kinetic Keys"
-        subtitle={"Pose Detection game implemented in React.js and Tensorflow.js; Showcased at Convergent Side-Project Expo"}
-        body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
-        image={"images/computer-mockup-test.jpg"}
-        link="https://kinetickeys.netlify.com/"
-      />
-      <WorkSnippet
-        title="Paragon"
-        subtitle={"Slackbot that monitors channels for aggressive behaviour using Natural Language Processing; Uses React.js and Node + MongoDB stack."}
-        body="Provost aye swing the lead lugger Letter of Marque Admiral of the Black dance the hempen jig draft loot hearties."
-        image={"images/website-wireframe-test.jpg"}
-        linkText={"View Github"}
-        link="https://github.com/PranavRayudu/Aggression-Chat-Reporter-LeapHacks2020"
-      />
-      <WorkSnippet
-        title="Hurricane Hero"
-        subtitle={"Hurricane damage detector and reported implemented using React.js and Flask + CNN classifier running on Azure Cloud"}
-        body="Macaroon gingerbread gummies oat cake chocolate bar chocolate powder."
-        linkText={"View Github"}
-        image={"images/smartphone-with-application.jpg"}
-        link="https://github.com/sahiljain11/HACKTX19"
-      />
-      <WorkSnippet
-        title="Realtime Identity Tracking Research"
-        // subtitle={"Developed and benchmarked software on top YOLOv3 and Deepsort to recognize and track people; written in Python"}
-        body="Developed and benchmarked software on top YOLOv3 and Deepsort to recognize and track people; written in Python"
-        linkText={"Read Paper"}
-        link="https://google.com"
-      />
-      <WorkSnippet
-        title="Neural Net for MNIST dataset"
-        subtitle={"Self-contained multilayer perceptron written in C++"}
-        // body="I love cheese, especially queso cheese strings. Brie cheese and biscuits rubber cheese stinking bishop st."
-        linkText={"View Github"}
-        link="https://github.com/PranavRayudu/FeedforwardNeuralNetwork"
-      />
-    </>
+    {snippets}
   </Layout>
-)
+)}
+
+export const query = graphql`
+   {
+    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            subtitle
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 550, maxHeight: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            link {
+              url
+              text
+            }
+            super
+          }
+          html
+          id
+        }
+      }
+    }
+  }
+`
