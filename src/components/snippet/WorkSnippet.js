@@ -22,7 +22,8 @@ function WorkSnippet(props) {
       props.image ? SnippetStyles.hasImg : "",
     ].join(" ")} id={props.title.toLowerCase().replace(" ", "-")}>
 
-      {props.image && <Img fluid={props.image.childImageSharp.fluid} className={SnippetStyles.img}/>}
+      {props.image && <Img fluid={props.image.childImageSharp.fluid}
+                           className={SnippetStyles.img}/>}
 
       <div className={SnippetStyles.content}>
 
@@ -31,7 +32,7 @@ function WorkSnippet(props) {
 
           {(props.body || props.subtitle) &&
           <p className={`${SnippetStyles.text} ${SnippetStyles.hideSm}`}>
-            {props.subtitle ? props.subtitle : props.body}
+            {props.subtitle ? props.subtitle : <span dangerouslySetInnerHTML={{__html: props.body}}/>}
           </p>}
 
           <p className={`${SnippetStyles.text} ${SnippetStyles.showSm}`}>

@@ -35,6 +35,14 @@ body {
   }
 }
 
+ul, li {
+  margin-left: -0.5em;
+}
+
+p {
+  line-height: 1.4em;
+}
+
 ::selection {
   background: $accent-2;
   color: $md-white;

@@ -80,14 +80,19 @@ $img-variant: 2;
 
 .super-snippet {
   grid-column: span 3;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-auto-rows: auto;
-
   grid-gap: $space-small $space-medium;
+
+  &.has-img {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
 
   @include respond-to(lg) {
     grid-column: span 2;
@@ -96,10 +101,6 @@ $img-variant: 2;
   @include respond-to(md) {
     grid-gap: $space-small;
     grid-column: span 1;
-  }
-
-  @include respond-to(sm) {
-    grid-template-columns: 1fr;
   }
 
   .img {
@@ -128,6 +129,10 @@ $img-variant: 2;
 
 .text {
   color: $primary-grey;
+
+  img {
+    display: none;
+  }
 }
 
 .img {
@@ -166,6 +171,13 @@ $img-variant: 2;
 
   @include respond-to(sm) {
     padding: $space-small !important;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
   }
 }
 

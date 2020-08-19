@@ -6,11 +6,11 @@
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://pranavrayudu.netlify.app/',
+  URL: NETLIFY_SITE_URL = "https://pranavrayudu.netlify.app/",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
-const isNetlifyProduction = NETLIFY_ENV === 'production'
+const isNetlifyProduction = NETLIFY_ENV === "production"
 const url = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 
@@ -50,39 +50,57 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-html-attributes',
+      resolve: "gatsby-plugin-html-attributes",
       options: {
-        lang: 'en'
-      }
+        lang: "en",
+      },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*' }],
+            policy: [{ userAgent: "*" }],
           },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
           },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
           },
         },
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 400,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-sass`,
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ],
 }
