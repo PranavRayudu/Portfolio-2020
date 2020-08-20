@@ -7,7 +7,6 @@ import { FaPaintBrush, FaBiking, FaMicrochip } from "react-icons/fa"
 import { graphql } from "gatsby"
 
 function Hero({ data }) {
-  console.log(data)
   return (
     <>
       <h1 className={PageStyles.title}>{data.markdownRemark.frontmatter.title}</h1>
