@@ -4,6 +4,7 @@ import SnippetStyles from "./snippet.module.scss"
 import { useTransition, animated } from "react-spring"
 import { DialogOverlay, DialogContent } from "@reach/dialog"
 import "@reach/dialog/styles.css"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 function WorkSnippet(props) {
 
@@ -23,7 +24,7 @@ function WorkSnippet(props) {
     ].join(" ")} id={props.title.toLowerCase().replace(" ", "-")}>
 
       {props.image && <Img fluid={props.image.childImageSharp.fluid}
-                           className={SnippetStyles.img}/>}
+                           className={SnippetStyles.bannerImg}/>}
 
       <div className={SnippetStyles.content}>
 
@@ -51,9 +52,9 @@ function WorkSnippet(props) {
           }
 
           {props.link &&
-          <a href={props.link.url} target="_blank" rel="noopener noreferrer" className={SnippetStyles.link}>
+          <OutboundLink  href={props.link.url} target="_blank" rel="noopener noreferrer" className={SnippetStyles.link}>
             {props.link.text}
-          </a>}
+          </OutboundLink>}
         </div>
       </div>
 

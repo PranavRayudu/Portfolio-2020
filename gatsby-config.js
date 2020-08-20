@@ -102,6 +102,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-175894149-1",
+        pageTransitionDelay: 250,
+        head: true,
+        exclude: ["/404"],
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-sass`,

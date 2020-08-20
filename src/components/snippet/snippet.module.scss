@@ -62,7 +62,7 @@ $img-variant: 2;
     }
   }
 
-  .img {
+  .banner-img {
     flex: 1;
 
     @if ($img-variant == 1) {
@@ -103,7 +103,7 @@ $img-variant: 2;
     grid-column: span 1;
   }
 
-  .img {
+  .banner-img {
 
     @if ($img-variant == 1) {
       border-radius: $space-small;
@@ -123,25 +123,14 @@ $img-variant: 2;
   color: white;
 }
 
-.subtitle {
-  color: $primary-grey;
-}
+//.subtitle {
+//  color: $primary-grey;
+//}
 
 .text {
-  color: $primary-grey;
-
-  img {
+  img, video {
     display: none;
   }
-}
-
-.img {
-
-}
-
-.dialog-img {
-  max-width: 400px;
-  margin: auto;
 }
 
 .overlay {
@@ -173,7 +162,7 @@ $img-variant: 2;
     padding: $space-small !important;
   }
 
-  img {
+  img, video {
     display: block;
     width: 100%;
     max-width: 400px;

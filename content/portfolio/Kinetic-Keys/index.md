@@ -12,4 +12,6 @@ It detects letters from key body joints through a custom pose estimation model r
 This custom vision model was refined further from the PoseNet model using a 4500+ image dataset we created for this project.  
 Made in collaboration with [Mehul Daruka](https://mehul-da.github.io/) and [Mayank Daruka](https://mayankdaruka.github.io/). 
 
-![Kinetic Keys Demo](kinetic-keys-demo.gif)
+<Video autoplay loop muted playsinline>
+    <source src="kinetic-keys-demo.mp4" type="video/mp4">
+</Video>
