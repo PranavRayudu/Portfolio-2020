@@ -13,9 +13,9 @@ import {
   FaJsSquare,
   FaLayerGroup,
   FaRobot,
-  FaCss3Alt,
+  FaSass,
 } from "react-icons/fa"
-import { DiMongodb } from "react-icons/di"
+import { DiMongodb, DiMysql } from "react-icons/di"
 
 function Hero() {
   return (
@@ -27,7 +27,7 @@ function Hero() {
         I'm a full-stack developer who loves building robots and creative programming.
         <br/>
 
-        <Link to="/about#contact-form">Let's talk.</Link>
+        <Link to="/about#contact-form">Say Hi!</Link>
         <br/>
       </h2>
     </>
@@ -50,6 +50,8 @@ function SidebarContent() {
             <div className={PageStyles.chipStrong}><FaFlask className={"icon"}/> Flask</div>
             <div className={PageStyles.chipStrong}><FaNodeJs className={"icon"}/> Node.js</div>
             <div className={PageStyles.chipStrong}><DiMongodb className={"icon"}/> MongoDB</div>
+            <div className={PageStyles.chipStrong}><DiMysql classname={"icon"}/> MySQL</div>
+            <div className={PageStyles.chipStrong}> Selenium</div>
           </section>
 
           <section className={PageStyles.skillsSection}>
@@ -57,7 +59,7 @@ function SidebarContent() {
             <div className={PageStyles.chip}>C / C++</div>
             <div className={PageStyles.chip}><FaPython className={"icon"}/> Python</div>
             <div className={PageStyles.chip}><FaJsSquare className={"icon"}/> Javascript</div>
-            <div className={PageStyles.chip}><FaCss3Alt className={"icon"}/> HTML5 / CSS3</div>
+            <div className={PageStyles.chip}><FaSass className={"icon"}/> HTML5 / Sass</div>
           </section>
 
           <section className={PageStyles.skillsSection}>
@@ -102,7 +104,9 @@ export default ({data}) => {
 
 export const query = graphql`
    {
-    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
+    allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex : "/portfolio/"}},
+    sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           frontmatter {

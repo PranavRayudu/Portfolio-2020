@@ -10,7 +10,6 @@ html,
 body {
   //background: $dark-grey;
   font-family: $default-font;
-  font-size: 20px;
   //z-index: -10;
   position: relative;
 
@@ -40,7 +39,8 @@ ul, li {
 }
 
 p {
-  line-height: 1.4em;
+  font-size: 18px;
+  line-height: 1.6em;
 }
 
 ::selection {
