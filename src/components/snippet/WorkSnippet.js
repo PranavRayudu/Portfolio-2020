@@ -58,7 +58,7 @@ function WorkSnippet(props) {
         </div>
       </div>
 
-      {!props.superSnippet && props.body && transitions.map(
+      {props.subtitle && props.body && transitions.map(
         ({ item, props: styles }) =>
           item && (
             <AnimatedDialogOverlay
