@@ -43,7 +43,7 @@ function WorkSnippet(props) {
         </div>
 
         <div className={SnippetStyles.footer}>
-          {!props.superSnippet && props.body && <button
+          {props.body && props.subtitle && <button
             type="button"
             className={`${SnippetStyles.button} ${SnippetStyles.hideSm}`}
             onClick={() => setShowDialog(true)}>

@@ -1,6 +1,6 @@
 ---
 title: Hurricane Hero
-date: 11-20-2019
+date: 2019-11-20
 subtitle: Hurricane damage detector and reported implemented using React.js and Flask + CNN classifier running on Azure Cloud
 thumbnail: hurricane-hero-mockup.png
 link:

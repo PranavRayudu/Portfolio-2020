@@ -1,6 +1,6 @@
 ---
 title: Kinetic Keys
-date: 3-10-2020
+date: 2020-3-10
 subtitle: Pose Detection game implemented in React.js and Tensorflow.js; Showcased at Convergent Side-Project Expo
 thumbnail: kinetic-keys-mockup.png
 link:
