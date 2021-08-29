@@ -1,8 +1,5 @@
 import React from "react"
-import {
-  TransitionGroup,
-  CSSTransition,
-} from "react-transition-group"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 const timeout = 250
 
@@ -18,7 +15,8 @@ class Animate extends React.PureComponent {
             enter: timeout,
             exit: timeout,
           }}
-          classNames={"animateContainer"}>
+          classNames={"animateContainer"}
+        >
           <div>{children}</div>
         </CSSTransition>
       </TransitionGroup>

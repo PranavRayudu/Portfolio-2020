@@ -1,17 +1,18 @@
 import { animated, useSpring } from "react-spring"
 import { Link } from "gatsby"
-import SidebarStyles from "./sidebar.module.scss"
+import { logoLink } from "./sidebar.module.scss"
 import React from "react"
 
-export default function({ to, children }) {
+export default function TiltLink({ to, children }) {
   const sensitivity = 0.3
   let bounds = [250, 110, 100, 140] // estimates only, need link's ref to ne valid
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 
   const calc = (x, y) => [
-    x - bounds[0] - (bounds[2] / 2),
-    y - bounds[1] - (bounds[3] / 2)]
+    x - bounds[0] - bounds[2] / 2,
+    y - bounds[1] - bounds[3] / 2,
+  ]
 
   const trans = (x, y) => `
     perspective(${bounds[2]}px) 
@@ -29,18 +30,18 @@ export default function({ to, children }) {
   return (
     <AnimatedLink
       to={to}
-      className={SidebarStyles.logoLink}
+      className={logoLink}
       aria-label={"Pranav Rayudu's Logo"}
-      ref={el => {
+      ref={(el) => {
         if (!el) return
 
         let bound = el.getBoundingClientRect()
         bounds = [bound.x, bound.y, bound.width, bound.height]
       }}
-
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-      onMouseLeave={() => set({ xy: [0, 0] })}
-      style={{ transform: pos.xy.interpolate(trans) }}>
+      onMouseMove={({ clientX: x, clientY: y }) => set.start({ xy: calc(x, y) })}
+      onMouseLeave={() => set.start({ xy: [0, 0] })}
+      style={{ transform: pos.xy.to(trans) }}
+    >
       {children}
     </AnimatedLink>
   )

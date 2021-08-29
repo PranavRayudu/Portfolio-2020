@@ -1,8 +1,10 @@
 import React from "react"
-import gridStyles from "./grid.module.scss"
+import { sidebar } from "./grid.module.scss"
 
-export default props => (
-  <div className={`${props.className} ${gridStyles.sidebar}`}>
-    {props.children}
-  </div>
-)
+export default function gridSidebar(props) {
+  return (
+    <div className={`${props.className} ${sidebar}`}>
+      {props.children}
+    </div>
+  )
+}

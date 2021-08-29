@@ -111,6 +111,7 @@ module.exports = {
         exclude: ["/404"],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-sass`,

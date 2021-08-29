@@ -1,8 +1,11 @@
 import React from "react"
-import contentStyles from "./grid.module.scss"
+import { content } from "./grid.module.scss"
 
-export default props => (
-  <div className={`${contentStyles.content} ${props.className}`} style={props.style}>
+export default function gridContent(props) {
+  return (
+  <div
+    className={`${content} ${props.className}`}
+    style={props.style}>
     {props.children}
-  </div>
-)
+  </div>)
+}

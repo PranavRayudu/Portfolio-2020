@@ -1,19 +1,17 @@
 import React from "react"
-import masterGridStyles from "./grid.module.scss"
+import { gridStraight, gridReverse } from "./grid.module.scss"
 
 function Grid(props) {
-
   return (
-    <main className={`${masterGridStyles.gridStraight} ${props.class}`}>
+    <main className={`${gridStraight} ${props.class}`}>
       {props.children}
     </main>
   )
 }
 
 function ReverseGrid(props) {
-
   return (
-    <main className={`${masterGridStyles.gridReverse} ${props.className}`}>
+    <main className={`${gridReverse} ${props.className}`}>
       {props.children}
     </main>
   )
